@@ -1,7 +1,7 @@
 ## Default Spring Initialize
-Project - Maven Project
-Spring Boot - 2.7.5
-Java - 19
+- Project - Maven Project
+- Spring Boot - 2.7.5
+- Java - 19
 ## DB Connection
 เปลี่ยน `<usernaem>` กับ `<password>` / username ตอนนี้มี admin1, admin2, admin3 รหัสผ่านอันเดียวกับ username
 - **spring backend** ไฟล์ application.properties
