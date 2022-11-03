@@ -60,7 +60,9 @@ function information() {
                     ml-4
                     mt-4
                     border-2 
-                    border-[#162B78] 
+                    border-[#162B78]
+                    focus:outline-none
+                    focus:border-[#162B78]
                     rounded-xl
                     "
                     
@@ -83,6 +85,8 @@ function information() {
                     m-2
                     border-2 
                     border-[#162B78] 
+                    focus:outline-none
+                    focus:border-[#162B78]
                     rounded-xl text-m-4 
                     active:border-[#162B78]"
                   placeholder="ระบุชื่อที่พัก (English)"
@@ -103,7 +107,10 @@ function information() {
                         m-2
                         w-[200px]
                         h-[40px]
-                        border-2 border-[#162B78]
+                        border-2 
+                        border-[#162B78]
+                        focus:outline-none
+                        focus:border-[#162B78]
                         rounded-xl"
                       placeholder="เลขที่"
                       name="name"
@@ -119,7 +126,10 @@ function information() {
                         w-[200px]
                         h-[40px]
                         m-2 
-                        border-2 border-[#162B78]
+                        border-2 
+                        border-[#162B78]
+                        focus:outline-none
+                        focus:border-[#162B78]
                         rounded-xl"
                       placeholder="ถนน"
                       name="name"
@@ -135,7 +145,10 @@ function information() {
                         w-[200px]
                         h-[40px]
                         m-2 
-                        border-2 border-[#162B78]
+                        border-2 
+                        border-[#162B78]
+                        focus:outline-none
+                        focus:border-[#162B78]
                         rounded-xl"
                       placeholder="ซอย"
                       name="name"
@@ -154,7 +167,10 @@ function information() {
                         m-2 
                         w-[200px]
                         h-[40px]
-                        border-2 border-[#162B78]
+                        border-2 
+                        border-[#162B78]
+                        focus:outline-none
+                        focus:border-[#162B78]
                         rounded-xl"
                       placeholder="ตำบล / แขวง"
                       name="name"
@@ -170,7 +186,10 @@ function information() {
                         w-[200px]
                         h-[40px]
                         m-2 
-                        border-2 border-[#162B78]
+                        border-2 
+                        border-[#162B78]
+                        focus:outline-none
+                        focus:border-[#162B78]
                         rounded-xl"
                       placeholder="อำเภอ / เขต"
                       name="name"
@@ -186,7 +205,10 @@ function information() {
                         w-[200px]
                         h-[40px]
                         m-2 
-                        border-2 border-[#162B78]
+                        border-2 
+                        border-[#162B78]
+                        focus:outline-none
+                        focus:border-[#162B78]
                         rounded-xl"
                       placeholder="จังหวัด"
                       name="name"
@@ -205,7 +227,10 @@ function information() {
                         text-lg 
                         pl-5 
                         w-[200px]
-                        border-2 border-[#162B78]
+                        border-2 
+                        border-[#162B78]
+                        focus:outline-none
+                        focus:border-[#162B78]
                         rounded-xl"
                       placeholder="รหัสไปรษณีย์"
                       name="name"
