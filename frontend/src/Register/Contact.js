@@ -3,6 +3,9 @@ import "./Contact.css"
 import { Button, TextField,} from "@mui/material";
 
 function information() {
+  const steps = [
+    '','','','','','','','',
+  ];
   return (
     <>
       <div className='flex justify-between ml-5 mr-5 mt-8' >

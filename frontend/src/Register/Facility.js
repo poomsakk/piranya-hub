@@ -12,7 +12,7 @@ function information() {
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
   return (
     <>
-      <div className='items-center '>
+        <div className='items-center '>
             <div className='container'>
               <Stepper activeStep={1} alternativeLabel
                 className='py-5 mt-7 '>

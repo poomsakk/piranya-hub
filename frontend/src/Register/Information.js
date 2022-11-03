@@ -12,25 +12,7 @@ function information() {
       '','','','','','','','',
     ];
 
-    const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
-      [`&.${stepConnectorClasses.active}`]: {
-        [`& .${stepConnectorClasses.line}`]: {
-          backgroundColor: theme.palette.mode === 'dark' ? theme.palette.grey[800] : '#162B78'
-        },
-      },
-      [`&.${stepConnectorClasses.completed}`]: {
-        [`& .${stepConnectorClasses.line}`]: {
-          backgroundColor: theme.palette.mode === 'dark' ? theme.palette.grey[800] : '#162B78'
-        },
-      },
-      [`& .${stepConnectorClasses.line}`]: {
-        height: 2,
-        border: 0,
-        backgroundColor:
-          theme.palette.mode === 'dark' ? theme.palette.grey[800] : '#eaeaf0',
-        borderRadius: 1,
-      },
-    }));
+    
 
   return (
     <>
