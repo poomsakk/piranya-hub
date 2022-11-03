@@ -2,6 +2,9 @@ import React from 'react'
 import "./Promotion.css"
 
 function information() {
+  const steps = [
+    '','','','','','','','',
+  ];
   return (
     <>
       <div className='flex justify-between ml-5 mr-5 mt-8' >
