@@ -1,10 +1,8 @@
 import React ,{ useState } from 'react'
 import "./Information.css"
-import { styled } from '@mui/material/styles';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
-import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
 
 function information() {
 
