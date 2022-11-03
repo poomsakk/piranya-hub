@@ -5,7 +5,6 @@ import Banner from './components/Banner'
 import Content from './components/Content'
 import CallToAction from './components/CallToAction'
 import Page404 from './components/Page404'
-
 import Information from './Register/Information'
 import Contact from './Register/Contact'
 import Cost from './Register/Cost'
@@ -31,8 +30,7 @@ function App() {
             <Route path = "/facility"element={<Facility />} />
             <Route path = "/image"element={<Image />} />
             <Route path = "/type"element={<Type />} />
-            <Route path = "/promotion"element={<Promotion />} />
-            
+            <Route path = "/promotion"element={<Promotion />} />  
         </Routes>
     </div>
   );
