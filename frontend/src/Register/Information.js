@@ -12,31 +12,11 @@ function information() {
       '','','','','','','','',
     ];
 
-    const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
-      [`&.${stepConnectorClasses.active}`]: {
-        [`& .${stepConnectorClasses.line}`]: {
-          backgroundColor: theme.palette.mode === 'dark' ? theme.palette.grey[800] : '#162B78'
-        },
-      },
-      [`&.${stepConnectorClasses.completed}`]: {
-        [`& .${stepConnectorClasses.line}`]: {
-          backgroundColor: theme.palette.mode === 'dark' ? theme.palette.grey[800] : '#162B78'
-        },
-      },
-      [`& .${stepConnectorClasses.line}`]: {
-        height: 2,
-        border: 0,
-        backgroundColor:
-          theme.palette.mode === 'dark' ? theme.palette.grey[800] : '#eaeaf0',
-        borderRadius: 1,
-      },
-    }));
-
   return (
     <>
         <div className='items-center '>
             <div className='container'>
-              <Stepper activeStep={0} alternativeLabel className='py-5 mt-7 ' connector={<ColorlibConnector/>}>
+              <Stepper activeStep={0} alternativeLabel className='py-5 mt-7 '>
                 {steps.map((label) => (
                   <Step key={label}>
                     <StepLabel>{label}</StepLabel>
