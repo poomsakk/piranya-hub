@@ -6,10 +6,6 @@ import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
-import Box from '@mui/material/Box';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputAdornment from '@mui/material/InputAdornment';
-import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Radio from '@mui/material/Radio';
@@ -88,6 +84,8 @@ function type() {
                       mt-5
                       border-2 
                       border-[#162B78] 
+                      focus:outline-none
+                      focus:border-[#162B78]
                       rounded-xl
                       "
                     placeholder="ระบุขนาดห้อง"
@@ -111,6 +109,8 @@ function type() {
                       mt-5
                       border-2 
                       border-[#162B78] 
+                      focus:outline-none
+                      focus:border-[#162B78]
                       rounded-xl
                       "
                     placeholder="ระบุค่าเช่ารายเดือน"
@@ -118,8 +118,12 @@ function type() {
                   />
                   <h1 className = "font-IBMPlexSansThai text-xl text-[#162B78] m-2 w-32 mt-7" >บาท/เดือน</h1>
                   <FormControl class="flex flex-row">
-                    <FormControlLabel  className='mt-5' value="NoMonth" control={<Radio />}/>
-                    <h1 className = "font-IBMPlexSansThai text-xl text-[#162B78] w-44 mt-8" >ไม่มีห้องเช่ารายเดือน</h1>
+                    <FormControlLabel
+                    className='mt-5' 
+                    value="NoMonth" 
+                    control={
+                      <Radio />}/>
+                    <h1 className = "font-IBMPlexSansThai text-xl text-[#162B78] w-44 mt-7" >ไม่มีห้องเช่ารายเดือน</h1>
                   </FormControl>
                 </div>
 
@@ -138,6 +142,8 @@ function type() {
                       mt-5
                       border-2 
                       border-[#162B78] 
+                      focus:outline-none
+                      focus:border-[#162B78]
                       rounded-xl
                       "
                     placeholder="ระบุค่าเช่ารายวัน"
@@ -146,7 +152,7 @@ function type() {
                   <h1 className = "font-IBMPlexSansThai text-xl text-[#162B78] m-2 w-32 mt-7" >บาท/วัน</h1>
                   <FormControl class="flex flex-row">
                     <FormControlLabel  className='mt-5  font-IBMPlexSansThai text-xl text-[#162B78]' value="NoDay" control={<Radio />}/>
-                    <h1 className = "font-IBMPlexSansThai text-xl text-[#162B78] w-44 mt-8" >ไม่มีห้องเช่ารายวัน</h1>
+                    <h1 className = "font-IBMPlexSansThai text-xl text-[#162B78] w-44 mt-7" >ไม่มีห้องเช่ารายวัน</h1>
                   </FormControl>
                 </div>
               </div>
