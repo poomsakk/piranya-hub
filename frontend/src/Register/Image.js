@@ -1,5 +1,8 @@
 import React from 'react'
 import "./Image.css"
+import Stepper from '@mui/material/Stepper';
+import Step from '@mui/material/Step';
+import StepLabel from '@mui/material/StepLabel';
 
 function information() {
   const steps = [
@@ -7,6 +10,16 @@ function information() {
   ];
   return (
     <>
+    <div className='container'>
+              <Stepper activeStep={5} alternativeLabel
+                className='py-5 mt-7 '>
+              {steps.map((label) => (
+                <Step key={label}>
+                  <StepLabel >{label}</StepLabel>
+                </Step>
+              ))}
+              </Stepper>
+            </div>
       <div className='flex justify-between ml-5 mr-5 mt-8' >
           <a href="/detail">
             <button class="
