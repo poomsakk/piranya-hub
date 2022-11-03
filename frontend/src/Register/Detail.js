@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Detail.css"
 
-function information() {
+function detail() {
   return (
     <>
       <div className='flex justify-between ml-5 mr-5 mt-8' >
@@ -43,4 +43,4 @@ function information() {
   )
 }
 
-export default information
+export default detail
