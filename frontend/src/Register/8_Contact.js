@@ -1,5 +1,5 @@
 import React from 'react'
-import "./Contact.css"
+import "./8_Contact.css"
 import { Button, TextField,} from "@mui/material";
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
@@ -15,7 +15,26 @@ function information() {
               <Stepper activeStep={7} alternativeLabel
                 className='py-5 mt-7 '>
               {steps.map((label) => (
-                <Step key={label}>
+                <Step key={label}
+                sx={{
+                  '& .MuiStepLabel-root .Mui-completed': {
+                    color: '#162B78', // circle color (COMPLETED)
+                  },
+                  '& .MuiStepLabel-label.Mui-completed.MuiStepLabel-alternativeLabel':
+                    {
+                      color: '#EFEFEF', // Just text label (COMPLETED)
+                    },
+                  '& .MuiStepLabel-root .Mui-active': {
+                    color: '#162B78', // circle color (ACTIVE)
+                  },
+                  '& .MuiStepLabel-label.Mui-active.MuiStepLabel-alternativeLabel':
+                    {
+                      color: '#EFEFEF', // Just text label (ACTIVE)
+                    },
+                  '& .MuiStepLabel-root .Mui-active .MuiStepIcon-text': {
+                    fill: '#EFEFEF', // circle's number (ACTIVE)
+                  },
+                  }}>
                   <StepLabel >{label}</StepLabel>
                 </Step>
               ))}

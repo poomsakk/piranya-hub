@@ -1,5 +1,5 @@
 import React from 'react'
-import "./Facility.css"
+import "./2_Facility.css"
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
