@@ -32,6 +32,25 @@
     display: none;
 }
 
+.UserRegistor-btn{
+    display: inline-block;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    color: white;
+    border: 2px solid transparent;
+    transition: 0.3s;
+    margin-top: rem;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+
+
+.UserRegistor-btn:hover{
+    color: white;
+    text-decoration: underline;
+
+}
+
 .Resgistor-btn {
     background: #fff;
     display: inline-block;
@@ -48,6 +67,10 @@
     border: 2px solid #fff;
     background: transparent;
     color: #fff;
+}
+
+.md-social-btn .mbsc-ic {
+    float: left;
 }
 
 @media screen and (max-width: 480px) {

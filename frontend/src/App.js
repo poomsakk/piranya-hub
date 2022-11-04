@@ -14,6 +14,8 @@ import Facility from './Register/Facility'
 import Image from './Register/Image'
 import Promotion from './Register/Promotion'
 import Type from './Register/Type'
+import UserSignIn from './Register/UserSignIn'
+import UserSignUp from './Register/UserSignUp'
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
             <Route path = "/CallToAction"element={<CallToAction />} />
             <Route path = "/Page404"element={<Page404 />} />
             <Route path = "/information"element={<Information />} />
+            <Route path = "/sign-in"element={<UserSignIn />} />
+            <Route path = "/sign-up"element={<UserSignUp />} />
             <Route path = "/contact"element={<Contact />} />
             <Route path = "/cost"element={<Cost />} />
             <Route path = "/detail"element={<Detail />} />

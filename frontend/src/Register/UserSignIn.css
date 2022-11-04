@@ -1,0 +1,20 @@
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+
+}
+
+.usersignincontent {
+    padding-top: 10%;
+    max-width: 960px;
+    margin: auto auto;
+}
+
+.signup {
+    color: #162B78;
+}
+
+.signup:hover {
+    color: #162B78;
+    text-decoration: underline;
+}
