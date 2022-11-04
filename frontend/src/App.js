@@ -5,17 +5,17 @@ import Banner from './components/Banner'
 import Content from './components/Content'
 import CallToAction from './components/CallToAction'
 import Page404 from './components/Page404'
-
-import Information from './Register/Information'
-import Contact from './Register/Contact'
-import Cost from './Register/Cost'
-import Detail from './Register/Detail'
-import Facility from './Register/Facility'
-import Image from './Register/Image'
-import Promotion from './Register/Promotion'
-import Type from './Register/Type'
+import Information from './Register/1_Information'
+import Contact from './Register/8_Contact'
+import Cost from './Register/4_Cost'
+import Detail from './Register/5_Detail'
+import Facility from './Register/2_Facility'
+import Image from './Register/6_Image'
+import Promotion from './Register/7_Promotion'
+import Type from './Register/3_Type'
 import UserSignIn from './Register/UserSignIn'
 import UserSignUp from './Register/UserSignUp'
+
 
 function App() {
   return (
@@ -35,8 +35,7 @@ function App() {
             <Route path = "/facility"element={<Facility />} />
             <Route path = "/image"element={<Image />} />
             <Route path = "/type"element={<Type />} />
-            <Route path = "/promotion"element={<Promotion />} />
-            
+            <Route path = "/promotion"element={<Promotion />} />  
         </Routes>
     </div>
   );
