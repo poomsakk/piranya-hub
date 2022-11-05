@@ -1,6 +1,7 @@
 import {Routes, Route} from 'react-router-dom'
 
 import Header from './components/Header'
+import Footer from './components/Footer'
 import Banner from './components/Banner'
 import Content from './components/Content'
 import CallToAction from './components/CallToAction'
@@ -13,6 +14,7 @@ import Facility from './Register/2_Facility'
 import Image from './Register/6_Image'
 import Promotion from './Register/7_Promotion'
 import Type from './Register/3_Type'
+import Filter from './Filter/filter'
 
 function App() {
   return (
@@ -30,8 +32,10 @@ function App() {
             <Route path = "/facility"element={<Facility />} />
             <Route path = "/image"element={<Image />} />
             <Route path = "/type"element={<Type />} />
-            <Route path = "/promotion"element={<Promotion />} />  
+            <Route path = "/promotion"element={<Promotion />} />
+            <Route path = "/filter"element={<Filter />} />  
         </Routes>
+        <Footer/>
     </div>
   );
 }

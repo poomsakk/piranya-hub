@@ -17,6 +17,7 @@ function Header() {
                         <a href ='/'><img className='h-16' src={logo}/> </a>
                     </div>
                     <a href="/information" className="Resgistor-btn font-IBMPlexSansThai text-lg ">ลงประกาศที่พัก</a>
+                    <a href="/filter" className="Resgistor-btn font-IBMPlexSansThai text-lg ">ค้นหาที่พัก</a>
                     <div className='mobile-menu' onClick={handleClick}>
                         {click ?(<FiX/>) : (<FiMenu/>)}
                     </div>
