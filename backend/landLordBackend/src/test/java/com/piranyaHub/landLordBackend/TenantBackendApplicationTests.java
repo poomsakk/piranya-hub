@@ -1,4 +1,4 @@
-package com.piranyaHub.tenantBackend;
+package com.piranyaHub.landLordBackend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

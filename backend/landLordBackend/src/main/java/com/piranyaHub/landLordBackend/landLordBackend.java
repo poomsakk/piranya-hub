@@ -1,13 +1,13 @@
-package com.piranyaHub.tenantBackend;
+package com.piranyaHub.landLordBackend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TenantBackendApplication {
+public class landLordBackend {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TenantBackendApplication.class, args);
+		SpringApplication.run(landLordBackend.class, args);
 	}
 
 }
