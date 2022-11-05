@@ -9,6 +9,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/lodge")
+@CrossOrigin //accept all origin
+//@CrossOrigin(origins = "http://localhost:3000/")     accept only this origin
 public class LodgeController {
     @Autowired
     private LodgeService lodgeService;
