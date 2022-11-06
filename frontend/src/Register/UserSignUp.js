@@ -1,10 +1,6 @@
 import React, { useState } from 'react'
-import "./UserSignIn.css"
-import axios from "axios"
 import { useNavigate } from "react-router-dom"
-import Stepper from '@mui/material/Stepper';
-import Step from '@mui/material/Step';
-import StepLabel from '@mui/material/StepLabel';
+import { authApi } from '../axiosConfig'
 
 function UserSignUp() {
     let navigate = useNavigate()
@@ -19,23 +15,31 @@ function UserSignUp() {
     const { username, nameSurname, email, password } = user
 
     const onInputChange = (e) => {
-        console.log(e)
         setUser({ ...user, [e.target.name]: e.target.value })
     }
 
-    const onSubmit = async (e) => {
+    function onSubmit(e) {
         e.preventDefault();
-        // TODO 
-        // Set the path for the submission
-        // await axios.post("", user)
-        navigate("/")
+        authApi.post("/signup", { username: user.username, password: user.password })
+            .then(function (response) {
+                alert("Signup successful")
+                navigate("/signin")
+            })
+            .catch(function (error) {
+                console.log(error);
+                if (error.response) {
+                    alert(error.response.data.message) // wrong username password
+                } else {
+                    alert(error.message) // server down
+                }
+            });
     }
-    
+
     return (
         <>
             <div className='items-center '>
                 <div className='usersignincontent'>
-                    <form onSubmit={(e) => onSubmit(e)}>
+                    <form onSubmit={onSubmit}>
                         <div className='flex flex-row'>
                             <h1 className="font-IBMPlexSansThai text-2xl text-[#162B78] m-4 mt-8 w-64 " >Username :</h1>
                             <input
@@ -134,8 +138,8 @@ function UserSignUp() {
                         </div>
                         <div className='flex justify-center ml-5 mr-5 mt-8' >
                             <a href="/facility">
-                                <button href='/facility'
-                                    class="
+                                <button type='submit'
+                                    className="
                                     bg-[#162B78] 
                                     font-IBMPlexSansThai
                                     hover:bg-white 

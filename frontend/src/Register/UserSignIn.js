@@ -1,41 +1,37 @@
 import React, { useState } from 'react'
-import "./UserSignIn.css"
-import axios from "axios"
 import { useNavigate } from "react-router-dom"
-import Stepper from '@mui/material/Stepper';
-import Step from '@mui/material/Step';
-import StepLabel from '@mui/material/StepLabel';
-import { setUseProxies } from 'immer';
+import { authApi } from '../axiosConfig'
 
 function UserSignIn() {
+  const navigate = useNavigate()
+  const [userName, setUserName] = useState("")
+  const [passWord, setpassword] = useState("")
 
-  let navigate = useNavigate()
-
-  const [user, setUser] = useState({
-    username: "",
-    password: ""
-  })
-
-  const { username, password } = user
-
-  const onInputChange = (e) => {
-    console.log(e)
-    setUser({ ...user, [e.target.name]: e.target.value })
-  }
-
-  const onSubmit = async (e) => {
+  function handleSubmit(e) {
     e.preventDefault();
-    // TODO 
-    // Set the path for the submission
-    // await axios.post("", user)
-    navigate("/")
+    const data = { username: userName, password: passWord }
+    authApi.post('/signin', data)
+      .then(function (response) {
+        // console.log(response.data.access_token);
+        localStorage.setItem("access_token", response.data.access_token)
+        alert("Login successful")
+        navigate("/")
+      })
+      .catch(function (error) {
+        console.log(error);
+        if (error.response) {
+          alert(error.response.data.message) // wrong username password
+        } else {
+          alert(error.message) // server down
+        }
+      });
   }
 
   return (
     <>
       <div className='items-center '>
         <div className='usersignincontent'>
-          <form onSubmit={(e) => onSubmit(e)}>
+          <form onSubmit={handleSubmit}>
             <div className='flex flex-row'>
               <h1 className="font-IBMPlexSansThai text-2xl text-[#162B78] m-4 mt-10 w-40 " >Username:</h1>
               <input
@@ -56,8 +52,8 @@ function UserSignIn() {
                     text-m-4"
                 placeholder="Username/Email"
                 name="username"
-                value={username}
-                onChange={(e) => onInputChange(e)}
+                value={userName}
+                onChange={(e) => setUserName(e.target.value)}
               />
             </div>
             <div className='flex flex-row'>
@@ -80,14 +76,14 @@ function UserSignIn() {
                     focus:border-[#162B78]"
                 placeholder="Password"
                 name="password"
-                value={password}
-                onChange={(e) => onInputChange(e)}
+                value={passWord}
+                onChange={(e) => setpassword(e.target.value)}
               />
             </div>
             <div className='flex justify-center ml-5 mr-5 mt-8' >
               <a href="/information">
-                <button href='/information'
-                  class="
+                <button type="submit"
+                  className="
                           bg-[#162B78] 
                           font-IBMPlexSansThai
                           hover:bg-white 
@@ -104,14 +100,14 @@ function UserSignIn() {
               </a>
             </div>
           </form>
-            <div className='flex justify-center ' >
-              <a href="/sign-up">
-                <button href='/sign-up'
-                  class="signup font-IBMPlexSansThai py-4 px-4">
-                  สมัครบัญชี
-                </button>
-              </a>
-            </div>
+          <div className='flex justify-center ' >
+            <a href="/signup">
+              <button href='/signup'
+                className="signup font-IBMPlexSansThai py-4 px-4">
+                สมัครบัญชี
+              </button>
+            </a>
+          </div>
         </div>
       </div>
     </>

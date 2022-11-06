@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin
 public class AuthController {
 
     @Autowired @Qualifier("userServiceImpl")
@@ -32,5 +33,6 @@ public class AuthController {
     public String takeSecret(){
         return "you got this";
     }
+
 }
 

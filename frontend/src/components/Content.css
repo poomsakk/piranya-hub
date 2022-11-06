@@ -4,7 +4,6 @@
 }
 .content-con {
     display: flex;
-    justify-content: space-between;
 }
 .content-con:first-child, .content-con:last-child {
     padding: 5rem 0;

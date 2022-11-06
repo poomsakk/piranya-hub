@@ -7,7 +7,7 @@ let bannerData = {
 }
 
 function Banner() {
-  return (
+    return (
         <div className="banner-bg">
             <div className="container">
                 <div className="banner-con">
@@ -21,7 +21,7 @@ function Banner() {
                 </div>
             </div>
         </div>
-  )
+    )
 }
 
 export default Banner
