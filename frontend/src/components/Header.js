@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React,{ useState } from 'react'
 import { FiMenu, FiX } from "react-icons/fi";
 import './Header.css'
 import logo from "../image/logo1.png"
@@ -14,14 +14,12 @@ function Header() {
             <div className='container'>
                 <div className='header-con'>
                     <div className='logo-container'>
-                        <a href='/'><img className='h-16' src={logo} /> </a>
+                        <a href ='/'><img className='h-16' src={logo}/> </a>
                     </div>
-                    <div>
-                        <a href="/sign-in" className="UserRegistor-btn font-IBMPlexSansThai text-lg ">เข้าสู่ระบบ/ลงทะเบียน</a>
-                        <a href="/information" className="Resgistor-btn font-IBMPlexSansThai text-lg ">ลงประกาศที่พัก</a>
-                    </div>
+                    <a href="/information" className="Resgistor-btn font-IBMPlexSansThai text-lg ">ลงประกาศที่พัก</a>
+                    <a href="/filter" className="Resgistor-btn font-IBMPlexSansThai text-lg ">ค้นหาที่พัก</a>
                     <div className='mobile-menu' onClick={handleClick}>
-                        {click ? (<FiX />) : (<FiMenu />)}
+                        {click ?(<FiX/>) : (<FiMenu/>)}
                     </div>
                 </div>
             </div>
