@@ -1,50 +1,40 @@
 import React, { useState } from "react";
-import "./Information.css";
-import { styled } from "@mui/material/styles";
+import "./1_Information.css";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
-import StepConnector, {
-  stepConnectorClasses,
-} from "@mui/material/StepConnector";
 
 function information() {
   const steps = ["", "", "", "", "", "", "", ""];
-
-  const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
-    [`&.${stepConnectorClasses.active}`]: {
-      [`& .${stepConnectorClasses.line}`]: {
-        backgroundColor:
-          theme.palette.mode === "dark" ? theme.palette.grey[800] : "#162B78",
-      },
-    },
-    [`&.${stepConnectorClasses.completed}`]: {
-      [`& .${stepConnectorClasses.line}`]: {
-        backgroundColor:
-          theme.palette.mode === "dark" ? theme.palette.grey[800] : "#162B78",
-      },
-    },
-    [`& .${stepConnectorClasses.line}`]: {
-      height: 2,
-      border: 0,
-      backgroundColor:
-        theme.palette.mode === "dark" ? theme.palette.grey[800] : "#eaeaf0",
-      borderRadius: 1,
-    },
-  }));
 
   return (
     <>
       <div className="items-center ">
         <div className="container">
-          <Stepper
-            activeStep={0}
-            alternativeLabel
-            className="py-5 mt-7 "
-            connector={<ColorlibConnector />}
-          >
+          <Stepper activeStep={0} alternativeLabel className="py-5 mt-7 ">
             {steps.map((label) => (
-              <Step key={label}>
+              <Step
+                key={label}
+                sx={{
+                  "& .MuiStepLabel-root .Mui-completed": {
+                    color: "#162B78", // circle color (COMPLETED)
+                  },
+                  "& .MuiStepLabel-label.Mui-completed.MuiStepLabel-alternativeLabel":
+                    {
+                      color: "#EFEFEF", // Just text label (COMPLETED)
+                    },
+                  "& .MuiStepLabel-root .Mui-active": {
+                    color: "#162B78", // circle color (ACTIVE)
+                  },
+                  "& .MuiStepLabel-label.Mui-active.MuiStepLabel-alternativeLabel":
+                    {
+                      color: "#EFEFEF", // Just text label (ACTIVE)
+                    },
+                  "& .MuiStepLabel-root .Mui-active .MuiStepIcon-text": {
+                    fill: "#EFEFEF", // circle's number (ACTIVE)
+                  },
+                }}
+              >
                 <StepLabel>{label}</StepLabel>
               </Step>
             ))}
@@ -75,9 +65,9 @@ function information() {
                     ml-4
                     mt-4
                     border-2 
-                    border-[#162B78] 
-                    focus:border-[#162B78]
+                    border-[#162B78]
                     focus:outline-none
+                    focus:border-[#162B78]
                     rounded-xl
                     "
               placeholder="ระบุชื่อที่พัก"
@@ -91,8 +81,6 @@ function information() {
             <input
               type={"text"}
               className="
-                    focus:border-[#162B78]
-                    focus:outline-none
                     font-IBMPlexSansThai 
                     bg-[#EFEFEF]
                     placeholder:text-zinc-500
@@ -103,7 +91,10 @@ function information() {
                     m-2
                     border-2 
                     border-[#162B78] 
-                    rounded-xl text-m-4"
+                    focus:outline-none
+                    focus:border-[#162B78]
+                    rounded-xl text-m-4 
+                    active:border-[#162B78]"
               placeholder="ระบุชื่อที่พัก (English)"
               name="name"
             />
@@ -124,9 +115,10 @@ function information() {
                         m-2
                         w-[200px]
                         h-[40px]
-                        border-2 border-[#162B78]
-                      focus:border-[#162B78]
+                        border-2 
+                        border-[#162B78]
                         focus:outline-none
+                        focus:border-[#162B78]
                         rounded-xl"
                 placeholder="เลขที่"
                 name="name"
@@ -142,9 +134,10 @@ function information() {
                         w-[200px]
                         h-[40px]
                         m-2 
-                        border-2 border-[#162B78]
-                      focus:border-[#162B78]
+                        border-2 
+                        border-[#162B78]
                         focus:outline-none
+                        focus:border-[#162B78]
                         rounded-xl"
                 placeholder="ถนน"
                 name="name"
@@ -160,9 +153,10 @@ function information() {
                         w-[200px]
                         h-[40px]
                         m-2 
-                        border-2 border-[#162B78]
-                      focus:border-[#162B78]
+                        border-2 
+                        border-[#162B78]
                         focus:outline-none
+                        focus:border-[#162B78]
                         rounded-xl"
                 placeholder="ซอย"
                 name="name"
@@ -181,9 +175,10 @@ function information() {
                         m-2 
                         w-[200px]
                         h-[40px]
-                        border-2 border-[#162B78]
-                      focus:border-[#162B78]
+                        border-2 
+                        border-[#162B78]
                         focus:outline-none
+                        focus:border-[#162B78]
                         rounded-xl"
               placeholder="ตำบล / แขวง"
               name="name"
@@ -199,9 +194,10 @@ function information() {
                         w-[200px]
                         h-[40px]
                         m-2 
-                        border-2 border-[#162B78]
+                        border-2 
+                        border-[#162B78]
+                        focus:outline-none
                         focus:border-[#162B78]
-                      focus:outline-none
                         rounded-xl"
               placeholder="อำเภอ / เขต"
               name="name"
@@ -217,9 +213,10 @@ function information() {
                         w-[200px]
                         h-[40px]
                         m-2 
-                        border-2 border-[#162B78]
-                      focus:border-[#162B78]
+                        border-2 
+                        border-[#162B78]
                         focus:outline-none
+                        focus:border-[#162B78]
                         rounded-xl"
               placeholder="จังหวัด"
               name="name"
@@ -238,9 +235,10 @@ function information() {
                         text-lg 
                         pl-5 
                         w-[200px]
-                        border-2 border-[#162B78]
-                      focus:border-[#162B78]
+                        border-2 
+                        border-[#162B78]
                         focus:outline-none
+                        focus:border-[#162B78]
                         rounded-xl"
             placeholder="รหัสไปรษณีย์"
             name="name"

@@ -1,46 +1,45 @@
-import React from "react";
-import "./Facility.css";
-import Stepper from "@mui/material/Stepper";
-import Step from "@mui/material/Step";
-import StepLabel from "@mui/material/StepLabel";
-import Checkbox from "@mui/material/Checkbox";
+import React from 'react'
+import "./2_Facility.css"
+import Stepper from '@mui/material/Stepper';
+import Step from '@mui/material/Step';
+import StepLabel from '@mui/material/StepLabel';
+import Checkbox from '@mui/material/Checkbox';
 
 function information() {
   const steps = ["", "", "", "", "", "", "", ""];
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
   return (
     <>
-      <div className="items-center ">
-        <div className="container">
-          <Stepper activeStep={1} alternativeLabel className="py-5 mt-7 ">
-            {steps.map((label) => (
-              <Step
+      <div className='items-center  '>
+            <div className='container'>
+              <Stepper activeStep={1} alternativeLabel
+                className='py-5 mt-7 '>
+              {steps.map((label) => (
+                <Step key={label}
                 sx={{
-                  "& .MuiStepLabel-root .Mui-completed": {
-                    color: "#162b78", // circle color (COMPLETED)
+                  '& .MuiStepLabel-root .Mui-completed': {
+                    color: '#162B78', // circle color (COMPLETED)
                   },
-                  "& .MuiStepLabel-label.Mui-completed.MuiStepLabel-alternativeLabel":
+                  '& .MuiStepLabel-label.Mui-completed.MuiStepLabel-alternativeLabel':
                     {
-                      color: "#ffff", // Just text label (COMPLETED)
+                      color: '#EFEFEF', // Just text label (COMPLETED)
                     },
-                  "& .MuiStepLabel-root .Mui-active": {
-                    color: "#162b78", // circle color (ACTIVE)
+                  '& .MuiStepLabel-root .Mui-active': {
+                    color: '#162B78', // circle color (ACTIVE)
                   },
-                  "& .MuiStepLabel-label.Mui-active.MuiStepLabel-alternativeLabel":
+                  '& .MuiStepLabel-label.Mui-active.MuiStepLabel-alternativeLabel':
                     {
-                      color: "#ffff", // Just text label (ACTIVE)
+                      color: '#EFEFEF', // Just text label (ACTIVE)
                     },
-                  "& .MuiStepLabel-root .Mui-active .MuiStepIcon-text": {
-                    fill: "#ffff", // circle's number (ACTIVE)
+                  '& .MuiStepLabel-root .Mui-active .MuiStepIcon-text': {
+                    fill: '#EFEFEF', // circle's number (ACTIVE)
                   },
-                }}
-                key={label}
-              >
-                <StepLabel>{label}</StepLabel>
-              </Step>
-            ))}
-          </Stepper>
-        </div>
+                  }}>
+                  <StepLabel >{label}</StepLabel>
+                </Step>
+              ))}
+              </Stepper>
+            </div>
 
         <div className="content">
           <h1 className="font-IBMPlexSansThai text-2xl text-[#162B78] ml-12 m-2 w-96 mt-2">
