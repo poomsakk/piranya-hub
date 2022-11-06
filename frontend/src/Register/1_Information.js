@@ -3,6 +3,7 @@ import "./1_Information.css";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
+import { Link } from "react-router-dom";
 
 function information() {
   const steps = ["", "", "", "", "", "", "", ""];
@@ -244,10 +245,9 @@ function information() {
             name="name"
           />
           <div className="flex justify-end ml-5 mr-5 mt-8">
-            <a href="/facility">
-              <button
-                href="/facility"
-                class="
+            <button
+              href="/facility"
+              class="
                           bg-[#162B78] 
                           font-IBMPlexSansThai
                           hover:bg-white 
@@ -259,10 +259,9 @@ function information() {
                           border border-[#162B78]
                         shadow-md shadow-[#162B78]
                           "
-              >
-                ถัดไป
-              </button>
-            </a>
+            >
+              <Link to={"/facility"}>ถัดไป</Link>
+            </button>
           </div>
         </div>
       </div>

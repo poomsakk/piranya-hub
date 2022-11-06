@@ -2,6 +2,7 @@ import React,{ useState } from 'react'
 import { FiMenu, FiX } from "react-icons/fi";
 import './Header.css'
 import logo from "../image/logo1.png"
+import { Link } from 'react-router-dom';
 
 function Header() {
 
@@ -14,9 +15,9 @@ function Header() {
             <div className='container'>
                 <div className='header-con'>
                     <div className='logo-container'>
-                        <a href ='/'><img className='h-16' src={logo}/> </a>
+                        <Link to ='/'><img className='h-16' src={logo}/> </Link>
                     </div>
-                    <a href="/information" className="Resgistor-btn font-IBMPlexSansThai text-lg ">ลงประกาศที่พัก</a>
+                    <Link to="/information" className="Resgistor-btn font-IBMPlexSansThai text-lg ">ลงประกาศที่พัก</Link>
                     <div className='mobile-menu' onClick={handleClick}>
                         {click ?(<FiX/>) : (<FiMenu/>)}
                     </div>
