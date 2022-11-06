@@ -1,7 +1,7 @@
-import {Routes, Route} from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 import Header from './components/Header'
-import Footer from './components/Footer'
+// import Footer from './components/Footer'
 import Banner from './components/Banner'
 import Content from './components/Content'
 import CallToAction from './components/CallToAction'
@@ -15,27 +15,31 @@ import Image from './Register/6_Image'
 import Promotion from './Register/7_Promotion'
 import Type from './Register/3_Type'
 import Filter from './Filter/filter'
+import UserSignIn from "./Register/UserSignIn"
+import UserSignUp from "./Register/UserSignUp"
 
 function App() {
   return (
     <div>
-        <Header/>
-        <Routes>
-            <Route path = "/Banner"element={<Banner />} />
-            <Route path = "/Content"element={<Content />} />
-            <Route path = "/CallToAction"element={<CallToAction />} />
-            <Route path = "/Page404"element={<Page404 />} />
-            <Route path = "/information"element={<Information />} />
-            <Route path = "/contact"element={<Contact />} />
-            <Route path = "/cost"element={<Cost />} />
-            <Route path = "/detail"element={<Detail />} />
-            <Route path = "/facility"element={<Facility />} />
-            <Route path = "/image"element={<Image />} />
-            <Route path = "/type"element={<Type />} />
-            <Route path = "/promotion"element={<Promotion />} />
-            <Route path = "/filter"element={<Filter />} />  
-        </Routes>
-        <Footer/>
+      <Header />
+      <Routes>
+        <Route path="/Banner" element={<Banner />} />
+        <Route path="/" element={<Content />} />
+        <Route path="/CallToAction" element={<CallToAction />} />
+        <Route path="/Page404" element={<Page404 />} />
+        <Route path="/information" element={<Information />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/cost" element={<Cost />} />
+        <Route path="/detail" element={<Detail />} />
+        <Route path="/facility" element={<Facility />} />
+        <Route path="/image" element={<Image />} />
+        <Route path="/type" element={<Type />} />
+        <Route path="/promotion" element={<Promotion />} />
+        <Route path="/filter" element={<Filter />} />
+        <Route path="/signup" element={<UserSignUp></UserSignUp>} />
+        <Route path="/signin" element={<UserSignIn></UserSignIn>} />
+      </Routes>
+      {/* <Footer /> */}
     </div>
   );
 }
