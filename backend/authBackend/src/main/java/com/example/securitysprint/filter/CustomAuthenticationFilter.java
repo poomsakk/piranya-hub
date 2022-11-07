@@ -2,6 +2,7 @@ package com.example.securitysprint.filter;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
+import com.example.securitysprint.service.UserDetailsImp;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -10,6 +11,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
@@ -48,7 +50,9 @@ public class CustomAuthenticationFilter extends AbstractAuthenticationProcessing
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authentication) throws IOException, ServletException {
 //        super.successfulAuthentication(request, response, chain, authResult);
 //        System.out.println(authentication.getPrincipal());
-        User user = (User) authentication.getPrincipal();
+
+        UserDetailsImp user = (UserDetailsImp) authentication.getPrincipal();
+//        System.out.println(user.getId());
         Algorithm algorithm = Algorithm.HMAC256("secret".getBytes());
         String access_token = JWT.create()
                 .withSubject(user.getUsername())
@@ -64,6 +68,7 @@ public class CustomAuthenticationFilter extends AbstractAuthenticationProcessing
                 .sign(algorithm);
 
         Map<String, String> token = new HashMap<>();
+        token.put("id", user.getId());
         token.put("access_token", access_token);
         token.put("refresh_token", refresh_token);
 
