@@ -13,9 +13,9 @@ import Contact from './8_Contact'
 function AddLodge() {
     
   return (
-    <div className="background flex justify-center">
-        <div className="flex flex-col">
-            <div className='max-w-[960px] bg-[#fff] flex flex-col mt-10 rounded-3xl'>
+    <div className="flex justify-center">
+        <div className="flex flex-col ">
+            <div className='max-w-[960px] bg-[#EFEFEF] flex flex-col mt-10 rounded-3xl '>
                 <div className="mb-10"><Information /></div>
                 <div className="mb-10"><Facility /></div>
                 <div className="mb-10"><Type /></div>

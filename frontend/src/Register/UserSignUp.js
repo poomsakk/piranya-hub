@@ -38,11 +38,13 @@ function UserSignUp() {
 
     return (
         <>
-            <div className='container flex justify-center'>
-                <div className='usersignincontent mt-20'>
+        <div className='flex justify-center'>
+            <div className='max-w-[960px] bg-[#EFEFEF] flex flex-col mt-16 rounded-3xl'>
+                <div className='usersignincontent mt-10 ml-12 mr-16 mb-12'>
                     <form onSubmit={onSubmit}>
+                        <h1 className = "flex justify-center font-IBMPlexSansThai text-3xl text-[#162B78]" >ลงทะเบียน</h1> 
                         <div className='flex flex-row'>
-                            <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] m-4 mt-8 w-40 " >Username :</h1>
+                            <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] m-4 mt-10 w-40 " >Username :</h1>
                             <input
                                 type={"text"}
                                 className="
@@ -67,7 +69,7 @@ function UserSignUp() {
                             />
                         </div>
                         <div className='flex flex-row'>
-                            <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] m-4 mt-8 w-40 " >Name-Surname :</h1>
+                            <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] m-4 mt-10 w-40 " >Name-Surname :</h1>
                             <input
                                 type={"text"}
                                 className="
@@ -92,7 +94,7 @@ function UserSignUp() {
                             />
                         </div>
                         <div className='flex flex-row'>
-                            <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] m-4 mt-8 w-40 " >Email :</h1>
+                            <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] m-4 mt-10 w-40 " >Email :</h1>
                             <input
                                 type={"text"}
                                 className="
@@ -117,7 +119,7 @@ function UserSignUp() {
                             />
                         </div>
                         <div className='flex flex-row'>
-                            <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] m-4 mt-8 w-40 " >Password :</h1>
+                            <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] m-4 mt-10 w-40 " >Password :</h1>
                             <input
                                 type={"text"}
                                 className="
@@ -163,6 +165,7 @@ function UserSignUp() {
                     </form>
                 </div>
             </div>
+        </div>
         </>
     )
 }
