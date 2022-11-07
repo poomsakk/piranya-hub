@@ -13,14 +13,14 @@ import Facility from "./Register/2_Facility";
 import Image from "./Register/6_Image";
 import Promotion from "./Register/7_Promotion";
 import Type from "./Register/3_Type";
-import MainPage from "./pages/MainPage";
+import MainPage from "./pages/MainPage/MainPage.jsx";
 import { useLocation } from "react-router-dom";
 
 function App() {
   const { pathname } = useLocation();
 
   return (
-    <div>
+    <div className="App">
       {pathname == "/" ? <Header /> : <Header />}
       <Routes>
         <Route path="/" element={<MainPage />} />
