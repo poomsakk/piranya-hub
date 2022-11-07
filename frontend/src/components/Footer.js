@@ -1,7 +1,5 @@
 import React,{ useState } from 'react'
-import { FiMenu, FiX } from "react-icons/fi";
 import './Footer.css'
-import logo from "../image/logo1.png"
 
 function Footer() {
 
@@ -10,9 +8,15 @@ function Footer() {
     console.log(click);
 
     return (
-        <div className='header'>
+        <div className='main-footer'>
             <div className='container'>
-                
+                <div className='row'>
+                    <p>
+                        &copy;{new Date().getFullYear()} PIRANYA-HUB | All right reserved | Term Of Service | Privacy
+                    </p>
+                </div>
+                <br></br>
+
             </div>
         </div>
     )

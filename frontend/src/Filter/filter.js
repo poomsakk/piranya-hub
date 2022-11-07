@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 import "./filter.css"
-import Stepper from '@mui/material/Stepper';
-import Step from '@mui/material/Step';
-import StepLabel from '@mui/material/StepLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { Slider } from '@mui/material';
+import {useLoadScript, GoogleMap} from '@react-google-maps/api';
 
 function Filter(){
     const locationType = [
@@ -19,9 +17,9 @@ function Filter(){
       const updateRange=(e,data)=>{
         setVal(data)
       }
+
       return(
         <>
-        
         <div className='content' >
             <h1 className = "font-IBMPlexSansThai text-xl text-[#162B78] ml-12 m-2 w-96 mt-4" >ระยะห่างจากมหาวิทยาลัย</h1> 
             <h1 className = "font-IBMPlexSansThai text-xl text-[#162B78] ml-12 m-2 w-96 mt-4" >{val} กิโลเมตร</h1>
@@ -164,9 +162,6 @@ function Filter(){
                   </a>
                 </div>
             </div>
-            <br></br>
-            <br></br>
-
         </>
       )
 

@@ -1,5 +1,5 @@
 import {Routes, Route} from 'react-router-dom'
-
+import './App.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Banner from './components/Banner'
@@ -18,7 +18,8 @@ import Filter from './Filter/filter'
 
 function App() {
   return (
-    <div>
+    <div className='page-container'>
+      <div className='content-wrap'>
         <Header/>
         <Routes>
             <Route path = "/Banner"element={<Banner />} />
@@ -35,6 +36,11 @@ function App() {
             <Route path = "/promotion"element={<Promotion />} />
             <Route path = "/filter"element={<Filter />} />  
         </Routes>
+        </div>
+        <br></br>
+        <br></br>
+        <br></br>
+
         <Footer/>
     </div>
   );
