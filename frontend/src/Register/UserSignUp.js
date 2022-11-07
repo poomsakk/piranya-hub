@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom"
 import { authApi } from '../axiosConfig'
+import "./UserSignUp.css"
 
 function UserSignUp() {
     let navigate = useNavigate()
@@ -37,27 +38,28 @@ function UserSignUp() {
 
     return (
         <>
-            <div className='items-center '>
-                <div className='usersignincontent'>
+            <div className='container flex justify-center'>
+                <div className='usersignincontent mt-20'>
                     <form onSubmit={onSubmit}>
                         <div className='flex flex-row'>
-                            <h1 className="font-IBMPlexSansThai text-2xl text-[#162B78] m-4 mt-8 w-64 " >Username :</h1>
+                            <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] m-4 mt-8 w-40 " >Username :</h1>
                             <input
                                 type={"text"}
                                 className="
                                     font-IBMPlexSansThai 
                                     bg-[#EFEFEF]
                                     placeholder:text-zinc-500
-                                    text-lg 
+                                    text-lg
                                     pl-5 
-                                    w-[99%] 
-                                    mb-4 
-                                    mr-4 
-                                    mt-4 
+                                    w-[500px]
+                                    h-[40px]
+                                    mt-8
                                     border-2 
                                     border-[#162B78] 
-                                    rounded-xl text-m-4 
-                                    focus:border-[#162B78]"
+                                    focus:outline-none
+                                    focus:border-[#162B78]
+                                    rounded-xl
+                                    "
                                 placeholder="Username"
                                 name="username"
                                 value={username}
@@ -65,23 +67,24 @@ function UserSignUp() {
                             />
                         </div>
                         <div className='flex flex-row'>
-                            <h1 className="font-IBMPlexSansThai text-2xl text-[#162B78] m-4 mt-8 w-64 " >Name-Surname :</h1>
+                            <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] m-4 mt-8 w-40 " >Name-Surname :</h1>
                             <input
                                 type={"text"}
                                 className="
                                     font-IBMPlexSansThai 
                                     bg-[#EFEFEF]
                                     placeholder:text-zinc-500
-                                    text-lg 
+                                    text-lg
                                     pl-5 
-                                    w-[99%] 
-                                    mb-4 
-                                    mr-4 
-                                    mt-4 
+                                    w-[500px]
+                                    h-[40px]
+                                    mt-8
                                     border-2 
                                     border-[#162B78] 
-                                    rounded-xl text-m-4 
-                                    focus:border-[#162B78]"
+                                    focus:outline-none
+                                    focus:border-[#162B78]
+                                    rounded-xl
+                                    "
                                 placeholder="Name-Surname"
                                 name="nameSurname"
                                 value={nameSurname}
@@ -89,23 +92,24 @@ function UserSignUp() {
                             />
                         </div>
                         <div className='flex flex-row'>
-                            <h1 className="font-IBMPlexSansThai text-2xl text-[#162B78] m-4 mt-8 w-64 " >Email :</h1>
+                            <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] m-4 mt-8 w-40 " >Email :</h1>
                             <input
                                 type={"text"}
                                 className="
                                     font-IBMPlexSansThai 
                                     bg-[#EFEFEF]
                                     placeholder:text-zinc-500
-                                    text-lg 
+                                    text-lg
                                     pl-5 
-                                    w-[99%] 
-                                    mb-4 
-                                    mr-4 
-                                    mt-4 
+                                    w-[500px]
+                                    h-[40px]
+                                    mt-8
                                     border-2 
                                     border-[#162B78] 
-                                    rounded-xl text-m-4 
-                                    focus:border-[#162B78]"
+                                    focus:outline-none
+                                    focus:border-[#162B78]
+                                    rounded-xl
+                                    "
                                 placeholder="Email"
                                 name="email"
                                 value={email}
@@ -113,30 +117,31 @@ function UserSignUp() {
                             />
                         </div>
                         <div className='flex flex-row'>
-                            <h1 className="font-IBMPlexSansThai text-2xl text-[#162B78] m-4 mt-8 w-64 " >Password :</h1>
+                            <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] m-4 mt-8 w-40 " >Password :</h1>
                             <input
                                 type={"text"}
                                 className="
                                     font-IBMPlexSansThai 
                                     bg-[#EFEFEF]
                                     placeholder:text-zinc-500
-                                    text-lg 
+                                    text-lg
                                     pl-5 
-                                    w-[99%] 
-                                    mb-4 
-                                    mr-4 
-                                    mt-4 
+                                    w-[500px]
+                                    h-[40px]
+                                    mt-8
                                     border-2 
                                     border-[#162B78] 
-                                    rounded-xl text-m-4 
-                                    focus:border-[#162B78]"
+                                    focus:outline-none
+                                    focus:border-[#162B78]
+                                    rounded-xl
+                                    "
                                 placeholder="Password"
                                 name="password"
                                 value={password}
                                 onChange={(e) => onInputChange(e)}
                             />
                         </div>
-                        <div className='flex justify-center ml-5 mr-5 mt-8' >
+                        <div className='flex justify-center mt-8' >
                             <a href="/facility">
                                 <button type='submit'
                                     className="
