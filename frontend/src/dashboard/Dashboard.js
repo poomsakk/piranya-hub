@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import "./Content.css"
+import "./Dashboard.css"
 import { landLordApi } from '../axiosConfig'
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -30,27 +30,36 @@ function Dashboard() {
 
 
     return (<>
-        <Card sx={{ maxWidth: 345 }}>
-            <CardMedia
-                component="img"
-                height="140"
-                image="/static/images/cards/contemplative-reptile.jpg"
-                alt="green iguana"
-            />
-            <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                    Lizard
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                    Lizards are a widespread group of squamate reptiles, with over 6,000
-                    species, ranging across all continents except Antarctica
-                </Typography>
-            </CardContent>
-            <CardActions>
-                <Button size="small">Share</Button>
-                <Button size="small">Learn More</Button>
-            </CardActions>
-        </Card>
+        <div className='container'>
+            {lodges.map((lodge) => {
+                return <section className="card-content-con" key={lodge.lodgeId}>
+                    <Card className='color-#162B78' sx={{ maxWidth: 345 }}>
+                        <CardMedia
+                            component="img"
+                            height="140"
+                            image="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                            alt="green iguana"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                                <div className='{lodge.information.name}'>
+                                    {lodge.information.name}
+                                </div>
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary" >
+                                <div className='{lodge.information.name}'>
+                                    information : {lodge.detail.detailENG}
+                                </div>
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                            <Button size="small">Edit</Button>
+                            <Button size="small">Delete</Button>
+                        </CardActions>
+                    </Card>
+                </section>
+            })}
+        </div>
         {/* <div className="container">
             {lodges.map((lodge) => {
                 return <section className="content-con" key={lodge.lodgeId}>
