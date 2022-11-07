@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,7 +18,7 @@ public class Lodge {
     private String lodgeId;
     private Information information;
     private Facility facility;
-    private RoomType roomType;
+    private List<RoomType> roomType;
     private Cost cost;
     private Detail detail;
     private ImagePath imagePath;
