@@ -25,8 +25,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     UserRepository userRepository;
 
     @Override
-    public User saveUser(User user) {
+    public User saveUser(User user) throws Exception {
         User u = new User();
+        if (userRepository.existsByUsername(user.getUsername())){
+           throw new Exception("User already exists!");
+        }
         u.setUsername(user.getUsername());
         u.setPassword(passwordEncoder.encode(user.getPassword()));
         u.setLodgeOwn(Collections.emptyList());
@@ -62,6 +65,8 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         User user = userRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found with username" + username));
 
-        return new org.springframework.security.core.userdetails.User(user.getUsername(),user.getPassword(),new ArrayList<>());
+//        return new org.springframework.security.core.userdetails.User(user.getUsername(),user.getPassword(),new ArrayList<>());
+//        return UserDetailsImp.build(user);
+        return new UserDetailsImp(user.getId(), user.getUsername(), user.getPassword(), new ArrayList<>());
     }
 }
