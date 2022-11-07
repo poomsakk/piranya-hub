@@ -10,6 +10,7 @@ import Total from './Register/total'
 import Filter from './Filter/filter'
 import UserSignIn from "./Register/UserSignIn"
 import UserSignUp from "./Register/UserSignUp"
+import Dashboard from './dashboard/Dashboard'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/Page404" element={<Page404 />} />
         <Route path = "/total"element={<Total />} />
         <Route path="/filter" element={<Filter />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/signup" element={<UserSignUp></UserSignUp>} />
         <Route path="/signin" element={<UserSignIn></UserSignIn>} />
       </Routes>

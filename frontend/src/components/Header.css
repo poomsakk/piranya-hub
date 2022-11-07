@@ -10,6 +10,7 @@
     display: flex;
     justify-content: space-between;
     height: 80px;
+    width: 120%;
     align-items: center;
 }
 .logo-container a {
@@ -38,7 +39,7 @@
     padding: .5rem 1rem;
     text-decoration: none;
     color: #162B78;
-    border: 2px solid transparent;
+    border: 2px;
     transition: 0.3s;
     margin-top: rem;
     border-radius: 10px;
