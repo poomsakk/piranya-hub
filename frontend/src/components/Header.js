@@ -14,7 +14,7 @@ function Header() {
     }
     const handleClickRegister = () => {
         if (isLogin()) {
-            navigate("/information")
+            navigate("/total")
         }
         else {
             alert("You need to signin")
