@@ -17,6 +17,7 @@ import Type from './Register/3_Type'
 import Filter from './Filter/filter'
 import UserSignIn from "./Register/UserSignIn"
 import UserSignUp from "./Register/UserSignUp"
+import Dashboard from './dashboard/Dashboard'
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="/type" element={<Type />} />
         <Route path="/promotion" element={<Promotion />} />
         <Route path="/filter" element={<Filter />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/signup" element={<UserSignUp></UserSignUp>} />
         <Route path="/signin" element={<UserSignIn></UserSignIn>} />
       </Routes>

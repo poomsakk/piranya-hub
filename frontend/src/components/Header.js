@@ -37,12 +37,15 @@ function Header() {
                     <div className='logo-container'>
                         <a href='/'><img className='h-16' src={logo} alt="logoname" /> </a>
                     </div>
-                    <div className='header-con'>
-                        <a href="/filter" className="Resgistor-btn font-IBMPlexSansThai text-lg ml-[470px]">ค้นหาที่พัก</a>{isLogin() ? "เว้นไงวะ" : null}
+                    <div>
+                        <a href="/filter" className="Resgistor-btn font-IBMPlexSansThai text-lg ">ค้นหาที่พัก</a>{isLogin() ? "" : null}
+                        <button onClick={handleClickRegister} className="Resgistor-btn font-IBMPlexSansThai text-lg ">ลงประกาศที่พัก</button>
+
                         {isLogin() ? <button onClick={handleLogout} className="Resgistor-btn font-IBMPlexSansThai text-lg ">LOGOUT</button> : null}
+                        {isLogin() ? <a href="/dashboard" className="Resgistor-btn font-IBMPlexSansThai text-lg ">Dashboard</a> : null}
+
+
                     </div>
-                    <button onClick={handleClickRegister} className="Resgistor-btn font-IBMPlexSansThai text-lg ">ลงประกาศที่พัก</button>
-                    
                     <div className='mobile-menu' onClick={handleClick}>
                         {click ? (<FiX />) : (<FiMenu />)}
                     </div>
