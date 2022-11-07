@@ -12,4 +12,6 @@ public interface UserService {
 
     List<User> getUser();
 
+    String addLodge(String userId,String lodgeId);
+
 }

@@ -15,9 +15,9 @@ public class LodgeController {
     @Autowired
     private LodgeService lodgeService;
 
-    @PostMapping("/add")
-    public Lodge saveLodge(@RequestBody Lodge lodge) {
-        return lodgeService.addLodge(lodge);
+    @PostMapping("/add/{userid}")
+    public Lodge saveLodge(@RequestBody Lodge lodge,@PathVariable("userid") String userid) {
+        return lodgeService.addLodge(lodge,userid);
     }
 
     @GetMapping("/get/{lodge_id}")

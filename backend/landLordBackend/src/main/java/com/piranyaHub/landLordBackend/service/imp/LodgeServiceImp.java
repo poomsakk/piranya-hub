@@ -4,7 +4,10 @@ import com.piranyaHub.landLordBackend.model.Lodge;
 import com.piranyaHub.landLordBackend.repository.LodgeRepository;
 import com.piranyaHub.landLordBackend.service.LodgeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,8 +18,15 @@ public class LodgeServiceImp implements LodgeService {
     private LodgeRepository lodgeRepository;
 
     @Override
-    public Lodge addLodge(Lodge lodge) {
-        return lodgeRepository.save(lodge);
+    public Lodge addLodge(Lodge lodge, String userid) {
+        Lodge data = lodgeRepository.save(lodge);
+        //add lodge id in user collections
+        String uri = "http://localhost:8090/addLodgeId/" + userid + "/" + data.getLodgeId();
+        System.out.println(uri);
+        RestTemplate restTemplate = new RestTemplate();
+        String result = restTemplate.getForObject(uri, String.class);
+        System.out.println(result);
+        return data;
     }
 
     @Override
