@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom"
 import { authApi } from '../axiosConfig'
+import "./UserSignIn.css"
 
 function UserSignIn() {
   const navigate = useNavigate()
@@ -29,27 +30,28 @@ function UserSignIn() {
 
   return (
     <>
-      <div className='items-center '>
-        <div className='usersignincontent'>
+      <div className='container flex justify-center'>
+        <div className='usersignincontent mt-20'>
           <form onSubmit={handleSubmit}>
             <div className='flex flex-row'>
-              <h1 className="font-IBMPlexSansThai text-2xl text-[#162B78] m-4 mt-10 w-40 " >Username:</h1>
+              <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] m-4 mt-10 w-[110px] " >Username :</h1>
               <input
                 type={"text"}
                 className="
-                    font-IBMPlexSansThai 
-                    bg-[#EFEFEF]
-                    placeholder:text-zinc-500
-                    text-lg 
-                    pl-5 
-                    w-[100%] 
-                    m-4 
-                    ml-20 
-                    mt-6 
-                    border-2 
-                    border-[#162B78] 
-                    rounded-xl 
-                    text-m-4"
+                  font-IBMPlexSansThai 
+                  bg-[#EFEFEF]
+                  placeholder:text-zinc-500
+                  text-lg
+                  pl-5 
+                  w-[500px]
+                  h-[40px]
+                  mt-8
+                  border-2 
+                  border-[#162B78] 
+                  focus:outline-none
+                  focus:border-[#162B78]
+                  rounded-xl
+                  "
                 placeholder="Username/Email"
                 name="username"
                 value={userName}
@@ -57,30 +59,31 @@ function UserSignIn() {
               />
             </div>
             <div className='flex flex-row'>
-              <h1 className="font-IBMPlexSansThai text-2xl text-[#162B78] m-4 mt-8 w-64 " >Password:</h1>
+              <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] m-4 mt-8 w-28 " >Password :</h1>
               <input
                 type={"text"}
                 className="
-                    font-IBMPlexSansThai 
-                    bg-[#EFEFEF]
-                    placeholder:text-zinc-500
-                    text-lg 
-                    pl-5 
-                    w-[99%] 
-                    mb-4 
-                    mr-4 
-                    mt-4 
-                    border-2 
-                    border-[#162B78] 
-                    rounded-xl text-m-4 
-                    focus:border-[#162B78]"
+                  font-IBMPlexSansThai 
+                  bg-[#EFEFEF]
+                  placeholder:text-zinc-500
+                  text-lg
+                  pl-5 
+                  w-[500px]
+                  h-[40px]
+                  mt-6
+                  border-2 
+                  border-[#162B78] 
+                  focus:outline-none
+                  focus:border-[#162B78]
+                  rounded-xl
+                  "
                 placeholder="Password"
                 name="password"
                 value={passWord}
                 onChange={(e) => setpassword(e.target.value)}
               />
             </div>
-            <div className='flex justify-center ml-5 mr-5 mt-8' >
+            <div className='flex justify-center mt-8' >
               <a href="/information">
                 <button type="submit"
                   className="
@@ -103,7 +106,7 @@ function UserSignIn() {
           <div className='flex justify-center ' >
             <a href="/signup">
               <button href='/signup'
-                className="signup font-IBMPlexSansThai py-4 px-4">
+                className="signup font-IBMPlexSansThai py-4 px-4 mt-2">
                 สมัครบัญชี
               </button>
             </a>
