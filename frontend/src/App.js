@@ -14,13 +14,16 @@ import Image from "./Register/6_Image";
 import Promotion from "./Register/7_Promotion";
 import Type from "./Register/3_Type";
 import MainPage from "./pages/MainPage";
+import { useLocation } from "react-router-dom";
 
 function App() {
+  const { pathname } = useLocation();
+
   return (
     <div>
-      <Header />
+      {pathname == "/" ? <Header /> : <Header />}
       <Routes>
-        <Route path="/" element={<MainPage/>} />
+        <Route path="/" element={<MainPage />} />
         <Route path="/Banner" element={<Banner />} />
         <Route path="/Content" element={<Content />} />
         <Route path="/CallToAction" element={<CallToAction />} />
