@@ -44,6 +44,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
                 .antMatchers(HttpMethod.POST, "/signin").permitAll()
                 .antMatchers(HttpMethod.GET,"/protected").authenticated();
 
+        http.cors().and()
+                .authorizeRequests()
+                .and().formLogin().loginPage("/signin").permitAll()
+                .and().logout();
        http.addFilterAt(customFilter, UsernamePasswordAuthenticationFilter.class);
        http.addFilterBefore(new CustomAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
 

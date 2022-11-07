@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin
 public class AuthController {
 
     @Autowired @Qualifier("userServiceImpl")
@@ -25,12 +26,17 @@ public class AuthController {
     public ResponseEntity<Optional<User>> signin(@RequestBody User user){
 //        return ResponseEntity.ok().body(reqData);
         System.out.println(user);
-        return ResponseEntity.ok().body(userService.getUser(user.getUsername()));
+        return ResponseEntity.ok().body(userService.getUser(user.getId()));
     }
 
     @GetMapping("/protected")
     public String takeSecret(){
         return "you got this";
+    }
+
+    @GetMapping("/addLodgeId/{userid}/{lodgeid}")
+    public  String addLodgeId(@PathVariable("userid") String userid, @PathVariable("lodgeid") String lodgeid){
+        return userService.addLodge(userid,lodgeid);
     }
 }
 

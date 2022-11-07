@@ -1,0 +1,39 @@
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+.card-content-con {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    display: flex;
+}
+
+.card{
+    color: #162B78;
+}
+
+
+.card-content-con:first-child, .card-content-con:last-child {
+    padding: 5rem 0;
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+.content-l img {
+    max-width: 400px;
+    border-radius: 10px;
+}
+.content-r {
+    padding: 2rem;
+    text-align: left;
+}
+
+@media screen and (max-width: 480px) {
+    .content-con {
+        flex-direction: column;
+    }
+    .content-con:nth-child(2) .content-r {
+        order: 1;
+    }
+}
