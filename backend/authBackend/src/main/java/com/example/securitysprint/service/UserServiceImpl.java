@@ -11,6 +11,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,6 +29,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         User u = new User();
         u.setUsername(user.getUsername());
         u.setPassword(passwordEncoder.encode(user.getPassword()));
+        u.setLodgeOwn(Collections.emptyList());
 //        System.out.println(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(u);
     }
@@ -40,6 +42,18 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     @Override
     public List<User> getUser() {
         return userRepository.findAll();
+    }
+
+    @Override
+    public String addLodge(String userId, String lodgeId) {
+        Optional<User> data = userRepository.findById(userId);
+        if(data.isPresent()){
+            User newUser = data.get();
+            newUser.getLodgeOwn().add(lodgeId);
+            userRepository.save(newUser);
+            return "Successful";
+        }
+        return null;
     }
 
 
