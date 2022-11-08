@@ -1,6 +1,6 @@
 import React from "react";
 
-const CheckBoxCT = ({ name }) => {
+const CheckBoxCT = ({ name,onCheck }) => {
   return (
     <div className="flex items-center mx-2 my-2">
       <input
@@ -8,6 +8,7 @@ const CheckBoxCT = ({ name }) => {
         type="checkbox"
         name=""
         id="aic-con"
+        onClick={(e) => onCheck(e)}
       />
       <label className="text-center text-base ml-2 text-black" htmlFor="air-con">
         {name}

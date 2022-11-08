@@ -16,6 +16,8 @@ import Type from "./Register/3_Type";
 import MainPage from "./pages/MainPage/MainPage.jsx";
 import { useLocation } from "react-router-dom";
 import FilterPage from "./pages/filterPage/FilterPage";
+import ListPage from "./pages/ListPage/ListPage";
+import LodgeInfo from './components/LodgeInfo'
 
 function App() {
   const { pathname } = useLocation();
@@ -23,14 +25,15 @@ function App() {
   return (
     <div className="App">
       {/* {pathname == "/" ? <Header /> : <Header />} */}
-      {pathname !== '/FilterPage' && <Header/> }
+      {pathname !== "/FilterPage" && <Header />}
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/FilterPage" element={<FilterPage />} />
+        <Route path="/Lodges" element={<ListPage />} />
+        <Route path="/Lodges/:lodgeId" element={<LodgeInfo />} />
         <Route path="/Banner" element={<Banner />} />
         <Route path="/Content" element={<Content />} />
         <Route path="/CallToAction" element={<CallToAction />} />
-        <Route path="/Page404" element={<Page404 />} />
         <Route path="/information" element={<Information />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/cost" element={<Cost />} />
@@ -39,6 +42,7 @@ function App() {
         <Route path="/image" element={<Image />} />
         <Route path="/type" element={<Type />} />
         <Route path="/promotion" element={<Promotion />} />
+        <Route path="*" element={<Page404 />} />
       </Routes>
     </div>
   );

@@ -1,32 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLoadScript } from "@react-google-maps/api";
 import { useNavigate } from "react-router-dom";
 import ButtonCT from "../../components/ButtonCT";
 import Map from "../../components/Map";
 import CheckBoxCT from "../../components/CheckBoxCT";
 import "./FilterPage.css";
-import { Slider } from "@mui/material";
-import { useState } from "react";
+import { Slider, CircularProgress } from "@mui/material";
+import { data } from "../../data";
 
 const FilterPage = () => {
-  const [price, setPrice] = useState([20, 50]);
+  const [price, setPrice] = useState([1000, 5000]);
+  const [checked, setChecked] = useState([]);
   const navigate = useNavigate();
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API,
   });
-  if (!isLoaded) return <div>Loading...</div>;
+  if (!isLoaded)
+    return (
+      <div>
+        <CircularProgress />
+      </div>
+    );
 
-  const startHandler = (e) =>{
-    const prev = price[1] 
-    setPrice([e.target.value, prev])
-  } 
+  const startHandler = (e) => {
+    const prev = price[1];
+    setPrice([e.target.value, prev]);
+  };
 
-  const endHandler = (e) =>{
-    const prev = price[0] 
-    setPrice([prev, e.target.value])
-  } 
+  const endHandler = (e) => {
+    const prev = price[0];
+    setPrice([prev, e.target.value]);
+  };
 
-  console.log(price[0], price[1]);
+  // console.log(price[0], price[1]);
 
   return (
     <section className="w-full h-screen ">
@@ -37,7 +43,7 @@ const FilterPage = () => {
             <ButtonCT btnName={"back to home"} onClick={() => navigate("/")} />
             <ButtonCT
               btnName={"click to serch"}
-              onClick={() => console.log("click")}
+              onClick={() => navigate("/Lodges")}
             />
           </div>
           <div className="font-IBMPlexSansThai rounded  text-black w-[390px] mx-auto h-5/6 my-12">
@@ -45,7 +51,7 @@ const FilterPage = () => {
               คุณอยากได้ที่พักแบกไหน?
             </h1>
             <div className="flex flex-col w-full h-full overflow-y-scroll overflow-x-hidden custom-class">
-              <h1>ราคา</h1>
+              <h1 className="text-xl">ราคา</h1>
               <Slider
                 value={price}
                 onChange={(event, newValue) => setPrice(newValue)}
@@ -85,7 +91,10 @@ const FilterPage = () => {
               </div>
 
               <h1 className="text-xl m-2">สิ่งอำนวยความสะดวก ภายในห้อง</h1>
-              <CheckBoxCT name={"โทรศัพท์สายตรง"} />
+              <CheckBoxCT
+                onCheck={(e) => console.log(e.target.checked)}
+                name={"โทรศัพท์สายตรง"}
+              />
               <CheckBoxCT name={"เครื่องปรับอากาศ"} />
               <CheckBoxCT name={"พัดลม"} />
               <CheckBoxCT name={"โทรทัศน์"} />
