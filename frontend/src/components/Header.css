@@ -45,6 +45,8 @@
   display: none;
 }
 
+/* kim */
+
 .Resgistor-btn {
   background: #fff;
   display: inline-block;
@@ -54,7 +56,7 @@
   border: 2px solid transparent;
   transition: 0.3s;
   margin-top: rem;
-  border-radius: 10px;
+  border-radius: 8px;
   text-transform: uppercase;
 }
 .Resgistor-btn:hover {

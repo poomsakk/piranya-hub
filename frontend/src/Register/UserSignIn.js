@@ -63,7 +63,7 @@ function handleSubmit(e) {
             <div className='flex flex-row'>
               <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] m-4 mt-10 w-40 " >Password :</h1>
               <input
-                type={"text"}
+                type={"password"}
                 className="
                   font-IBMPlexSansThai 
                   bg-[#EFEFEF]
