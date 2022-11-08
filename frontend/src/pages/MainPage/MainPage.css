@@ -1,0 +1,20 @@
+.container_main_page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to top,
+    #162b78,
+    #13327f,
+    #0f3a85,
+    #0a418c,
+    #054892,
+    #00579e,
+    #0067a8,
+    #0076b2,
+    #0090bd,
+    #00a9c0,
+    #38c0bc,
+    #74d5b7
+  );
+}
