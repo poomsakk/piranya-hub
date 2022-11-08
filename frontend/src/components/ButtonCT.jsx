@@ -4,7 +4,7 @@ const ButtonCT = ({onClick, btnName}) => {
   return (
     <button
       onClick={onClick}
-      class="group relative inline-flex items-center overflow-hidden rounded bg-blue-600 px-8 py-3 text-white focus:outline-none focus:ring active:bg-blue-500"
+      class="group relative inline-flex items-center overflow-hidden rounded bg-gray-900 px-8 py-3 text-white focus:outline-none  active:bg-none"
     >
       <span class="absolute left-0 -translate-x-full transition-transform group-hover:translate-x-4">
         <svg
