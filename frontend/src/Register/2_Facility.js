@@ -3,11 +3,10 @@ import "./2_Facility.css"
 import Checkbox from '@mui/material/Checkbox';
 
 function facility() {
-
-const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
-return (
-    <>
-        <div className='items-center  '>
+  const steps = ["", "", "", "", "", "", "", ""];
+  const label = { inputProps: { "aria-label": "Checkbox demo" } };
+  return (
+    <div className='items-center  '>
             <div className='content' >
                 <h1 className = "font-IBMPlexSansThai text-2xl text-[#162B78] ml-12 m-2 w-96" >2. สิ่งอำนวยความสะดวก</h1> 
                 <div className='flex flex-row mt-4 '>
@@ -103,8 +102,7 @@ return (
                 </div>
             </div>
         </div>
-    </>
-  )
+  );
 }
 
 export default facility

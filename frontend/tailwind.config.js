@@ -5,9 +5,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        IBMPlexSansThai: ['IBM Plex Sans Thai', 'sans-serif'],
-       },
+        IBMPlexSansThai: ["IBM Plex Sans Thai", "sans-serif"],
+      },
     },
   },
-  plugins: [],
-}
+  plugins: [require("@tailwindcss/line-clamp")],
+};
