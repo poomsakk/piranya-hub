@@ -10,6 +10,7 @@
     display: flex;
     justify-content: space-between;
     height: 80px;
+    width: 100%;
     align-items: center;
 }
 .logo-container a {
@@ -35,10 +36,10 @@
 .Resgistor-btn {
     background: #fff;
     display: inline-block;
-    padding: .5rem 1rem;
+    padding: 0.2rem 0.6rem;
     text-decoration: none;
     color: #162B78;
-    border: 2px solid transparent;
+    border: 2px solid #fff;
     transition: 0.3s;
     margin-top: rem;
     border-radius: 10px;

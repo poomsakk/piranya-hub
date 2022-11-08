@@ -6,10 +6,12 @@ import java.util.List;
 import java.util.Optional;
 
 public interface UserService {
-    User saveUser(User user);
+    User saveUser(User user) throws Exception;
 
     Optional<User> getUser(String username);
 
     List<User> getUser();
+
+    String addLodge(String userId,String lodgeId);
 
 }

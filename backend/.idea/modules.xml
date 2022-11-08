@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/backend.iml" filepath="$PROJECT_DIR$/.idea/backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/matchingBackend/matchingBackend.iml" filepath="$PROJECT_DIR$/matchingBackend/matchingBackend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/authBackend/security-sprint.iml" filepath="$PROJECT_DIR$/authBackend/security-sprint.iml" />
+      <module fileurl="file://$PROJECT_DIR$/landLordBackend/tenantBackend.iml" filepath="$PROJECT_DIR$/landLordBackend/tenantBackend.iml" />
+    </modules>
+  </component>
+</project>

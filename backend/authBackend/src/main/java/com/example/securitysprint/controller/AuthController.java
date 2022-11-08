@@ -18,7 +18,7 @@ public class AuthController {
     UserService userService;
 
     @PostMapping("/signup")
-    public ResponseEntity<User> signup(@RequestBody User user){
+    public ResponseEntity<User> signup(@RequestBody User user) throws Exception {
         return ResponseEntity.ok().body(userService.saveUser(user));
     }
 
@@ -26,7 +26,7 @@ public class AuthController {
     public ResponseEntity<Optional<User>> signin(@RequestBody User user){
 //        return ResponseEntity.ok().body(reqData);
         System.out.println(user);
-        return ResponseEntity.ok().body(userService.getUser(user.getUsername()));
+        return ResponseEntity.ok().body(userService.getUser(user.getId()));
     }
 
     @GetMapping("/protected")
@@ -34,5 +34,9 @@ public class AuthController {
         return "you got this";
     }
 
+    @GetMapping("/addLodgeId/{userid}/{lodgeid}")
+    public  String addLodgeId(@PathVariable("userid") String userid, @PathVariable("lodgeid") String lodgeid){
+        return userService.addLodge(userid,lodgeid);
+    }
 }
 

@@ -11,6 +11,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,10 +25,14 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     UserRepository userRepository;
 
     @Override
-    public User saveUser(User user) {
+    public User saveUser(User user) throws Exception {
         User u = new User();
+        if (userRepository.existsByUsername(user.getUsername())){
+           throw new Exception("User already exists!");
+        }
         u.setUsername(user.getUsername());
         u.setPassword(passwordEncoder.encode(user.getPassword()));
+        u.setLodgeOwn(Collections.emptyList());
 //        System.out.println(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(u);
     }
@@ -42,12 +47,26 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         return userRepository.findAll();
     }
 
+    @Override
+    public String addLodge(String userId, String lodgeId) {
+        Optional<User> data = userRepository.findById(userId);
+        if(data.isPresent()){
+            User newUser = data.get();
+            newUser.getLodgeOwn().add(lodgeId);
+            userRepository.save(newUser);
+            return "Successful";
+        }
+        return null;
+    }
+
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found with username" + username));
 
-        return new org.springframework.security.core.userdetails.User(user.getUsername(),user.getPassword(),new ArrayList<>());
+//        return new org.springframework.security.core.userdetails.User(user.getUsername(),user.getPassword(),new ArrayList<>());
+//        return UserDetailsImp.build(user);
+        return new UserDetailsImp(user.getId(), user.getUsername(), user.getPassword(), new ArrayList<>());
     }
 }
