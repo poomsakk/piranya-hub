@@ -6,46 +6,15 @@ import StepLabel from "@mui/material/StepLabel";
 import { Link } from "react-router-dom";
 
 function information() {
-  const steps = ["", "", "", "", "", "", "", ""];
 
   return (
     <>
       <div className="items-center ">
         <div className="container">
-          <Stepper activeStep={0} alternativeLabel className="py-5 mt-7 ">
-            {steps.map((label) => (
-              <Step
-                key={label}
-                sx={{
-                  "& .MuiStepLabel-root .Mui-completed": {
-                    color: "#162B78", // circle color (COMPLETED)
-                  },
-                  "& .MuiStepLabel-label.Mui-completed.MuiStepLabel-alternativeLabel":
-                    {
-                      color: "#EFEFEF", // Just text label (COMPLETED)
-                    },
-                  "& .MuiStepLabel-root .Mui-active": {
-                    color: "#162B78", // circle color (ACTIVE)
-                  },
-                  "& .MuiStepLabel-label.Mui-active.MuiStepLabel-alternativeLabel":
-                    {
-                      color: "#EFEFEF", // Just text label (ACTIVE)
-                    },
-                  "& .MuiStepLabel-root .Mui-active .MuiStepIcon-text": {
-                    fill: "#EFEFEF", // circle's number (ACTIVE)
-                  },
-                }}
-              >
-                <StepLabel>{label}</StepLabel>
-              </Step>
-            ))}
-          </Stepper>
-        </div>
-        <div className="content">
-          <h1 className="font-IBMPlexSansThai text-2xl text-[#162B78] ml-12 m-2 w-96 mt-2">
+          <h1 className="font-IBMPlexSansThai text-3xl text-[#162B78] ml-12 w-96 mt-10">
             ลงประกาศอพาร์ทเม้นท์
           </h1>
-          <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] ml-12 m-2 w-96 mt-4">
+          <h1 className="font-IBMPlexSansThai text-2xl text-[#162B78] ml-12 m-2 w-96 mt-4">
             1. ข้อมูลที่พัก
           </h1>
           <div className="flex flex-row">
@@ -55,22 +24,22 @@ function information() {
             <input
               type={"text"}
               className="
-                    font-IBMPlexSansThai 
-                    bg-[#EFEFEF]
-                    placeholder:text-zinc-500
-                    text-lg
-                    pl-5 
-                    w-[631px]
-                    h-[40px]
-                    m-2
-                    ml-4
-                    mt-4
-                    border-2 
-                    border-[#162B78]
-                    focus:outline-none
-                    focus:border-[#162B78]
-                    rounded-xl
-                    "
+                            font-IBMPlexSansThai 
+                            bg-[#EFEFEF]
+                            placeholder:text-zinc-500
+                            text-lg
+                            pl-5 
+                            w-[631px]
+                            h-[40px]
+                            m-2
+                            ml-4
+                            mt-4
+                            border-2 
+                            border-[#162B78]
+                            focus:outline-none
+                            focus:border-[#162B78]
+                            rounded-xl
+                            "
               placeholder="ระบุชื่อที่พัก"
               name="name"
             />
@@ -82,20 +51,20 @@ function information() {
             <input
               type={"text"}
               className="
-                    font-IBMPlexSansThai 
-                    bg-[#EFEFEF]
-                    placeholder:text-zinc-500
-                    text-lg 
-                    pl-5 
-                    w-[631px]
-                    h-[40px]
-                    m-2
-                    border-2 
-                    border-[#162B78] 
-                    focus:outline-none
-                    focus:border-[#162B78]
-                    rounded-xl text-m-4 
-                    active:border-[#162B78]"
+                            font-IBMPlexSansThai 
+                            bg-[#EFEFEF]
+                            placeholder:text-zinc-500
+                            text-lg 
+                            pl-5 
+                            w-[631px]
+                            h-[40px]
+                            m-2
+                            border-2 
+                            border-[#162B78] 
+                            focus:outline-none
+                            focus:border-[#162B78]
+                            rounded-xl text-m-4 
+                            active:border-[#162B78]"
               placeholder="ระบุชื่อที่พัก (English)"
               name="name"
             />
@@ -108,117 +77,117 @@ function information() {
               <input
                 type={"text"}
                 className="
-                        font-IBMPlexSansThai 
-                        bg-[#EFEFEF]
-                        placeholder:text-zinc-500
-                        text-lg 
-                        pl-5 
-                        m-2
-                        w-[200px]
-                        h-[40px]
-                        border-2 
-                        border-[#162B78]
-                        focus:outline-none
-                        focus:border-[#162B78]
-                        rounded-xl"
+                                font-IBMPlexSansThai 
+                                bg-[#EFEFEF]
+                                placeholder:text-zinc-500
+                                text-lg 
+                                pl-5 
+                                m-2
+                                w-[200px]
+                                h-[40px]
+                                border-2 
+                                border-[#162B78]
+                                focus:outline-none
+                                focus:border-[#162B78]
+                                rounded-xl"
                 placeholder="เลขที่"
                 name="name"
               />
               <input
                 type={"text"}
                 className="
-                        font-IBMPlexSansThai 
-                        bg-[#EFEFEF]
-                        placeholder:text-zinc-500
-                        text-lg 
-                        pl-5 
-                        w-[200px]
-                        h-[40px]
-                        m-2 
-                        border-2 
-                        border-[#162B78]
-                        focus:outline-none
-                        focus:border-[#162B78]
-                        rounded-xl"
+                                font-IBMPlexSansThai 
+                                bg-[#EFEFEF]
+                                placeholder:text-zinc-500
+                                text-lg 
+                                pl-5 
+                                w-[200px]
+                                h-[40px]
+                                m-2 
+                                border-2 
+                                border-[#162B78]
+                                focus:outline-none
+                                focus:border-[#162B78]
+                                rounded-xl"
                 placeholder="ถนน"
                 name="name"
               />
               <input
                 type={"text"}
                 className="
-                        font-IBMPlexSansThai 
-                        bg-[#EFEFEF]
-                        placeholder:text-zinc-500
-                        text-lg 
-                        pl-5 
-                        w-[200px]
-                        h-[40px]
-                        m-2 
-                        border-2 
-                        border-[#162B78]
-                        focus:outline-none
-                        focus:border-[#162B78]
-                        rounded-xl"
+                                font-IBMPlexSansThai 
+                                bg-[#EFEFEF]
+                                placeholder:text-zinc-500
+                                text-lg 
+                                pl-5 
+                                w-[200px]
+                                h-[40px]
+                                m-2 
+                                border-2 
+                                border-[#162B78]
+                                focus:outline-none
+                                focus:border-[#162B78]
+                                rounded-xl"
                 placeholder="ซอย"
                 name="name"
               />
             </div>
           </div>
-          <div className="flex justify-center ml-[136px]">
+          <div className="flex justify-center ml-[172px]">
             <input
               type={"text"}
               className="
-                        font-IBMPlexSansThai 
-                        bg-[#EFEFEF]
-                        placeholder:text-zinc-500
-                        text-lg 
-                        pl-5 
-                        m-2 
-                        w-[200px]
-                        h-[40px]
-                        border-2 
-                        border-[#162B78]
-                        focus:outline-none
-                        focus:border-[#162B78]
-                        rounded-xl"
+                                font-IBMPlexSansThai 
+                                bg-[#EFEFEF]
+                                placeholder:text-zinc-500
+                                text-lg 
+                                pl-5 
+                                m-2 
+                                w-[200px]
+                                h-[40px]
+                                border-2 
+                                border-[#162B78]
+                                focus:outline-none
+                                focus:border-[#162B78]
+                                rounded-xl"
               placeholder="ตำบล / แขวง"
               name="name"
             />
             <input
               type={"text"}
               className="
-                        font-IBMPlexSansThai 
-                        bg-[#EFEFEF]
-                        placeholder:text-zinc-500
-                        text-lg 
-                        pl-5 
-                        w-[200px]
-                        h-[40px]
-                        m-2 
-                        border-2 
-                        border-[#162B78]
-                        focus:outline-none
-                        focus:border-[#162B78]
-                        rounded-xl"
+                                font-IBMPlexSansThai 
+                                bg-[#EFEFEF]
+                                placeholder:text-zinc-500
+                                text-lg 
+                                pl-5 
+                                w-[200px]
+                                h-[40px]
+                                m-2 
+                                border-2 
+                                border-[#162B78]
+                                focus:outline-none
+                                focus:border-[#162B78]
+                                rounded-xl"
               placeholder="อำเภอ / เขต"
               name="name"
             />
             <input
               type={"text"}
               className="
-                        font-IBMPlexSansThai 
-                        bg-[#EFEFEF]
-                        placeholder:text-zinc-500
-                        text-lg 
-                        pl-5 
-                        w-[200px]
-                        h-[40px]
-                        m-2 
-                        border-2 
-                        border-[#162B78]
-                        focus:outline-none
-                        focus:border-[#162B78]
-                        rounded-xl"
+                                font-IBMPlexSansThai 
+                                bg-[#EFEFEF]
+                                placeholder:text-zinc-500
+                                text-lg 
+                                pl-5 
+                                w-[200px]
+                                h-[40px]
+                                m-2 
+                                border-2 
+                                border-[#162B78]
+                                focus:outline-none
+                                focus:border-[#162B78]
+                                rounded-xl"
               placeholder="จังหวัด"
               name="name"
             />
@@ -226,43 +195,24 @@ function information() {
           <input
             type={"text"}
             className="
-                        place-center 
-                        bg-[#EFEFEF]
-                        placeholder:text-zinc-500
-                        m-2 
-                        h-[40px]
-                        ml-[233px]
-                        font-IBMPlexSansThai 
-                        text-lg 
-                        pl-5 
-                        w-[200px]
-                        border-2 
-                        border-[#162B78]
-                        focus:outline-none
-                        focus:border-[#162B78]
-                        rounded-xl"
+                                place-center 
+                                bg-[#EFEFEF]
+                                placeholder:text-zinc-500
+                                m-2 
+                                h-[40px]
+                                ml-[233px]
+                                font-IBMPlexSansThai 
+                                text-lg 
+                                pl-5 
+                                w-[200px]
+                                border-2 
+                                border-[#162B78]
+                                focus:outline-none
+                                focus:border-[#162B78]
+                                rounded-xl"
             placeholder="รหัสไปรษณีย์"
             name="name"
           />
-          <div className="flex justify-end ml-5 mr-5 mt-8">
-            <button
-              href="/facility"
-              class="
-                          bg-[#162B78] 
-                          font-IBMPlexSansThai
-                          hover:bg-white 
-                          hover:text-[#162B78] 
-                          text-white 
-                          py-2 
-                          px-4 
-                          rounded-full 
-                          border border-[#162B78]
-                        shadow-md shadow-[#162B78]
-                          "
-            >
-              <Link to={"/facility"}>ถัดไป</Link>
-            </button>
-          </div>
         </div>
       </div>
     </>
