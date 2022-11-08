@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from "react-router-dom"
+import {Link, useNavigate } from "react-router-dom"
 import { authApi } from '../axiosConfig'
 import "./UserSignIn.css"
 
@@ -16,7 +16,7 @@ function handleSubmit(e) {
       // console.log(response.data.access_token);
       localStorage.setItem("access_token", response.data.access_token)
       alert("Login successful")
-      navigate("/")
+      navigate("/dashboard")
     })
     .catch(function (error) {
       console.log(error);
@@ -86,7 +86,6 @@ function handleSubmit(e) {
               />
             </div>
             <div className='flex justify-center mt-8' >
-              <a href="/information">
                 <button type="submit"
                   className="
                           bg-[#162B78] 
@@ -102,16 +101,15 @@ function handleSubmit(e) {
                           ">
                   เข้าสู่ระบบ
                 </button>
-              </a>
             </div>
           </form>
           <div className='flex justify-center ' >
-            <a href="/signup">
+            <Link to="/signup">
               <button href='/signup'
                 className="signup font-IBMPlexSansThai py-4 px-4 mt-3">
                 สมัครบัญชี
               </button>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

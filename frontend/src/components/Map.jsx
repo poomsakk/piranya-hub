@@ -2,7 +2,6 @@ import React, { useMemo } from "react";
 import { GoogleMap, Marker, Circle } from "@react-google-maps/api";
 import { useRef } from "react";
 import { useCallback } from "react";
-import Logo from "../image/logo.png";
 
 const Map = () => {
   const center = useMemo(() => ({ lat: 13.7299, lng: 100.7782 }), []);
