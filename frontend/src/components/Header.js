@@ -52,10 +52,11 @@ function Header() {
                             LOGOUT
                         </button> : null}
 
+                        {isLogin() ? null :
                         <a href="/signin"
                             className="font-IBMPlexSansThai text-base text-[#EFEFEF] underline hover:text-gray-400 m-2">
                             LOGIN
-                        </a>{isLogin() ? "" : null}
+                        </a>}
 
                         <a href="/filter"
                             className="Resgistor-btn font-IBMPlexSansThai text-lg m-2">
