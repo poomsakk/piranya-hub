@@ -14,7 +14,7 @@ function Header() {
     }
     const handleClickRegister = () => {
         if (isLogin()) {
-            navigate("/information")
+            navigate("/total")
         }
         else {
             alert("You need to signin")
@@ -37,13 +37,36 @@ function Header() {
                     <div className='logo-container'>
                         <a href='/'><img className='h-16' src={logo} alt="logoname" /> </a>
                     </div>
-                    <div>
-                        <a href="/filter" className="Resgistor-btn font-IBMPlexSansThai text-lg ">ค้นหาที่พัก</a>{isLogin() ? "" : null}
-                        <button onClick={handleClickRegister} className="Resgistor-btn font-IBMPlexSansThai text-lg ">ลงประกาศที่พัก</button>
+                    <div className='m-2'>
 
-                        {isLogin() ? <button onClick={handleLogout} className="Resgistor-btn font-IBMPlexSansThai text-lg ">LOGOUT</button> : null}
-                        {isLogin() ? <a href="/dashboard" className="Resgistor-btn font-IBMPlexSansThai text-lg ">Dashboard</a> : null}
+                        {isLogin() ? 
+                        <a href="/dashboard" 
+                            className="font-IBMPlexSansThai text-base text-[#EFEFEF] underline hover:text-gray-400 m-2">
+                            DASHBOARD
+                        </a> : null}
 
+                        {isLogin() ? 
+                        <button 
+                            onClick={handleLogout} 
+                            className="font-IBMPlexSansThai text-base text-[#EFEFEF] underline hover:text-gray-400 m-2">
+                            LOGOUT
+                        </button> : null}
+
+                        <a href="/signin"
+                            className="font-IBMPlexSansThai text-base text-[#EFEFEF] underline hover:text-gray-400 m-2">
+                            LOGIN
+                        </a>{isLogin() ? "" : null}
+
+                        <a href="/filter"
+                            className="Resgistor-btn font-IBMPlexSansThai text-lg m-2">
+                            ค้นหาที่พัก
+                            </a>{isLogin() ? "" : null}
+
+                        <button 
+                            onClick={handleClickRegister} 
+                            className="Resgistor-btn font-IBMPlexSansThai text-lg m-2">
+                            ลงประกาศที่พัก
+                        </button>
 
                     </div>
                     <div className='mobile-menu' onClick={handleClick}>
