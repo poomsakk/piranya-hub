@@ -15,15 +15,18 @@ import Promotion from "./Register/7_Promotion";
 import Type from "./Register/3_Type";
 import MainPage from "./pages/MainPage/MainPage.jsx";
 import { useLocation } from "react-router-dom";
+import FilterPage from "./pages/filterPage/FilterPage";
 
 function App() {
   const { pathname } = useLocation();
 
   return (
     <div className="App">
-      {pathname == "/" ? <Header /> : <Header />}
+      {/* {pathname == "/" ? <Header /> : <Header />} */}
+      {pathname !== '/FilterPage' && <Header/> }
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="/FilterPage" element={<FilterPage />} />
         <Route path="/Banner" element={<Banner />} />
         <Route path="/Content" element={<Content />} />
         <Route path="/CallToAction" element={<CallToAction />} />

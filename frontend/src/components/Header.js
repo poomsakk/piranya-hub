@@ -9,7 +9,7 @@ function Header() {
   const { pathname } = useLocation();
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
-  console.log(click);
+  // console.log(click);
 
   return (
     <div className={`${pathname == "/" ? "header-in-main-page" : "header"}`}>
