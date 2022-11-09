@@ -22,7 +22,9 @@ function Dashboard() {
     const getLodge = () => {
 
         userData = JSON.parse(localStorage.getItem("user"))
+        console.log(userData)
         const userLodges = userData.lodgeOwn.slice(1, userData.lodgeOwn.length - 1).split(", ")
+
         setIsLoading(true)
         setOwnLodges([])
         for (let i = 0; i < userLodges.length; i++) {
@@ -34,7 +36,7 @@ function Dashboard() {
                 .catch(error => console.log(error))
                 .finally(() => {
                     setIsLoading(false)
-                    console.log("lodge:", lodges)
+
                 });
         }
     }
