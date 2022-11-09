@@ -18,7 +18,6 @@ function Filter() {
   }
   return (
     <>
-
       <div className='content' >
         <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] ml-12 m-2 w-96 mt-4" >ระยะห่างจากมหาวิทยาลัย</h1>
         <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] ml-12 m-2 w-96 mt-4" >{val} กิโลเมตร</h1>

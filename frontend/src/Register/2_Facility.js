@@ -3,7 +3,6 @@ import "./2_Facility.css"
 import Checkbox from '@mui/material/Checkbox';
 
 function facility() {
-  const steps = ["", "", "", "", "", "", "", ""];
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
   return (
     <div className='items-center  '>
