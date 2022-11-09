@@ -17,4 +17,6 @@ public class Information {
     private String area;
     private String city;
     private String postalCode;
+    private Double lat;
+    private Double lng;
 }

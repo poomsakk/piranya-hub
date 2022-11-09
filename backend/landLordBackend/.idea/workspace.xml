@@ -5,18 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="573ebdec-ff4a-4789-8661-5462f5cbc04d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/filter/CustomAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/filter/CustomAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/service/UserDetailsImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/service/UserDetailsImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/controller/LodgeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/controller/LodgeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/piranyaHub/landLordBackend/model/Lodge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/piranyaHub/landLordBackend/model/Lodge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/piranyaHub/landLordBackend/model/subModel/Information.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/piranyaHub/landLordBackend/model/subModel/Information.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/piranyaHub/landLordBackend/model/subModel/RoomType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/piranyaHub/landLordBackend/model/subModel/RoomType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/model/Lodge.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/model/Lodge.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/service/LodgeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/service/LodgeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/service/imp/LodgeServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/service/imp/LodgeServiceImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/model/subModel/Information.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/model/subModel/Information.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/model/subModel/RoomType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/model/subModel/RoomType.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
