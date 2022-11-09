@@ -69,6 +69,7 @@ public class CustomAuthenticationFilter extends AbstractAuthenticationProcessing
 
         Map<String, String> token = new HashMap<>();
         token.put("id", user.getId());
+        token.put("lodgeOwn",user.getLodgeOwn().toString());
         token.put("access_token", access_token);
         token.put("refresh_token", refresh_token);
 

@@ -23,6 +23,7 @@ function Header() {
 
   function handleLogout() {
     localStorage.clear("token");
+    localStorage.clear("user");
     alert("Loguot successful");
     navigate("/");
   }
@@ -75,16 +76,15 @@ function Header() {
             </a> */}
             {isLogin() ? "" : null}
 
-            <Link
+            <button
               class="ml-5 group relative inline-block outline-none text-sm font-medium text-white focus:outline-none focus:ring"
               onClick={handleClickRegister}
-              to="/total"
             >
               <span class="absolute outline-0 inset-0 border focus:outline-none outline-none border-white group-active:border-white"></span>
               <span class="font-IBMPlexSansThai outline-0 focus:outline-none outline-none text-base block border border-white text-black bg-white px-12 py-3 transition-transform active:border-white  active:bg-white group-hover:-translate-x-1 group-hover:-translate-y-1">
                 ลงประกาศที่พัก
               </span>
-            </Link>
+            </button>
             {/* <button
               className="Resgistor-btn font-IBMPlexSansThai text-lg m-2"
             ></button> */}

@@ -10,6 +10,9 @@
         <module name="tenantBackend" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="landLordBackend" target="19" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
