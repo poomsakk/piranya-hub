@@ -1,9 +1,5 @@
 import React from 'react'
-import { useState } from "react";
 import "./3_Type.css"
-import Stepper from '@mui/material/Stepper';
-import Step from '@mui/material/Step';
-import StepLabel from '@mui/material/StepLabel';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';

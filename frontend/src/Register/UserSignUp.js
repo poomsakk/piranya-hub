@@ -144,7 +144,6 @@ function UserSignUp() {
                             />
                         </div>
                         <div className='flex justify-center mt-8' >
-                            <Link to="/facility">
                                 <button type='submit'
                                     className="
                                     bg-[#162B78] 
@@ -160,7 +159,6 @@ function UserSignUp() {
                             ">
                                     ลงทะเบียน
                                 </button>
-                            </Link>
                         </div>
                     </form>
                 </div>
