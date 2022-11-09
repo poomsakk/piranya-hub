@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 public class Contact {
 
-    private String name;
+    private String nameContact;
     private String phoneNumber;
     private String email;
     private String lineId;

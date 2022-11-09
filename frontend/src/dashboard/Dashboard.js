@@ -15,20 +15,18 @@ function Dashboard() {
     const [isLoading, setIsLoading] = useState(false)
     // const [userData, setUserData] = useState({})
     // let lodges = {}
-    let userData = {}
+
     // let ownLodges = []
     const [ownLodges, setOwnLodges] = useState([])
 
     const getLodge = () => {
-
+        let userData = {}
         userData = JSON.parse(localStorage.getItem("user"))
         console.log(userData)
         const userLodges = userData.lodgeOwn.slice(1, userData.lodgeOwn.length - 1).split(", ")
-
         setIsLoading(true)
         setOwnLodges([])
         for (let i = 0; i < userLodges.length; i++) {
-            console.log("loop", userLodges[i])
             landLordApi.get("lodge/get/" + userLodges[i])
                 .then((response) => {
                     setOwnLodges(ownLodges => [...ownLodges, response.data])
@@ -36,7 +34,6 @@ function Dashboard() {
                 .catch(error => console.log(error))
                 .finally(() => {
                     setIsLoading(false)
-
                 });
         }
     }

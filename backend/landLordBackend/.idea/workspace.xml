@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="573ebdec-ff4a-4789-8661-5462f5cbc04d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/Register/UserSignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/Register/UserSignIn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/piranyaHub/landLordBackend/model/subModel/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/piranyaHub/landLordBackend/model/subModel/Contact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/Register/total.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/Register/total.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../frontend/src/dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/dashboard/Dashboard.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +39,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/PREMz/Desktop/pirunyaHub/piranya-hub/backend/landLordBackend&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/PREMz/Desktop/pirunyaHub/piranya-hub/backend/authBackend&quot;
   }
 }</component>
   <component name="RunManager">
