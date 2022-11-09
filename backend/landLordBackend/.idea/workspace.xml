@@ -5,7 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="573ebdec-ff4a-4789-8661-5462f5cbc04d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/controller/LodgeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/controller/LodgeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/landLordBackend.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/landLordBackend.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/model/Lodge.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/model/Lodge.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/model/subModel/Contact.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/model/subModel/Contact.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/model/subModel/Cost.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/model/subModel/Cost.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/model/subModel/Detail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/model/subModel/Detail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/model/subModel/Facility.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/model/subModel/Facility.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/model/subModel/ImagePath.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/model/subModel/ImagePath.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/model/subModel/Information.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/model/subModel/Information.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/model/subModel/Promotion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/model/subModel/Promotion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/model/subModel/RoomType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/model/subModel/RoomType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/service/LodgeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/service/LodgeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/service/imp/LodgeServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/service/imp/LodgeServiceImp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/Register/1_Information.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/Register/1_Information.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/Register/2_Facility.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/Register/2_Facility.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/Register/3_Type.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/Register/3_Type.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/Register/4_Cost.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/Register/4_Cost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/Register/5_Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/Register/5_Detail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/Register/6_Image.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/Register/6_Image.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/Register/7_Promotion.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/Register/7_Promotion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/Register/8_Contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/Register/8_Contact.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/Register/UserSignUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/Register/UserSignUp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/Register/total.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/Register/total.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/components/Header.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +63,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/piranya-hub/backend/landLordBackend"
+    "last_opened_file_path": "C:/Users/PREMz/Desktop/pirunyaHub/piranya-hub/backend/landLordBackend"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

@@ -1,13 +1,12 @@
 import { Routes, Route } from 'react-router-dom'
 import Header from "./components/Header";
 import Banner from "./components/Banner";
-import Content from "./components/Content";
 import CallToAction from "./components/CallToAction";
 import Page404 from "./components/Page404";
 import MainPage from "./pages/MainPage/MainPage.jsx";
 import { useLocation } from "react-router-dom";
 import FilterPage from "./pages/filterPage/FilterPage";
-import Total from './Register/total'
+import AddLodge from './Register/AddLodge'
 import ListPage from "./pages/ListPage/ListPage";
 import Filter from './Filter/filter'
 import LodgeInfo from './components/LodgeInfo'
@@ -29,7 +28,7 @@ function App() {
         <Route path="/Lodges/:lodgeId" element={<LodgeInfo />} />
         <Route path="/Banner" element={<Banner />} />
         <Route path="/CallToAction" element={<CallToAction />} />
-         <Route path="/total"element={<Total />} />
+        <Route path="/addlodge" element={<AddLodge />} />
         <Route path="/filter" element={<Filter />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/signup" element={<UserSignUp></UserSignUp>} />

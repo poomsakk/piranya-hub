@@ -5,7 +5,24 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import { Link } from "react-router-dom";
 
-function information() {
+function Information() {
+  const [informationData, setInformationData] = useState({
+    name: "",
+    nameEng: "",
+    houseNumber: "",
+    street: "",
+    soi: "",
+    subArea: "",
+    area: "",
+    city: "",
+    postalCode: ""
+  })
+
+  const { name, nameEng, houseNumber, street, soi, subArea, area, city, postalCode } = informationData
+
+  function onInputChange(e) {
+    setInformationData({ ...informationData, [e.target.name]: e.target.value })
+  }
 
   return (
     <>
@@ -42,6 +59,8 @@ function information() {
                             "
               placeholder="ระบุชื่อที่พัก"
               name="name"
+              value={name}
+              onChange={onInputChange}
             />
           </div>
           <div className="flex flex-row">
@@ -66,7 +85,9 @@ function information() {
                             rounded-xl text-m-4 
                             active:border-[#162B78]"
               placeholder="ระบุชื่อที่พัก (English)"
-              name="name"
+              name="nameEng"
+              value={nameEng}
+              onChange={onInputChange}
             />
           </div>
           <div className="flex flex-row">
@@ -91,7 +112,9 @@ function information() {
                                 focus:border-[#162B78]
                                 rounded-xl"
                 placeholder="เลขที่"
-                name="name"
+                name="houseNumber"
+                value={houseNumber}
+                onChange={onInputChange}
               />
               <input
                 type={"text"}
@@ -110,7 +133,9 @@ function information() {
                                 focus:border-[#162B78]
                                 rounded-xl"
                 placeholder="ถนน"
-                name="name"
+                name="street"
+                value={street}
+                onChange={onInputChange}
               />
               <input
                 type={"text"}
@@ -129,7 +154,9 @@ function information() {
                                 focus:border-[#162B78]
                                 rounded-xl"
                 placeholder="ซอย"
-                name="name"
+                name="soi"
+                value={soi}
+                onChange={onInputChange}
               />
             </div>
           </div>
@@ -151,7 +178,9 @@ function information() {
                                 focus:border-[#162B78]
                                 rounded-xl"
               placeholder="ตำบล / แขวง"
-              name="name"
+              name="subArea"
+              value={subArea}
+              onChange={onInputChange}
             />
             <input
               type={"text"}
@@ -170,7 +199,9 @@ function information() {
                                 focus:border-[#162B78]
                                 rounded-xl"
               placeholder="อำเภอ / เขต"
-              name="name"
+              name="area"
+              value={area}
+              onChange={onInputChange}
             />
             <input
               type={"text"}
@@ -189,7 +220,9 @@ function information() {
                                 focus:border-[#162B78]
                                 rounded-xl"
               placeholder="จังหวัด"
-              name="name"
+              name="city"
+              value={city}
+              onChange={onInputChange}
             />
           </div>
           <input
@@ -211,7 +244,9 @@ function information() {
                                 focus:border-[#162B78]
                                 rounded-xl"
             placeholder="รหัสไปรษณีย์"
-            name="name"
+            name="postalCode"
+            value={postalCode}
+            onChange={onInputChange}
           />
         </div>
       </div>
@@ -219,4 +254,4 @@ function information() {
   );
 }
 
-export default information;
+export default Information;
