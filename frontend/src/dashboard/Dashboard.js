@@ -15,6 +15,8 @@ function Dashboard() {
     const [isLoading, setIsLoading] = useState(false)
 
     const getLodge = () => {
+        const str = JSON.parse(localStorage.getItem("user"))
+        console.log(str.id)
         setIsLoading(true)
         return landLordApi.get("/lodge/list")
             .then((response) => setLodges(response.data))
