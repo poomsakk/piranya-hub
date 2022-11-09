@@ -6,11 +6,10 @@ import Map from "../../components/Map";
 import CheckBoxCT from "../../components/CheckBoxCT";
 import "./FilterPage.css";
 import { Slider, CircularProgress } from "@mui/material";
-import { data } from "../../data";
 
 const FilterPage = () => {
   const [price, setPrice] = useState([1000, 5000]);
-  const [checked, setChecked] = useState([]);
+  const [circleRad,setCircleRad] = useState(150)
   const navigate = useNavigate();
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API,
@@ -37,7 +36,7 @@ const FilterPage = () => {
   return (
     <section className="w-full h-screen ">
       <div className="text-white flex justify-center items-center">
-        <Map />
+        <Map rad={circleRad}/>
         <div className="w-1/4 h-screen flex flex-col items-center justify-center bg-white ">
           <div className="h-15  w-full flex justify-evenly">
             <ButtonCT btnName={"back to home"} onClick={() => navigate("/")} />
@@ -62,6 +61,15 @@ const FilterPage = () => {
                 sx={{
                   color: "#000",
                 }}
+              />
+              <Slider 
+              value={circleRad}
+              onChange={(e,newValue) =>setCircleRad(newValue)}
+              aria-label="Default"
+              step={100}
+              min={100}
+              max={5000}
+              valueLabelDisplay="on"
               />
               <div className="flex my-3 justify-between items-center w-full">
                 <div className="flex justify-center items-center ">

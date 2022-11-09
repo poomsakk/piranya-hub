@@ -15,4 +15,5 @@ public class RoomType {
     private double size;
     private double pricePerMonth;
     private double pricePerDay;
+    private boolean available;
 }

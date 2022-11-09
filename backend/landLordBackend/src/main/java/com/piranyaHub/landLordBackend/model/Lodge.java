@@ -1,9 +1,7 @@
 package com.piranyaHub.landLordBackend.model;
 
 import com.piranyaHub.landLordBackend.model.subModel.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 

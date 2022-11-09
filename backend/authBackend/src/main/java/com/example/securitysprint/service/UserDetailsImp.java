@@ -8,11 +8,14 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class UserDetailsImp implements UserDetails {
     private static final long serialVersionUID = 1L;
     private String id;
     private String username;
+
+    private List<String> lodgeown;
 
     @JsonIgnore
     private String password;
@@ -22,15 +25,20 @@ public class UserDetailsImp implements UserDetails {
         return id;
     }
 
-    public UserDetailsImp(String id, String username, String password, Collection<? extends GrantedAuthority> authorities){
+    public UserDetailsImp(String id, String username, String password, List<String> lodgeown, Collection<? extends GrantedAuthority> authorities){
         this.id = id;
         this.username = username;
         this.password = password;
         this.authorities = authorities;
+        this.lodgeown = lodgeown;
+    }
+
+    public List<String> getLodgeOwn(){
+        return lodgeown;
     }
 
     public static UserDetailsImp build(User user){
-        return new UserDetailsImp(user.getId(), user.getUsername(),user.getPassword(), new ArrayList<>());
+        return new UserDetailsImp(user.getId(), user.getUsername(),user.getPassword(),user.getLodgeOwn(), new ArrayList<>());
     }
 
     @Override
