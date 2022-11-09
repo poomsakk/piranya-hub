@@ -1,10 +1,10 @@
 import React, { useMemo } from "react";
 import { GoogleMap, Marker, Circle } from "@react-google-maps/api";
-import { useRef,useEffect,useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import { useCallback } from "react";
 import { landLordApi } from "../axiosConfig";
 
-const Map = ({rad}) => {
+const Map = ({ rad }) => {
   const center = useMemo(() => ({ lat: 13.7299, lng: 100.7782 }), []);
   const mapRef = useRef();
   const options = useMemo(
@@ -14,24 +14,24 @@ const Map = ({rad}) => {
     }),
     []
   );
-  const [lodges, setLodges] = useState([])
+  const [lodges, setLodges] = useState([]);
 
   const onLoad = useCallback((map) => (mapRef.current = map), []);
 
-  
   const getLodge = () => {
-    landLordApi.get("/lodge/list")
-        .then((response) => setLodges(response.data))
-        .catch(error => console.log(error))
+    landLordApi
+      .get("/lodge/list")
+      .then((response) => setLodges(response.data))
+      .catch((error) => console.log(error));
+  };
+
+  function handleOnclick(e) {
+    console.log("lat:" + e.latLng.lat() + ", lng:" + e.latLng.lng());
   }
 
-  function handleOnclick(e){
-    console.log("lat:" + e.latLng.lat() + ", lng:" + e.latLng.lng())
-  }
-
-useEffect(() => {
-    getLodge()
-}, [])
+  useEffect(() => {
+    getLodge();
+  }, []);
 
   return (
     <GoogleMap
@@ -44,13 +44,23 @@ useEffect(() => {
     >
       <>
         <Marker position={center} />
-		<Circle center={center} radius={rad}/>
-      </>
-      {lodges.map((lodge)=>{
-        return <Marker key={lodge.lodgeId}
-        position={{lat:lodge.information.lat,lng:lodge.information.lng}}
-        label={lodge.information.name}
+        <Circle
+          center={center}
+          options={{ fillColor: "green", strokeColor: "green" }}
+          radius={rad}
         />
+      </>
+      {lodges.map((lodge) => {
+        return (
+          <Marker
+            key={lodge.lodgeId}
+            position={{
+              lat: lodge.information.lat,
+              lng: lodge.information.lng,
+            }}
+            label={lodge.information.name}
+          />
+        );
       })}
     </GoogleMap>
   );

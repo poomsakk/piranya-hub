@@ -1,0 +1,16 @@
+[
+  {
+    "type": "ห้องธรรมดา",
+    "roomLayout": "สตูดิโอ",
+    "monthlyRent": "5600-800 บาท",
+    "dailyRent": "-",
+    "state": "มีห้องว่าง"
+  },
+  {
+    "type": "ห้องแอร์",
+    "roomLayout": "สตูดิโอ",
+    "monthlyRent": "-",
+    "dailyRent": "300-600 บาท",
+    "state": "ไม่มีห้องว่าง"
+  }
+]

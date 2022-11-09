@@ -50,7 +50,19 @@ const FilterPage = () => {
               คุณอยากได้ที่พักแบกไหน?
             </h1>
             <div className="flex flex-col w-full h-full overflow-y-scroll overflow-x-hidden custom-class">
-              <h1 className="text-xl">ราคา</h1>
+              <h1 className="my-7">ระยะทางจาก สจล.</h1>
+              <Slider 
+              value={circleRad}
+              onChange={(e,newValue) =>setCircleRad(newValue)}
+              aria-label="Default"
+              size="small"
+              step={100}
+              min={100}
+              max={5000}
+              sx={{color:'#000'}}
+              valueLabelDisplay="on"
+              />
+              <h1 className="text-xl mt-5">ราคา</h1>
               <Slider
                 value={price}
                 onChange={(event, newValue) => setPrice(newValue)}
@@ -62,16 +74,7 @@ const FilterPage = () => {
                   color: "#000",
                 }}
               />
-              <Slider 
-              value={circleRad}
-              onChange={(e,newValue) =>setCircleRad(newValue)}
-              aria-label="Default"
-              step={100}
-              min={100}
-              max={5000}
-              valueLabelDisplay="on"
-              />
-              <div className="flex my-3 justify-between items-center w-full">
+              <div className="flex my-5 justify-between items-center w-full">
                 <div className="flex justify-center items-center ">
                   <label className="mr-3 text-center" htmlFor="startPrice">
                     ราคาเริ่มต้น
