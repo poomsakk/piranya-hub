@@ -2,11 +2,14 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from "react-router-dom"
 import { authApi } from '../axiosConfig'
 import "./UserSignIn.css"
+import { useDispatch } from "react-redux"
+import { setData } from "../redux/mhooSlice"
 
 function UserSignIn() {
   const navigate = useNavigate()
   const [userName, setUserName] = useState("")
   const [passWord, setpassword] = useState("")
+  const dispatch = useDispatch();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -16,6 +19,7 @@ function UserSignIn() {
         // console.log(response.data.access_token);
         localStorage.setItem("access_token", response.data.access_token)
         localStorage.setItem("user", JSON.stringify(response.data))
+        dispatch(setData(response.data))
         alert("Login successful")
         navigate("/dashboard")
       })
