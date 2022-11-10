@@ -16,7 +16,7 @@ import "./map.css"
 
 export default function Map3({ SetPositon }) {
     const { isLoaded } = useLoadScript({
-        googleMapsApiKey: "AIzaSyDjkBoXpRwQSVeE-yKmgnQyg2pov85HHJg",
+        googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API,
         libraries: ["places"],
         mapIds: ["f64b52faf7f620b2"],
     });
