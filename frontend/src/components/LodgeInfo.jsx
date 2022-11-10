@@ -8,12 +8,13 @@ import { data } from "../data";
 import ImageCom from "./ImageCom";
 import TableCT from "./TableCT";
 import TypeOfRoom from "../helper/type_of_room.json";
+import ArticleCT from "./ArticleCT";
 
 const LodgeInfo = () => {
   const { lodgeId } = useParams();
   return (
     <div className="container">
-      <div className="w-full h-full flex justify-center items-center">
+      <div className="w-full h-full flex justify-between ">
         <div className="font-IBMPlexSansThai w-3/4 h-full">
           <section className="my-5">
             <Typography variant="h3" className="font-IBMPlexSansThai">
@@ -57,7 +58,7 @@ const LodgeInfo = () => {
                 </p>
               </div>
               <div className="ml-10 w-1/2">
-                <div className="rounded-xl border border-gray-100 p-8 shadow-xl">
+                <div className="rounded border border-gray-100 p-8 shadow-xl">
                   <div className="flex justify-between">
                     <h1>ราคาที่พัก </h1>
                     <h1>2800-3800 บาท/เดือน</h1>
@@ -123,35 +124,16 @@ const LodgeInfo = () => {
             <div className="mb-20"></div>
           </section>
         </div>
-        <div className="w-1/4 h-full bg-stone-100">
-          <article class=" overflow-hidden rounded-lg shadow transition hover:shadow-lg">
-            <img
-              alt="Office"
-              src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-              class="h-30 w-full object-cover"
-            />
-
-            <div class="bg-white p-4 sm:p-6">
-              <time datetime="2022-10-10" class="block text-xs text-gray-500">
-                10th Oct 2022
-              </time>
-
-              <a href="#">
-                <h3 class="mt-0.5 text-lg text-gray-900">
-                  How to position your furniture for positivity
-                </h3>
-              </a>
-
-              <p class="mt-2 text-sm leading-relaxed text-gray-500 line-clamp-3">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Recusandae dolores, possimus pariatur animi temporibus nesciunt
-                praesentium dolore sed nulla ipsum eveniet corporis quidem,
-                mollitia itaque minus soluta, voluptates neque explicabo tempora
-                nisi culpa eius atque dignissimos. Molestias explicabo corporis
-                voluptatem?
-              </p>
-            </div>
-          </article>
+        <div className="w-1/4 h-full ml-10 font-IBMPlexSansThai">
+          <h1 className="text-xl font-bold my-5 font-IBMPlexSansThai">ที่พักที่คล้ายกัน</h1>
+          <ArticleCT />
+          <ArticleCT />
+          <ArticleCT />
+          <ArticleCT />
+          <ArticleCT />
+          <ArticleCT />
+          <ArticleCT />
+          <ArticleCT />
         </div>
       </div>
     </div>
