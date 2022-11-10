@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import Checkbox from '@mui/material/Checkbox';
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
@@ -10,6 +10,7 @@ import { landLordApi } from "../axiosConfig";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
 import { setData } from "../redux/mhooSlice"
+import Map3 from "./Map3";
 
 function AddLodge() {
   // Main section >>>
@@ -20,7 +21,7 @@ function AddLodge() {
     e.preventDefault()//
     let userLodges = userReduxData.lodgeOwn.slice(1, userReduxData.lodgeOwn.length - 1).split(", ")
     landLordApi.post(`/lodge/add/${userReduxData.id}`, {
-      information: informationData,
+      information: { ...informationData, lat: positon.lat, lng: positon.lng },
       facility: { facilities: tempF },
       roomType: [typeData],
       cost: costData,
@@ -81,6 +82,9 @@ function AddLodge() {
   function onInputinformationChange(e) {
     setInformationData({ ...informationData, [e.target.name]: e.target.value })
   }
+  // 1.1 Map section >>
+  const [positon, SetPositon] = useState({ lat: 13.7298889, lng: 100.7782323 })
+  // 1.1 Map section <<
   // 1 Information  section <<<
 
 
@@ -413,6 +417,8 @@ function AddLodge() {
                     onChange={onInputinformationChange}
                   />
                 </div>
+                <h1>lat:{positon.lat} ,lng:{positon.lng}</h1>
+                <Map3 SetPositon={SetPositon}></Map3>
               </div>
             </div>
             <div className="facilities mb-10">
@@ -1076,5 +1082,4 @@ function AddLodge() {
     </div>
   );
 }
-
 export default AddLodge;
