@@ -8,12 +8,13 @@ import { data } from "../data";
 import ImageCom from "./ImageCom";
 import TableCT from "./TableCT";
 import TypeOfRoom from "../helper/type_of_room.json";
+import ArticleCT from "./ArticleCT";
 
 const LodgeInfo = () => {
   const { lodgeId } = useParams();
   return (
     <div className="container">
-      <div className="w-full h-full flex justify-center items-center">
+      <div className="w-full h-full flex justify-between ">
         <div className="font-IBMPlexSansThai w-3/4 h-full">
           <section className="my-5">
             <Typography variant="h3" className="font-IBMPlexSansThai">
@@ -57,7 +58,7 @@ const LodgeInfo = () => {
                 </p>
               </div>
               <div className="ml-10 w-1/2">
-                <div className="rounded-xl border border-gray-100 p-8 shadow-xl">
+                <div className="rounded border border-gray-100 p-8 shadow-xl">
                   <div className="flex justify-between">
                     <h1>ราคาที่พัก </h1>
                     <h1>2800-3800 บาท/เดือน</h1>
@@ -123,7 +124,17 @@ const LodgeInfo = () => {
             <div className="mb-20"></div>
           </section>
         </div>
-        <div className="w-1/4 h-full bg-stone-100">ที่พักใกล้เคียง</div>
+        <div className="w-1/4 h-full ml-10 font-IBMPlexSansThai">
+          <h1 className="text-xl font-bold my-5 font-IBMPlexSansThai">ที่พักที่คล้ายกัน</h1>
+          <ArticleCT />
+          <ArticleCT />
+          <ArticleCT />
+          <ArticleCT />
+          <ArticleCT />
+          <ArticleCT />
+          <ArticleCT />
+          <ArticleCT />
+        </div>
       </div>
     </div>
   );

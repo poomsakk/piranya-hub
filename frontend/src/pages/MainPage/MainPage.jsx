@@ -1,6 +1,4 @@
-import { Box, Container, Typography } from "@mui/material";
 import React, { useRef, useEffect, useState } from "react";
-import googleMap from "../../image/google-map.jpg";
 import "./MainPage.css";
 import { gsap } from "gsap";
 import FilterPage from "../filterPage/FilterPage";
