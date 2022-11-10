@@ -2,17 +2,13 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import "./Dashboard.css"
 import { landLordApi } from '../axiosConfig'
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import { useSelector } from 'react-redux'
 
 
 function Dashboard() {
     const [lodges, setLodges] = useState([])
     const [isLoading, setIsLoading] = useState(false)
+    const userReduxData = useSelector((state) => state.data.userData)
     // const [userData, setUserData] = useState({})
     // let lodges = {}
 
@@ -20,10 +16,8 @@ function Dashboard() {
     const [ownLodges, setOwnLodges] = useState([])
 
     const getLodge = () => {
-        let userData = {}
-        userData = JSON.parse(localStorage.getItem("user"))
-        console.log(userData)
-        const userLodges = userData.lodgeOwn.slice(1, userData.lodgeOwn.length - 1).split(", ")
+        //const userLodges = userData.lodgeOwn.slice(1, userData.lodgeOwn.length - 1).split(", ")
+        const userLodges = userReduxData.lodgeOwn.slice(1, userReduxData.lodgeOwn.length - 1).split(", ")
         setIsLoading(true)
         setOwnLodges([])
         for (let i = 0; i < userLodges.length; i++) {

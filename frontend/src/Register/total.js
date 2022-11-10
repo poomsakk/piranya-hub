@@ -7,16 +7,19 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import { Button, Switch } from "@mui/material";
 import { landLordApi } from "../axiosConfig";
-import { useNavigate, authApi } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux'
+import { setData } from "../redux/mhooSlice"
 
 function AddLodge() {
   // Main section >>>
+  const dispatch = useDispatch()
+  const userReduxData = useSelector((state) => state.data.userData)
   let navigate = useNavigate()
   function handleSubmitForm(e) {
-    e.preventDefault()//        "/add/{userid}"
-    let userData = JSON.parse(localStorage.getItem("user"))
-    let userLodges = userData.lodgeOwn.slice(1, userData.lodgeOwn.length - 1).split(", ")
-    landLordApi.post(`/lodge/add/${userData.id}`, {
+    e.preventDefault()//
+    let userLodges = userReduxData.lodgeOwn.slice(1, userReduxData.lodgeOwn.length - 1).split(", ")
+    landLordApi.post(`/lodge/add/${userReduxData.id}`, {
       information: informationData,
       facility: { facilities: tempF },
       roomType: [typeData],
@@ -27,15 +30,27 @@ function AddLodge() {
       contact: contactData
     }).then((res) => {
       userLodges.push(res.data.lodgeId)
-      userData.lodgeOwn = userLodges
+      let str = "["
+      if (userLodges.length === 1) {
+        str = str + userLodges.toString() + "]"
+      } else {
+        userLodges.forEach(element => {
+          str = str + element + ", "
+        });
+        str = str.slice(0, str.length - 2) + "]"
+      }
+      const newData = { ...userReduxData, lodgeOwn: str }
+      dispatch(setData(newData))
+      localStorage.clear("user")
+      localStorage.setItem("user", JSON.stringify(newData))
       alert("Add success")
       navigate("/dashboard")
     }).catch((error) => {
       console.log(error)
       if (error.response) {
-        alert(error.response.data.message) // wrong username password
+        alert(error.response.data.message)
       } else {
-        alert(error.message) // server down
+        alert(error.message)
       }
     })
     // console.log(informationData)

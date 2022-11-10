@@ -5,8 +5,11 @@ import logo from "../image/logo1.png";
 import { Link } from "react-router-dom";
 import { useLocation, useNavigate } from "react-router-dom";
 import { isLogin } from "../auth";
+import { useDispatch } from "react-redux"
+import { setData } from "../redux/mhooSlice"
 
 function Header() {
+  const dispatch = useDispatch()
   const { pathname } = useLocation();
   const [click, setClick] = useState(false);
   const navigate = useNavigate();
@@ -24,6 +27,7 @@ function Header() {
   function handleLogout() {
     localStorage.clear("token");
     localStorage.clear("user");
+    dispatch(setData({}))
     alert("Loguot successful");
     navigate("/");
   }

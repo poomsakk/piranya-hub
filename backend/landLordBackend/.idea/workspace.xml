@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="573ebdec-ff4a-4789-8661-5462f5cbc04d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/piranyaHub/landLordBackend/model/subModel/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/piranyaHub/landLordBackend/model/subModel/Contact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/Register/UserSignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/Register/UserSignIn.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../frontend/src/Register/total.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/Register/total.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../frontend/src/dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/dashboard/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,13 +36,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/PREMz/Desktop/pirunyaHub/piranya-hub/backend/authBackend&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/PREMz/Desktop/pirunyaHub/piranya-hub/backend/authBackend"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="landLordBackend" />
