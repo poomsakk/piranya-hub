@@ -9,7 +9,7 @@ import { Slider, CircularProgress } from "@mui/material";
 
 const FilterPage = () => {
   const [price, setPrice] = useState([1000, 5000]);
-  const [circleRad,setCircleRad] = useState(150)
+  const [circleRad, setCircleRad] = useState(150);
   const navigate = useNavigate();
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API,
@@ -36,31 +36,31 @@ const FilterPage = () => {
   return (
     <section className="w-full h-screen ">
       <div className="text-white flex justify-center items-center">
-        <Map rad={circleRad}/>
-        <div className="w-1/4 h-screen flex flex-col items-center justify-center bg-white ">
-          <div className="h-15  w-full flex justify-evenly">
+        <Map rad={circleRad} />
+        <div className="w-1/4 overflow-hidden  h-screen flex flex-col items-center justify-center bg-white ">
+          <div className="h-15 w-full flex justify-evenly">
             <ButtonCT btnName={"back to home"} onClick={() => navigate("/")} />
             <ButtonCT
               btnName={"click to serch"}
               onClick={() => navigate("/Lodges")}
             />
           </div>
-          <div className="font-IBMPlexSansThai rounded  text-black w-[390px] mx-auto h-5/6 my-12">
+          <div className="font-IBMPlexSansThai p-3 rounded  text-black w-[390px] mx-auto h-5/6 my-7">
             <h1 className="text-3xl text-center font-bold mb-5">
               คุณอยากได้ที่พักแบกไหน?
             </h1>
             <div className="flex flex-col w-full h-full overflow-y-scroll overflow-x-hidden custom-class">
               <h1 className="my-7">ระยะทางจาก สจล.</h1>
-              <Slider 
-              value={circleRad}
-              onChange={(e,newValue) =>setCircleRad(newValue)}
-              aria-label="Default"
-              size="small"
-              step={100}
-              min={100}
-              max={5000}
-              sx={{color:'#000'}}
-              valueLabelDisplay="on"
+              <Slider
+                value={circleRad}
+                onChange={(e, newValue) => setCircleRad(newValue)}
+                aria-label="Default"
+                size="small"
+                step={100}
+                min={100}
+                max={5000}
+                sx={{ color: "#000" }}
+                valueLabelDisplay="on"
               />
               <h1 className="text-xl mt-5">ราคา</h1>
               <Slider
