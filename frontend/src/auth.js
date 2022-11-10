@@ -1,5 +1,5 @@
 export function isLogin() {
-    const userInfo = localStorage.getItem("access_token")
+    const userInfo = localStorage.getItem("user")
     if (userInfo) {
         return true
     } else {
