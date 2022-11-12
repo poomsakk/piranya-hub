@@ -417,7 +417,7 @@ function AddLodge() {
                     onChange={onInputinformationChange}
                   />
                 </div>
-                <h1>lat:{positon.lat} ,lng:{positon.lng}</h1>
+                {/* <h1>lat:{positon.lat} ,lng:{positon.lng}</h1> */}
                 <Map3 SetPositon={SetPositon}></Map3>
               </div>
             </div>

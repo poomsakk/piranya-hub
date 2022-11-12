@@ -10,7 +10,7 @@ const TableCT = ({ items }) => {
               ประเภท
             </th>
             <th class="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
-              รูปแบบห้อง
+              ขนาดห้อง
             </th>
             <th class="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
               ค่าเช่ารายเดือน
@@ -19,7 +19,7 @@ const TableCT = ({ items }) => {
               ค่าเช่ารายวัน
             </th>
             <th class="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
-              ค่าเช่ารายวัน
+              สถานะห้อง
             </th>
           </tr>
         </thead>
@@ -29,19 +29,19 @@ const TableCT = ({ items }) => {
             return (
               <tr>
                 <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                  {item.type}
+                  {item.typeName}
                 </td>
                 <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-                  {item.roomLayout}
+                  {item.size}{" "}{"ตร.ม."}
                 </td>
                 <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-                  {item.monthlyRent}
+                  {item.pricePerMonth}{" "}{"บาท"}
                 </td>
                 <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-                  {item.dailyRent}
+                  {item.pricePerDay === 0 ? "-" : item.pricePerDay}
                 </td>
                 <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-                  {item.state}
+                  {item.available ? "ว่าง" : "ไม่ว่าง"}
                 </td>
               </tr>
             );

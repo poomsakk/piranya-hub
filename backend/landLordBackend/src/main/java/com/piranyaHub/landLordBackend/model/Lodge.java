@@ -2,9 +2,11 @@ package com.piranyaHub.landLordBackend.model;
 
 import com.piranyaHub.landLordBackend.model.subModel.*;
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.Instant;
 import java.util.List;
 
 @Data
@@ -22,6 +24,8 @@ public class Lodge {
     private ImagePath imagePath;
     private Promotion promotion;
     private Contact contact;
+    @CreatedDate
+    private Instant createdDate;
 
     public void overWrite(Lodge lodge){
         information = lodge.getInformation();
