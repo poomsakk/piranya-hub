@@ -41,7 +41,61 @@ function detail() {
               </Stepper>
             </div>
 
-      <div className='flex justify-between ml-5 mr-5 mt-8' >
+      
+      <div className='content'>
+              <h1 className = "font-IBMPlexSansThai text-2xl text-[#162B78] ml-12 m-2 w-96 mt-2" >ลงประกาศอพาร์ทเม้นท์</h1> 
+              <h1 className = "font-IBMPlexSansThai text-2xl text-[#162B78] ml-12 m-2 w-96 mt-2" >5.รายละเอียด</h1>
+              
+              <div className='flex flex-row'>
+                <h1 className = "font-IBMPlexSansThai text-xl text-[#162B78] ml-12 m-4 mt-3 w-[160px] " >รายละเอียด</h1> 
+                <input
+                  type={"text"}
+                  className="
+                    font-IBMPlexSansThai 
+                    bg-[#EFEFEF]
+                    placeholder:text-zinc-500
+                    text-lg 
+                    pl-5 
+                    w-[631px]
+                    h-[200px]
+                    m-2
+                    border-2 
+                    border-[#162B78] 
+                    focus:outline-none
+                    focus:border-[#162B78]
+                    rounded-xl text-m-4 
+                    active:border-[#162B78]"
+                  
+                  name="name"
+                />
+              </div>
+                <div className = "flex flex-row">
+                  <h1 className = "font-IBMPlexSansThai text-xl text-[#162B78] ml-12 m-4 mt-2 w-32" >Detail</h1> 
+                  <div className='flex justify-center ml-8'>
+                    <input
+                      type={"text"}
+                      className="
+                        font-IBMPlexSansThai 
+                        bg-[#EFEFEF]
+                        placeholder:text-zinc-500
+                        text-lg 
+                        pl-5 
+                        m-2
+                        w-[631px]
+                        h-[200px]
+                        border-2 
+                        border-[#162B78]
+                        focus:outline-none
+                        focus:border-[#162B78]
+                        rounded-xl"
+              
+                      name="name"
+                    />
+                 
+                  </div>
+                </div>
+        </div>
+            <div className='flex justify-between ml-5 mr-5 mt-8' >
           <a href="/cost">
             <button class="
                   bg-[#162B78] 
@@ -76,8 +130,11 @@ function detail() {
               </button>
           </a>
       </div>
+      
     </>
+    
   )
+
 }
 
 export default detail

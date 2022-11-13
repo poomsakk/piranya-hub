@@ -40,8 +40,17 @@ function information() {
               ))}
               </Stepper>
             </div>
+            <div className='content'>
+              <h1 className = "font-IBMPlexSansThai text-2xl text-[#162B78] ml-12 m-2 w-96 mt-2" >ลงประกาศอพาร์ทเม้นท์</h1> 
+              <h1 className = "font-IBMPlexSansThai text-2xl text-[#162B78] ml-12 m-2 w-96 mt-2" >8.ข้อมูลสำหรับติดต่อ</h1>
+              
+              
+              
+              
+              
+      </div>
       <div className='flex justify-between ml-5 mr-5 mt-8' >
-          <a href="/promotion">
+          <a href="/detail">
             <button class="
                   bg-[#162B78] 
                   font-IBMPlexSansThai 
@@ -57,7 +66,7 @@ function information() {
                 กลับ
             </button>
           </a>
-          <a href="/Page404">
+          <a href="/promotion">
               <button
                   class="
                   bg-[#162B78] 
@@ -71,7 +80,7 @@ function information() {
                   border border-[#162B78]
                   shadow-md shadow-[#162B78]
                   ">
-                  บันทึก
+                    ถัดไป
               </button>
           </a>
       </div>
