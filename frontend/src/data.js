@@ -1,10 +1,10 @@
 export const data = [
   {
-    EngName: "direct dial phone",
+    EngName: "directphone",
     ThName: "โทรศัพท์สายตรง",
   },
   {
-    EngName: "air conditioner",
+    EngName: "airconditioner",
     ThName: "เครื่องปรับอากาศ",
   },
   {
@@ -12,7 +12,7 @@ export const data = [
     ThName: "พัดลม",
   },
   {
-    EngName: "television",
+    EngName: "tv",
     ThName: "โทรทัศน์",
   },
   {
@@ -24,47 +24,47 @@ export const data = [
     ThName: "เฟอร์นิเจอร์",
   },
   {
-    EngName: "water heater",
+    EngName: "waterheater",
     ThName: "เครื่องทำน้ำอุ่น",
   },
   {
-    EngName: "WIFI",
+    EngName: "wifi",
     ThName: "อินเตอร์เน็ตไร้สาย ",
   },
   {
-    EngName: "pet allowed",
+    EngName: "petallowed",
     ThName: "อนุญาตให้เลี้ยงสัตว์ ",
   },
   {
-    EngName: "fingerprint scanner",
+    EngName: "fingerprintscanner",
     ThName: "แสกนลายนิ้วมือ",
   },
   {
-    EngName: "closed-circuit camera",
+    EngName: "CCTV",
     ThName: "กล้องวงจรปิด",
   },
   {
-    EngName: "motorcycle park",
+    EngName: "motoparking",
     ThName: "ที่จอดรถมอเตอร์ไซด์",
   },
   {
-    EngName: "car park",
+    EngName: "carparking",
     ThName: "ที่จอดรถยนต์",
   },
   {
-    EngName: "swimming pool",
+    EngName: "swimmingpool",
     ThName: "สระว่ายน้ำ",
   },
   {
-    EngName: "fitness",
+    EngName: "gym",
     ThName: "ฟิตเนส",
   },
   {
-    EngName: "laundry shop",
+    EngName: "washingmachine",
     ThName: "ร้านซักผ้า",
   },
   {
-    EngName: "hair salon",
+    EngName: "hairsalon",
     ThName: "ร้านทำผม",
   },
   {
@@ -72,11 +72,15 @@ export const data = [
     ThName: "ลิฟต์",
   },
   {
-    EngName: "convenience store",
+    EngName: "conveniencestore",
     ThName: "ร้านสะดวกซื้อ",
   },
   {
-    EngName: "food store",
+    EngName: "foodstore",
     ThName: "ร้านขายอาหาร",
+  },
+  {
+    EngName: "securityguard",
+    ThName: "รปภ.",
   },
 ];

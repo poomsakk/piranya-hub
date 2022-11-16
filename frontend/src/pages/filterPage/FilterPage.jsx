@@ -9,7 +9,7 @@ import { Slider, CircularProgress } from "@mui/material";
 
 const FilterPage = () => {
   const [price, setPrice] = useState([1000, 5000]);
-  const [circleRad, setCircleRad] = useState(150);
+  const [circleRad, setCircleRad] = useState(450);
   const navigate = useNavigate();
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API,
@@ -56,7 +56,6 @@ const FilterPage = () => {
                 onChange={(e, newValue) => setCircleRad(newValue)}
                 aria-label="Default"
                 size="small"
-                step={100}
                 min={100}
                 max={5000}
                 sx={{ color: "#000" }}
