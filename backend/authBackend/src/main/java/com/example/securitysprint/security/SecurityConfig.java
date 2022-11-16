@@ -42,7 +42,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST, "/signup").permitAll()
                 .antMatchers(HttpMethod.POST, "/signin").permitAll()
-                .antMatchers(HttpMethod.GET,"/protected").authenticated();
+                .antMatchers(HttpMethod.GET,"/protected").authenticated()
+                .anyRequest().authenticated();
 
         http.cors().and()
                 .authorizeRequests()
