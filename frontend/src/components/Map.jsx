@@ -2,43 +2,35 @@ import React, { useMemo } from "react";
 import { GoogleMap, Marker, Circle } from "@react-google-maps/api";
 import { useRef, useEffect, useState } from "react";
 import { useCallback } from "react";
-import { landLordApi } from "../axiosConfig";
 
-const Map = ({ rad }) => {
+const Map = ({ rad, lodgeData }) => {
   const center = useMemo(() => ({ lat: 13.7299, lng: 100.7782 }), []);
   const mapRef = useRef();
   const options = useMemo(
     () => ({
       disableDefaultUI: true,
       clickalbeIcons: false,
-      mapId: "9cc8b6e30219f4b2"
+      mapId: "9cc8b6e30219f4b2",
     }),
     []
   );
-  const [lodges, setLodges] = useState([]);
+  const [lodgess, setLodgess] = useState([]);
 
   const onLoad = useCallback((map) => (mapRef.current = map), []);
-
-  const getLodge = () => {
-    landLordApi
-      .get("/lodge/list")
-      .then((response) => setLodges(response.data))
-      .catch((error) => console.log(error));
-  };
 
   function handleOnclick(e) {
     console.log("lat:" + e.latLng.lat() + ", lng:" + e.latLng.lng());
   }
 
   useEffect(() => {
-    getLodge();
-  }, []);
+    setLodgess(lodgeData);
+  }, [lodgeData]);
 
   return (
     <GoogleMap
-      zoom={17}
+      zoom={15}
       center={{ lat: 13.7299, lng: 100.7782 }}
-      mapContainerClassName="w-3/4 h-screen"
+      mapContainerClassName="w-auto h-[32rem]"
       options={options}
       onLoad={onLoad}
       onClick={handleOnclick}
@@ -51,7 +43,7 @@ const Map = ({ rad }) => {
           radius={rad}
         />
       </>
-      {lodges.map((lodge) => {
+      {lodgess.map((lodge) => {
         return (
           <Marker
             key={lodge.lodgeId}
