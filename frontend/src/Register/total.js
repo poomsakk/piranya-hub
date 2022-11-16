@@ -29,6 +29,10 @@ function AddLodge() {
       imagePath: imageData,
       promotion: promotionData,
       contact: contactData
+    },{
+      headers: {
+        "Authorization" : "Bearer " + userReduxData.access_token
+      }
     }).then((res) => {
       userLodges.push(res.data.lodgeId)
       let str = "["
