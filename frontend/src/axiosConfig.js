@@ -8,9 +8,14 @@ export const authApi = axios.create({
     baseURL: 'http://localhost:8090'
 });
 
+export const matchingApi = axios.create({
+    baseURL: 'http://localhost:8099'
+})
+
 const axiosConfig = {
     landLordApi,
-    authApi
+    authApi,
+    matchingApi
 }
 
 export default axiosConfig;

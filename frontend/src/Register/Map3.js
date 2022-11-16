@@ -18,7 +18,7 @@ export default function Map3({ SetPositon }) {
     const { isLoaded } = useLoadScript({
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API,
         libraries: ["places"],
-        mapIds: ["f64b52faf7f620b2"],
+        mapIds: ["768e6ec3c770487c"],
     });
 
     if (!isLoaded) return <div>Loading...</div>;

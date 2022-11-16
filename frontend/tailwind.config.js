@@ -17,6 +17,11 @@ module.exports = {
         IBMPlexSansThai: ["IBM Plex Sans Thai", "sans-serif"],
       },
     },
+    extend: {
+      height: {
+        '128': '32rem',
+      }
+    }
   },
   plugins: [require("@tailwindcss/line-clamp")],
 };
