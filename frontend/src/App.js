@@ -14,6 +14,7 @@ import LodgeInfo from './components/LodgeInfo'
 import UserSignIn from "./Register/UserSignIn"
 import UserSignUp from "./Register/UserSignUp"
 import Dashboard from './dashboard/Dashboard'
+import Edit from './dashboard/Edit';
 
 function App() {
   const { pathname } = useLocation();
@@ -29,12 +30,13 @@ function App() {
         <Route path="/Lodges/:lodgeId" element={<LodgeInfo />} />
         <Route path="/Banner" element={<Banner />} />
         <Route path="/CallToAction" element={<CallToAction />} />
-         <Route path="/total"element={<Total />} />
+        <Route path="/total" element={<Total />} />
         <Route path="/filter" element={<Filter />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/signup" element={<UserSignUp></UserSignUp>} />
         <Route path="/signin" element={<UserSignIn></UserSignIn>} />
         <Route path="*" element={<Page404 />} />
+        <Route path="/edit/:lodgeId" element={<Edit/>} />
       </Routes>
     </div>
   );

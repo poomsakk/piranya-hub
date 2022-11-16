@@ -28,7 +28,7 @@ function Header() {
     localStorage.clear("token");
     localStorage.clear("user");
     dispatch(setData({}))
-    alert("Loguot successful");
+    alert("Logout successful");
     navigate("/");
   }
 
