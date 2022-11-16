@@ -38,5 +38,10 @@ public class AuthController {
     public  String addLodgeId(@PathVariable("userid") String userid, @PathVariable("lodgeid") String lodgeid){
         return userService.addLodge(userid,lodgeid);
     }
+
+    @DeleteMapping("/deleteLodge/{userId}/{lodgeId}")
+    public String deleteLodgeId(@PathVariable("userId") String userId, @PathVariable("lodgeId") String lodgeId){
+        return userService.deleteLodge(userId, lodgeId);
+    }
 }
 
