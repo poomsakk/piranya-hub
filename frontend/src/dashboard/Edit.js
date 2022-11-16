@@ -52,7 +52,7 @@ export default function Edit() {
         // console.log(contactData)
     }
     // Main section <<<
-    
+
     const [lodge, setLodge] = useState([]);
     const [isLoading, setIsLoading] = useState(true)
     const [informationData, setInformationData] = useState({
@@ -107,6 +107,22 @@ export default function Edit() {
         imagePaths: []
     })
     let hello = 'yo'
+    const facilities_list = ["airconditioner", "furniture", "waterheater", "fan",
+        "tv", "fridge", "directphone", "wifi", "motoparking",
+        "carparking", "swimmingpool", "fingerprintscanner",
+        "CCTV", "elevator", "securityguard", "conveniencestore",
+        "washingmachine", "hairsalon", "foodstore", "gym", "petallowed"]
+    // const facilityCheck = [
+    //     false, false, false, false, false, false, false,
+    //     false, false, false, false, false, false, false,
+    //     false, false, false, false, false, false, false
+    // ]
+    let facilityCheck = [
+        true, true, false, false, false, false, false,
+        false, false, false, false, false, false, false,
+        false, false, false, false, false, false, false
+    ]
+    const [faciCheck,setFaciCheck] = useState(facilityCheck)
     const getLodge = async () => {
         await landLordApi
             .get("/lodge/get/" + lodgeId)
@@ -128,6 +144,19 @@ export default function Edit() {
                 setFacilityData({
                     facilities: response.data.facility.facilities
                 })
+                for (let i = 0; i < facilities_list.length; i++) {
+                    for (let j = 0; j < response.data.facility.facilities.length; j++) {
+                        if (response.data.facility.facilities[j] == facilities_list[i]) {
+                            facilityCheck[i] = (response.data.facility.facilities[j] == facilities_list[i])
+                            break
+                        }
+                        console.log(i, j, facilities_list[i], response.data.facility.facilities[j], (response.data.facility.facilities[j] == facilities_list[i]))
+                        // console.log("i",response.data.facility.facilities[i],"j",facilities_list[j])
+
+                    }
+                }
+                setFaciCheck(facilityCheck)
+                console.log("FINAL FACILITY-CHECKBOX",facilityCheck)
                 for (let i = 0; i < response.data.roomType.length; i++) {
                     setTypeData({
                         typeName: response.data.roomType[i].typeName,
@@ -151,7 +180,7 @@ export default function Edit() {
                     promotion: response.data.promotion.promotion
                 })
                 setContactData({
-                    nameContact:  response.data.contact.nameContact,
+                    nameContact: response.data.contact.nameContact,
                     phoneNumber: response.data.contact.phoneNumber,
                     email: response.data.contact.email,
                     lineId: response.data.contact.lineId
@@ -160,8 +189,8 @@ export default function Edit() {
                     imagePaths: response.data.imagePath.imagePaths
                 })
                 setIsLoading(false)
-                console.log(response.data)
-                console.log(response.data.roomType[0].typeName)
+                // console.log(response.data)
+                console.log(response.data.facility.facilities)
 
 
 
@@ -230,7 +259,7 @@ export default function Edit() {
     // 5 Detail section <<<
 
     // 6 Image section >>>
-    
+
     const { imagePaths } = imageData
     function onImagePathChange(e) {
         setImageData({ imagePaths: [] })
@@ -495,90 +524,90 @@ export default function Edit() {
                                     <div className='flex flex-row mt-4 '>
                                         <div >
                                             <div className='flex flex-row'>
-                                                <Checkbox {...label} className='text-[#162B78] ml-10' name="airconditioner" onChange={onChangeFacility} />
+                                                <Checkbox {...label} checked={faciCheck[0]} className='text-[#162B78] ml-10' name="airconditioner" onChange={onChangeFacility} />
                                                 <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-44" >เครื่องปรับอากาศ</h1>
                                             </div>
                                             <div className='flex flex-row'>
-                                                <Checkbox {...label} className='text-[#162B78] ml-10' name="furniture" onChange={onChangeFacility} />
+                                                <Checkbox {...label} checked={faciCheck[1]} className='text-[#162B78] ml-10' name="furniture" onChange={onChangeFacility} />
                                                 <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-44 " >เฟอร์นิเจอร์-ตู้, เตียง</h1>
                                             </div>
                                             <div className='flex flex-row'>
-                                                <Checkbox {...label} className='text-[#162B78] ml-10' name="waterheater" onChange={onChangeFacility} />
+                                                <Checkbox {...label} checked={faciCheck[2]} className='text-[#162B78] ml-10' name="waterheater" onChange={onChangeFacility} />
                                                 <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-44 " >เครื่องทำน้ำอุ่น</h1>
                                             </div>
                                             <div className='flex flex-row'>
-                                                <Checkbox {...label} className='text-[#162B78] ml-10' name="fan" onChange={onChangeFacility} />
+                                                <Checkbox {...label} checked={faciCheck[3]} className='text-[#162B78] ml-10' name="fan" onChange={onChangeFacility} />
                                                 <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-44 " >พัดลม</h1>
                                             </div>
                                             <div className='flex flex-row'>
-                                                <Checkbox {...label} className='text-[#162B78] ml-10' name="tv" onChange={onChangeFacility} />
+                                                <Checkbox {...label} checked={faciCheck[4]} className='text-[#162B78] ml-10' name="tv" onChange={onChangeFacility} />
                                                 <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-44 " >โทรทัศน์</h1>
                                             </div>
                                             <div className='flex flex-row'>
-                                                <Checkbox {...label} className='text-[#162B78] ml-10' name="fridge" onChange={onChangeFacility} />
+                                                <Checkbox {...label} checked={faciCheck[5]} className='text-[#162B78] ml-10' name="fridge" onChange={onChangeFacility} />
                                                 <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-44 " >ตู้เย็น</h1>
                                             </div>
                                             <div className='flex flex-row'>
-                                                <Checkbox {...label} className='text-[#162B78] ml-10' name="directphone" onChange={onChangeFacility} />
+                                                <Checkbox {...label} checked={faciCheck[6]} className='text-[#162B78] ml-10' name="directphone" onChange={onChangeFacility} />
                                                 <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-44 " >โทรศัพท์สายตรง</h1>
                                             </div>
                                             <div className='flex flex-row'>
-                                                <Checkbox {...label} className='text-[#162B78] ml-10' name="wifi" onChange={onChangeFacility} />
+                                                <Checkbox {...label} checked={faciCheck[7]} className='text-[#162B78] ml-10' name="wifi" onChange={onChangeFacility} />
                                                 <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-64 " >อินเทอร์เน็ตไร้สาย (WIFI) ในห้อง</h1>
                                             </div>
                                             <div className='flex flex-row'>
-                                                <Checkbox {...label} className='text-[#162B78] ml-10' name="motoparking" onChange={onChangeFacility} />
+                                                <Checkbox {...label} checked={faciCheck[8]} className='text-[#162B78] ml-10' name="motoparking" onChange={onChangeFacility} />
                                                 <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-60 " >ที่จอดรถมอเตอร์ไซด์ / จักรยาน</h1>
                                             </div>
                                             <div className='flex flex-row'>
-                                                <Checkbox {...label} className='text-[#162B78] ml-10' name="carparking" onChange={onChangeFacility} />
+                                                <Checkbox {...label} checked={faciCheck[9]} className='text-[#162B78] ml-10' name="carparking" onChange={onChangeFacility} />
                                                 <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-60 " >ที่จอดรถยนต์</h1>
                                             </div>
                                             <div className='flex flex-row'>
-                                                <Checkbox {...label} className='text-[#162B78] ml-10' name="swimmingpool" onChange={onChangeFacility} />
+                                                <Checkbox {...label} checked={faciCheck[10]} className='text-[#162B78] ml-10' name="swimmingpool" onChange={onChangeFacility} />
                                                 <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-60 " >สระว่ายน้ำ</h1>
                                             </div>
                                         </div>
 
                                         <div className='ml-32'>
                                             <div className='flex flex-row'>
-                                                <Checkbox {...label} className='text-[#162B78]' name="fingerprintscanner" onChange={onChangeFacility} />
+                                                <Checkbox {...label} checked={faciCheck[11]} className='text-[#162B78]' name="fingerprintscanner" onChange={onChangeFacility} />
                                                 <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-96 " >มีระบบรักษาความปลอดภัย (สแกนลายนิ้วมือ)</h1>
                                             </div>
                                             <div className='flex flex-row'>
-                                                <Checkbox {...label} className='text-[#162B78]' name="CCTV" onChange={onChangeFacility} />
+                                                <Checkbox {...label} checked={faciCheck[12]} className='text-[#162B78]' name="CCTV" onChange={onChangeFacility} />
                                                 <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-96 " >กล้องวงจรปิด (CCTV)</h1>
                                             </div>
                                             <div className='flex flex-row'>
-                                                <Checkbox {...label} className='text-[#162B78]' name="elevator" onChange={onChangeFacility} />
+                                                <Checkbox {...label} checked={faciCheck[13]} className='text-[#162B78]' name="elevator" onChange={onChangeFacility} />
                                                 <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-96 " >ลิฟต์</h1>
                                             </div>
                                             <div className='flex flex-row'>
-                                                <Checkbox {...label} className='text-[#162B78]' name="securityguard" onChange={onChangeFacility} />
+                                                <Checkbox {...label} checked={faciCheck[13]} className='text-[#162B78]' name="securityguard" onChange={onChangeFacility} />
                                                 <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-60 " >รปภ.</h1>
                                             </div>
                                             <div className='flex flex-row'>
-                                                <Checkbox {...label} className='text-[#162B78]' name="conveniencestore" onChange={onChangeFacility} />
+                                                <Checkbox {...label} checked={faciCheck[15]} className='text-[#162B78]' name="conveniencestore" onChange={onChangeFacility} />
                                                 <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-96 " >ร้านค้า สะดวกซื้อ</h1>
                                             </div>
                                             <div className='flex flex-row'>
-                                                <Checkbox {...label} className='text-[#162B78]' name="washingmachine" onChange={onChangeFacility} />
+                                                <Checkbox {...label} checked={faciCheck[16]} className='text-[#162B78]' name="washingmachine" onChange={onChangeFacility} />
                                                 <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-96 " >ร้านซัก-รีด / มีบริการเครื่องซักผ้า</h1>
                                             </div>
                                             <div className='flex flex-row'>
-                                                <Checkbox {...label} className='text-[#162B78]' name="hairsalon" onChange={onChangeFacility} />
+                                                <Checkbox {...label} checked={faciCheck[17]} className='text-[#162B78]' name="hairsalon" onChange={onChangeFacility} />
                                                 <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-96 " >ร้านทำผม-เสริมสวย</h1>
                                             </div>
                                             <div className='flex flex-row'>
-                                                <Checkbox {...label} className='text-[#162B78]' name="foodstore" onChange={onChangeFacility} />
+                                                <Checkbox {...label} checked={faciCheck[18]} className='text-[#162B78]' name="foodstore" onChange={onChangeFacility} />
                                                 <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-96 " >ร้านขายอาหาร</h1>
                                             </div>
                                             <div className='flex flex-row'>
-                                                <Checkbox {...label} className='text-[#162B78]' name="gym" onChange={onChangeFacility} />
+                                                <Checkbox {...label} checked={faciCheck[19]} className='text-[#162B78]' name="gym" onChange={onChangeFacility} />
                                                 <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-60 " >โรงยิม / ฟิตเนส</h1>
                                             </div>
                                             <div className='flex flex-row'>
-                                                <Checkbox {...label} className='text-[#162B78]' name="petallowed" onChange={onChangeFacility} />
+                                                <Checkbox {...label} checked={faciCheck[20]} className='text-[#162B78]' name="petallowed" onChange={onChangeFacility} />
                                                 <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-60 " >อนุญาตให้เลี้ยงสัตว์</h1>
                                             </div>
                                         </div>

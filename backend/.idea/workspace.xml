@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8bd2d643-7eb0-4ff2-9117-a12f3c2bf7e6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authBackend/src/main/java/com/example/securitysprint/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authBackend/src/main/java/com/example/securitysprint/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landLordBackend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/landLordBackend/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +52,9 @@
       <updated>1667788083826</updated>
       <workItem from="1667973424372" duration="3772000" />
       <workItem from="1668424271746" duration="600000" />
-      <workItem from="1668519221559" duration="7002000" />
+      <workItem from="1668519221559" duration="7614000" />
+      <workItem from="1668582920854" duration="1024000" />
+      <workItem from="1668583967512" duration="1919000" />
     </task>
     <servers />
   </component>
