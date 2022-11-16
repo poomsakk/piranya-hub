@@ -11,6 +11,7 @@ const Map = ({ rad }) => {
     () => ({
       disableDefaultUI: true,
       clickalbeIcons: false,
+      mapId: "9cc8b6e30219f4b2"
     }),
     []
   );

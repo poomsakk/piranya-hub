@@ -5,9 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="573ebdec-ff4a-4789-8661-5462f5cbc04d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../matchingBackend/src/main/java/com/piranyaHub/matchingBackend/controller/MatchingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../matchingBackend/src/main/java/com/piranyaHub/matchingBackend/model/Lodge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../matchingBackend/src/main/java/com/piranyaHub/matchingBackend/model/subModel/Contact.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../matchingBackend/src/main/java/com/piranyaHub/matchingBackend/model/subModel/Cost.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../matchingBackend/src/main/java/com/piranyaHub/matchingBackend/model/subModel/Detail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../matchingBackend/src/main/java/com/piranyaHub/matchingBackend/model/subModel/Facility.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../matchingBackend/src/main/java/com/piranyaHub/matchingBackend/model/subModel/ImagePath.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../matchingBackend/src/main/java/com/piranyaHub/matchingBackend/model/subModel/Information.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../matchingBackend/src/main/java/com/piranyaHub/matchingBackend/model/subModel/Promotion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../matchingBackend/src/main/java/com/piranyaHub/matchingBackend/model/subModel/RoomType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../matchingBackend/src/main/java/com/piranyaHub/matchingBackend/repository/LodgeRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/piranyaHub/landLordBackend/model/Lodge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/piranyaHub/landLordBackend/model/Lodge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/model/Lodge.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/model/Lodge.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../matchingBackend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../matchingBackend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/Register/Map3.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/Register/Map3.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,16 +42,19 @@
     </option>
   </component>
   <component name="ProjectId" id="2HCTzSw5AXlBO5dVfWtUcrm1MY1" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/PREMz/Desktop/pirunyaHub/piranya-hub/backend/landLordBackend"
+    "last_opened_file_path": "C:/Users/PREMz/Desktop/pirunyaHub/piranya-hub/backend/authBackend"
   }
 }]]></component>
   <component name="RunManager">
@@ -77,5 +93,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

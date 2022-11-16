@@ -1,16 +1,26 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { landLordApi } from "../../axiosConfig";
+import { landLordApi,matchingApi } from "../../axiosConfig";
 
 const ListPage = () => {
 	const [lodges, setLodges] = useState([]);
 	const navigate = useNavigate()
 
 	const getLodge = () => {
-		landLordApi
-		  .get("/lodge/list")
-		  .then((response) => setLodges(response.data))
-		  .catch((error) => console.log(error));
+		// landLordApi
+		//   .get("/lodge/list")
+		//   .then((response) => setLodges(response.data))
+		//   .catch((error) => console.log(error));
+		matchingApi.post("/match/filter",{
+			"facilitiesInput":[],
+			"radiusFromMid":1000000,
+			"minCostPerMonth":20,
+			"maxCostPerMonth":5555
+		})
+		.then((res)=>{
+			setLodges(res.data)
+		})
+		.catch((error) => console.log(error))
 	  };
 
 	useEffect(() => {

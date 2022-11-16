@@ -1,6 +1,6 @@
-package com.piranyaHub.landLordBackend.model;
+package com.piranyaHub.matchingBackend.model;
 
-import com.piranyaHub.landLordBackend.model.subModel.*;
+import com.piranyaHub.matchingBackend.model.subModel.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
