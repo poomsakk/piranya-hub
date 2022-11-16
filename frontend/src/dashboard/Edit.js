@@ -85,7 +85,7 @@ export default function Edit() {
 	}, []);
     // 1 Information  section >>>
     const [informationData, setInformationData] = useState({
-        name: "",
+        name: "Hello",
         nameEng: "",
         houseNumber: "",
         street: "",
