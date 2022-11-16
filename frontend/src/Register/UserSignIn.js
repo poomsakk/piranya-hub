@@ -59,7 +59,7 @@ function UserSignIn() {
                   focus:border-[#162B78]
                   rounded-xl
                   "
-                  placeholder="Username/Email"
+                  placeholder="Username"
                   name="username"
                   value={userName}
                   onChange={(e) => setUserName(e.target.value)}

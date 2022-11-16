@@ -1,4 +1,4 @@
-import React, { useState, useMemo,useEffect } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import Checkbox from '@mui/material/Checkbox';
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
@@ -15,14 +15,14 @@ import Map3 from "../Register/Map3.js";
 
 export default function Edit() {
     // Main section >>>
-
+    const { lodgeId } = useParams()
     const dispatch = useDispatch()
     const userReduxData = useSelector((state) => state.data.userData)
     let navigate = useNavigate()
     function handleSubmitForm(e) {
         e.preventDefault()//
         let userLodges = userReduxData.lodgeOwn.slice(1, userReduxData.lodgeOwn.length - 1).split(", ")
-        landLordApi.post(`/lodge/add/${userReduxData.id}`, {
+        landLordApi.put(`/lodge/update/${lodgeId}`, {
             information: { ...informationData, lat: positon.lat, lng: positon.lng },
             facility: { facilities: tempF },
             roomType: [typeData],
@@ -32,21 +32,7 @@ export default function Edit() {
             promotion: promotionData,
             contact: contactData
         }).then((res) => {
-            userLodges.push(res.data.lodgeId)
-            let str = "["
-            if (userLodges.length === 1) {
-                str = str + userLodges.toString() + "]"
-            } else {
-                userLodges.forEach(element => {
-                    str = str + element + ", "
-                });
-                str = str.slice(0, str.length - 2) + "]"
-            }
-            const newData = { ...userReduxData, lodgeOwn: str }
-            dispatch(setData(newData))
-            localStorage.clear("user")
-            localStorage.setItem("user", JSON.stringify(newData))
-            alert("Add success")
+            alert("Edit success")
             navigate("/dashboard")
         }).catch((error) => {
             console.log(error)
@@ -66,24 +52,9 @@ export default function Edit() {
         // console.log(contactData)
     }
     // Main section <<<
-    const { lodgeId } = useParams()
+    
     const [lodge, setLodge] = useState([]);
     const [isLoading, setIsLoading] = useState(true)
-
-    const getLodge = () => {
-		landLordApi
-		  .get("/lodge/get/" + lodgeId)
-		  .then((response) => {
-        setLodge(response.data)
-        setIsLoading(false)
-      })
-		  .catch((error) => console.log(error))
-	  };
-
-	useEffect(() => {
-		getLodge();
-	}, []);
-    // 1 Information  section >>>
     const [informationData, setInformationData] = useState({
         name: "Hello",
         nameEng: "",
@@ -97,6 +68,114 @@ export default function Edit() {
         lat: 3,
         lng: 3
     })
+
+    const [facilityData, setFacilityData] = useState({
+        facilities: []
+    })
+
+    const [typeData, setTypeData] = useState({
+        typeName: "",
+        size: 0,
+        pricePerMonth: 0,
+        pricePerDay: 0,
+        available: true
+    })
+
+    const [costData, setCostData] = useState({
+        waterPerUnit: 0,
+        electricPerUnit: 0,
+        commonFee: 0,
+        insurance: 0,
+    })
+
+    const [detailData, setDetailData] = useState({
+        detailTHA: "",
+        detailENG: ""
+    })
+
+    const [promotionData, setPromotionData] = useState({
+        promotion: ""
+    })
+
+    const [contactData, setContactData] = useState({
+        nameContact: "",
+        phoneNumber: "",
+        email: "",
+        lineId: ""
+    })
+    const [imageData, setImageData] = useState({
+        imagePaths: []
+    })
+    let hello = 'yo'
+    const getLodge = async () => {
+        await landLordApi
+            .get("/lodge/get/" + lodgeId)
+            .then((response) => {
+                setLodge(response.data)
+                setInformationData({
+                    name: response.data.information.name,
+                    nameEng: response.data.information.nameEng,
+                    houseNumber: response.data.information.houseNumber,
+                    street: response.data.information.street,
+                    soi: response.data.information.soi,
+                    subArea: response.data.information.subArea,
+                    area: response.data.information.area,
+                    city: response.data.information.city,
+                    postalCode: response.data.information.postalCode,
+                    lat: response.data.information.lat,
+                    lng: response.data.information.lng
+                })
+                setFacilityData({
+                    facilities: response.data.facility.facilities
+                })
+                for (let i = 0; i < response.data.roomType.length; i++) {
+                    setTypeData({
+                        typeName: response.data.roomType[i].typeName,
+                        size: response.data.roomType[i].size,
+                        pricePerMonth: response.data.roomType[i].pricePerMonth,
+                        pricePerDay: response.data.roomType[i].pricePerDay,
+                        available: response.data.roomType[i].available
+                    })
+                }
+                setCostData({
+                    waterPerUnit: response.data.cost.waterPerUnit,
+                    electricPerUnit: response.data.cost.electricPerUnit,
+                    commonFee: response.data.cost.commonFee,
+                    insurance: response.data.cost.insurance,
+                })
+                setDetailData({
+                    detailTHA: response.data.detail.detailTHA,
+                    detailENG: response.data.detail.detailENG
+                })
+                setPromotionData({
+                    promotion: response.data.promotion.promotion
+                })
+                setContactData({
+                    nameContact:  response.data.contact.nameContact,
+                    phoneNumber: response.data.contact.phoneNumber,
+                    email: response.data.contact.email,
+                    lineId: response.data.contact.lineId
+                })
+                setImageData({
+                    imagePaths: response.data.imagePath.imagePaths
+                })
+                setIsLoading(false)
+                console.log(response.data)
+                console.log(response.data.roomType[0].typeName)
+
+
+
+            })
+            .catch((error) => console.log(error))
+        // console.log(lodge.information)
+
+    };
+
+    useEffect(() => {
+        getLodge();
+    }, []);
+
+    // 1 Information  section >>>
     const { name, nameEng, houseNumber, street, soi, subArea, area, city, postalCode, lat, lng } = informationData
     function onInputinformationChange(e) {
         setInformationData({ ...informationData, [e.target.name]: e.target.value })
@@ -109,9 +188,6 @@ export default function Edit() {
 
     // 2 Facility section >>>
     const label = { inputProps: { "aria-label": "Checkbox demo" } };
-    const [facilityData, setFacilityData] = useState({
-        facilities: []
-    })
     const [tempF, setTempF] = useState([])
     function onChangeFacility(e) {
         let found = tempF.indexOf(e.target.name) !== -1
@@ -129,13 +205,6 @@ export default function Edit() {
 
 
     // 3 Type section <<<
-    const [typeData, setTypeData] = useState({
-        typeName: "",
-        size: 0,
-        pricePerMonth: 0,
-        pricePerDay: 0,
-        available: true
-    })
     const { typeName, size, pricePerMonth, pricePerDay, available } = typeData
     function onInputtypeChange(e) {
         setTypeData({ ...typeData, [e.target.name]: e.target.name === "typeName" ? e.target.value : parseFloat(e.target.value) })
@@ -147,12 +216,6 @@ export default function Edit() {
 
 
     // 4 Cost section <<<
-    const [costData, setCostData] = useState({
-        waterPerUnit: 0,
-        electricPerUnit: 0,
-        commonFee: 0,
-        insurance: 0,
-    })
     const { waterPerUnit, electricPerUnit, commonFee, insurance } = costData
     function onInputcostChange(e) {
         setCostData({ ...costData, [e.target.name]: parseFloat(e.target.value) })
@@ -160,21 +223,14 @@ export default function Edit() {
     // 4 Cost section <<<
 
     // 5 Detail section >>>
-    const [detailData, setDetailData] = useState({
-        detailTHA: "",
-        detailENG: ""
-    })
     const { detailTHA, detailENG } = detailData
     function onInputDetailChange(e) {
         setDetailData({ ...detailData, [e.target.name]: e.target.value })
     }
-
     // 5 Detail section <<<
 
     // 6 Image section >>>
-    const [imageData, setImageData] = useState({
-        imagePaths: []
-    })
+    
     const { imagePaths } = imageData
     function onImagePathChange(e) {
         setImageData({ imagePaths: [] })
@@ -185,9 +241,6 @@ export default function Edit() {
     // 6 Image section <<<
 
     // 7 Promotions section >>>
-    const [promotionData, setPromotionData] = useState({
-        promotion: ""
-    })
     const { promotion } = promotionData
     function onInputPromotionChange(e) {
         setPromotionData({ promotion: e.target.value })
@@ -195,12 +248,6 @@ export default function Edit() {
     // 7 Promotions section <<<
 
     // 8 Contact section >>>
-    const [contactData, setContactData] = useState({
-        nameContact: "",
-        phoneNumber: "",
-        email: "",
-        lineId: ""
-    })
     const { nameContact, phoneNumber, email, lineId } = contactData
     function onInputContactonChange(e) {
         setContactData({ ...contactData, [e.target.name]: e.target.value })
@@ -229,17 +276,17 @@ export default function Edit() {
                                             defaultValue="{}"
                                             type={"text"}
                                             className="
-                            font-IBMPlexSansThai 
+                            font-IBMPlexSansThai
                             bg-[#EFEFEF]
                             placeholder:text-zinc-500
                             text-lg
-                            pl-5 
+                            pl-5
                             w-[631px]
                             h-[40px]
                             m-2
                             ml-4
                             mt-4
-                            border-2 
+                            border-2
                             border-[#162B78]
                             focus:outline-none
                             focus:border-[#162B78]
@@ -258,19 +305,19 @@ export default function Edit() {
                                         <input
                                             type={"text"}
                                             className="
-                            font-IBMPlexSansThai 
+                            font-IBMPlexSansThai
                             bg-[#EFEFEF]
                             placeholder:text-zinc-500
-                            text-lg 
-                            pl-5 
+                            text-lg
+                            pl-5
                             w-[631px]
                             h-[40px]
                             m-2
-                            border-2 
-                            border-[#162B78] 
+                            border-2
+                            border-[#162B78]
                             focus:outline-none
                             focus:border-[#162B78]
-                            rounded-xl text-m-4 
+                            rounded-xl text-m-4
                             active:border-[#162B78]"
                                             placeholder="ระบุชื่อที่พัก (English)"
                                             name="nameEng"
@@ -286,15 +333,15 @@ export default function Edit() {
                                             <input
                                                 type={"text"}
                                                 className="
-                                font-IBMPlexSansThai 
+                                font-IBMPlexSansThai
                                 bg-[#EFEFEF]
                                 placeholder:text-zinc-500
-                                text-lg 
-                                pl-5 
+                                text-lg
+                                pl-5
                                 m-2
                                 w-[200px]
                                 h-[40px]
-                                border-2 
+                                border-2
                                 border-[#162B78]
                                 focus:outline-none
                                 focus:border-[#162B78]
@@ -307,15 +354,15 @@ export default function Edit() {
                                             <input
                                                 type={"text"}
                                                 className="
-                                font-IBMPlexSansThai 
+                                font-IBMPlexSansThai
                                 bg-[#EFEFEF]
                                 placeholder:text-zinc-500
-                                text-lg 
-                                pl-5 
+                                text-lg
+                                pl-5
                                 w-[200px]
                                 h-[40px]
-                                m-2 
-                                border-2 
+                                m-2
+                                border-2
                                 border-[#162B78]
                                 focus:outline-none
                                 focus:border-[#162B78]
@@ -328,15 +375,15 @@ export default function Edit() {
                                             <input
                                                 type={"text"}
                                                 className="
-                                font-IBMPlexSansThai 
+                                font-IBMPlexSansThai
                                 bg-[#EFEFEF]
                                 placeholder:text-zinc-500
-                                text-lg 
-                                pl-5 
+                                text-lg
+                                pl-5
                                 w-[200px]
                                 h-[40px]
-                                m-2 
-                                border-2 
+                                m-2
+                                border-2
                                 border-[#162B78]
                                 focus:outline-none
                                 focus:border-[#162B78]
@@ -352,15 +399,15 @@ export default function Edit() {
                                         <input
                                             type={"text"}
                                             className="
-                                font-IBMPlexSansThai 
+                                font-IBMPlexSansThai
                                 bg-[#EFEFEF]
                                 placeholder:text-zinc-500
-                                text-lg 
-                                pl-5 
-                                m-2 
+                                text-lg
+                                pl-5
+                                m-2
                                 w-[200px]
                                 h-[40px]
-                                border-2 
+                                border-2
                                 border-[#162B78]
                                 focus:outline-none
                                 focus:border-[#162B78]
@@ -373,15 +420,15 @@ export default function Edit() {
                                         <input
                                             type={"text"}
                                             className="
-                                font-IBMPlexSansThai 
+                                font-IBMPlexSansThai
                                 bg-[#EFEFEF]
                                 placeholder:text-zinc-500
-                                text-lg 
-                                pl-5 
+                                text-lg
+                                pl-5
                                 w-[200px]
                                 h-[40px]
-                                m-2 
-                                border-2 
+                                m-2
+                                border-2
                                 border-[#162B78]
                                 focus:outline-none
                                 focus:border-[#162B78]
@@ -394,15 +441,15 @@ export default function Edit() {
                                         <input
                                             type={"text"}
                                             className="
-                                font-IBMPlexSansThai 
+                                font-IBMPlexSansThai
                                 bg-[#EFEFEF]
                                 placeholder:text-zinc-500
-                                text-lg 
-                                pl-5 
+                                text-lg
+                                pl-5
                                 w-[200px]
                                 h-[40px]
-                                m-2 
-                                border-2 
+                                m-2
+                                border-2
                                 border-[#162B78]
                                 focus:outline-none
                                 focus:border-[#162B78]
@@ -416,17 +463,17 @@ export default function Edit() {
                                     <input
                                         type={"text"}
                                         className="
-                                place-center 
+                                place-center
                                 bg-[#EFEFEF]
                                 placeholder:text-zinc-500
-                                m-2 
+                                m-2
                                 h-[40px]
                                 ml-[233px]
-                                font-IBMPlexSansThai 
-                                text-lg 
-                                pl-5 
+                                font-IBMPlexSansThai
+                                text-lg
+                                pl-5
                                 w-[200px]
-                                border-2 
+                                border-2
                                 border-[#162B78]
                                 focus:outline-none
                                 focus:border-[#162B78]
@@ -550,17 +597,17 @@ export default function Edit() {
                                                 <input
                                                     type={"text"}
                                                     className="
-                              font-IBMPlexSansThai 
+                              font-IBMPlexSansThai
                               bg-[#EFEFEF]
                               placeholder:text-zinc-500
                               text-lg
-                              pl-5 
+                              pl-5
                               w-[180px]
                               h-[40px]
                               mt-5
                               ml-8
-                              border-2 
-                              border-[#162B78] 
+                              border-2
+                              border-[#162B78]
                               focus:outline-none
                               focus:border-[#162B78]
                               rounded-xl
@@ -576,17 +623,17 @@ export default function Edit() {
                                                 <input
                                                     type={"text"}
                                                     className="
-                                    font-IBMPlexSansThai 
+                                    font-IBMPlexSansThai
                                     bg-[#EFEFEF]
                                     placeholder:text-zinc-500
                                     text-lg
-                                    pl-5 
+                                    pl-5
                                     w-[180px]
                                     h-[40px]
                                     mt-5
                                     ml-8
-                                    border-2 
-                                    border-[#162B78] 
+                                    border-2
+                                    border-[#162B78]
                                     focus:outline-none
                                     focus:border-[#162B78]
                                     rounded-xl
@@ -610,17 +657,17 @@ export default function Edit() {
                                                     <input
                                                         type={"text"}
                                                         className="
-                                        font-IBMPlexSansThai 
+                                        font-IBMPlexSansThai
                                         bg-[#EFEFEF]
                                         placeholder:text-zinc-500
                                         text-lg
-                                        pl-5 
+                                        pl-5
                                         w-[180px]
                                         h-[40px]
                                         mt-5
                                         ml-[-15px]
-                                        border-2 
-                                        border-[#162B78] 
+                                        border-2
+                                        border-[#162B78]
                                         focus:outline-none
                                         focus:border-[#162B78]
                                         rounded-xl
@@ -653,17 +700,17 @@ export default function Edit() {
                                                     <input
                                                         type={"text"}
                                                         className="
-                                        font-IBMPlexSansThai 
+                                        font-IBMPlexSansThai
                                         bg-[#EFEFEF]
                                         placeholder:text-zinc-500
                                         text-lg
-                                        pl-5 
+                                        pl-5
                                         w-[180px]
                                         h-[40px]
                                         mt-5
                                         ml-[-15px]
-                                        border-2 
-                                        border-[#162B78] 
+                                        border-2
+                                        border-[#162B78]
                                         focus:outline-none
                                         focus:border-[#162B78]
                                         rounded-xl
@@ -714,17 +761,17 @@ export default function Edit() {
                                                 <input
                                                     type={"text"}
                                                     className="
-                                  font-IBMPlexSansThai 
+                                  font-IBMPlexSansThai
                                   bg-[#EFEFEF]
                                   placeholder:text-zinc-500
                                   text-lg
-                                  pl-5 
+                                  pl-5
                                   w-28
                                   h-[40px]
                                   mt-5
                                   ml-[-15px]
-                                  border-2 
-                                  border-[#162B78] 
+                                  border-2
+                                  border-[#162B78]
                                   focus:outline-none
                                   focus:border-[#162B78]
                                   rounded-xl
@@ -752,17 +799,17 @@ export default function Edit() {
                                                 <input
                                                     type={"text"}
                                                     className="
-                              font-IBMPlexSansThai 
+                              font-IBMPlexSansThai
                               bg-[#EFEFEF]
                               placeholder:text-zinc-500
                               text-lg
-                              pl-5 
+                              pl-5
                               w-28
                               h-[40px]
                               mt-5
                               ml-[-15px]
-                              border-2 
-                              border-[#162B78] 
+                              border-2
+                              border-[#162B78]
                               focus:outline-none
                               focus:border-[#162B78]
                               rounded-xl
@@ -791,17 +838,17 @@ export default function Edit() {
                                                 <input
                                                     type={"text"}
                                                     className="
-                              font-IBMPlexSansThai 
+                              font-IBMPlexSansThai
                               bg-[#EFEFEF]
                               placeholder:text-zinc-500
                               text-lg
-                              pl-5 
+                              pl-5
                               w-28
                               h-[40px]
                               mt-5
                               ml-[-15px]
-                              border-2 
-                              border-[#162B78] 
+                              border-2
+                              border-[#162B78]
                               focus:outline-none
                               focus:border-[#162B78]
                               rounded-xl
@@ -830,17 +877,17 @@ export default function Edit() {
                                                 <input
                                                     type={"text"}
                                                     className="
-                              font-IBMPlexSansThai 
+                              font-IBMPlexSansThai
                               bg-[#EFEFEF]
                               placeholder:text-zinc-500
                               text-lg
-                              pl-5 
+                              pl-5
                               w-28
                               h-[40px]
                               mt-5
                               ml-[-15px]
-                              border-2 
-                              border-[#162B78] 
+                              border-2
+                              border-[#162B78]
                               focus:outline-none
                               focus:border-[#162B78]
                               rounded-xl
@@ -868,17 +915,17 @@ export default function Edit() {
                                     type={"text"}
                                     multiline
                                     className="
-                            font-IBMPlexSansThai 
+                            font-IBMPlexSansThai
                             bg-[#EFEFEF]
                             placeholder:text-zinc-500
                             text-lg
-                            pl-5 
+                            pl-5
                             w-[631px]
                             h-[120px]
                             m-2
                             ml-4
                             mt-4
-                            border-2 
+                            border-2
                             border-[#162B78]
                             focus:outline-none
                             focus:border-[#162B78]
@@ -898,11 +945,11 @@ export default function Edit() {
                                 <TextField
                                     sx={{ border: '2px solid', borderRadius: 1, font: 'IBMPlexSansThai' }}
                                     className='
-                            fontfont-IBMPlexSansThai 
+                            fontfont-IBMPlexSansThai
                             bg-[#EFEFEF]
                             placeholder:text-zinc-500
                             text-lg
-                            pl-2 
+                            pl-2
                             w-[631px]
                             h-[120px]
                             m-2
@@ -943,17 +990,17 @@ export default function Edit() {
                                     type={"text"}
                                     multiline
                                     className="
-                            font-IBMPlexSansThai 
+                            font-IBMPlexSansThai
                             bg-[#EFEFEF]
                             placeholder:text-zinc-500
                             text-lg
-                            pl-5 
+                            pl-5
                             w-[631px]
                             h-[120px]
                             m-2
                             ml-4
                             mt-4
-                            border-2 
+                            border-2
                             border-[#162B78]
                             focus:outline-none
                             focus:border-[#162B78]
@@ -975,17 +1022,17 @@ export default function Edit() {
                                         <input
                                             type={"text"}
                                             className="
-                              font-IBMPlexSansThai 
+                              font-IBMPlexSansThai
                               bg-[#EFEFEF]
                               placeholder:text-zinc-500
                               text-lg
-                              pl-5 
+                              pl-5
                               w-[500px]
                               h-[40px]
                               mt-5
                               ml-8
-                              border-2 
-                              border-[#162B78] 
+                              border-2
+                              border-[#162B78]
                               focus:outline-none
                               focus:border-[#162B78]
                               rounded-xl
@@ -1001,17 +1048,17 @@ export default function Edit() {
                                         <input
                                             type={"text"}
                                             className="
-                                    font-IBMPlexSansThai 
+                                    font-IBMPlexSansThai
                                     bg-[#EFEFEF]
                                     placeholder:text-zinc-500
                                     text-lg
-                                    pl-5 
+                                    pl-5
                                     w-[500px]
                                     h-[40px]
                                     mt-5
                                     ml-8
-                                    border-2 
-                                    border-[#162B78] 
+                                    border-2
+                                    border-[#162B78]
                                     focus:outline-none
                                     focus:border-[#162B78]
                                     rounded-xl
@@ -1028,17 +1075,17 @@ export default function Edit() {
                                         <input
                                             type={"text"}
                                             className="
-                                        font-IBMPlexSansThai 
+                                        font-IBMPlexSansThai
                                         bg-[#EFEFEF]
                                         placeholder:text-zinc-500
                                         text-lg
-                                        pl-5 
+                                        pl-5
                                         w-[500px]
                                         h-[40px]
                                         mt-5
                                         ml-8
-                                        border-2 
-                                        border-[#162B78] 
+                                        border-2
+                                        border-[#162B78]
                                         focus:outline-none
                                         focus:border-[#162B78]
                                         rounded-xl
@@ -1054,17 +1101,17 @@ export default function Edit() {
                                         <input
                                             type={"text"}
                                             className="
-                                        font-IBMPlexSansThai 
+                                        font-IBMPlexSansThai
                                         bg-[#EFEFEF]
                                         placeholder:text-zinc-500
                                         text-lg
-                                        pl-5 
+                                        pl-5
                                         w-[500px]
                                         h-[40px]
                                         mt-5
                                         ml-8
-                                        border-2 
-                                        border-[#162B78] 
+                                        border-2
+                                        border-[#162B78]
                                         focus:outline-none
                                         focus:border-[#162B78]
                                         rounded-xl
@@ -1082,14 +1129,14 @@ export default function Edit() {
                     <div className="flex justify-end m-5">
                         <button type="submit"
                             class="
-                            bg-[#162B78] 
+                            bg-[#162B78]
                             font-IBMPlexSansThai
-                            hover:bg-white 
-                            hover:text-[#162B78] 
-                            text-white 
-                            py-2 
-                            px-4 
-                            rounded-full 
+                            hover:bg-white
+                            hover:text-[#162B78]
+                            text-white
+                            py-2
+                            px-4
+                            rounded-full
                             border border-[#162B78]
                             shadow-md shadow-[#162B78]
                             "

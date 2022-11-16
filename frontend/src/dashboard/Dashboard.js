@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import "./Dashboard.css"
-import { landLordApi } from '../axiosConfig'
+import { landLordApi,authApi } from '../axiosConfig'
 import { useSelector, useDispatch } from 'react-redux'
 import { CardActions, Button } from '@mui/material'
 import { Link } from 'react-router-dom'
@@ -46,6 +46,7 @@ function Dashboard() {
     const handleDel = async (id) => {
         let userLodges = userReduxData.lodgeOwn.slice(1, userReduxData.lodgeOwn.length - 1).split(", ")
         await landLordApi.delete("/lodge/delete/" + id)
+        await authApi.delete("/deleteLodge/"+userReduxData.id+"/"+id)
         userLodges = userLodges.filter(w => w !== id)
         let str = "["
 
@@ -58,7 +59,7 @@ function Dashboard() {
         dispatch(setData(newData))
         localStorage.clear("user")
         localStorage.setItem("user", JSON.stringify(newData))
-        alert("delete la ai sus")
+        alert("delete success")
         window.location.reload(false);
     }
 
