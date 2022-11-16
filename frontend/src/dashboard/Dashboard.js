@@ -2,10 +2,14 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import "./Dashboard.css"
 import { landLordApi } from '../axiosConfig'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { CardActions, Button } from '@mui/material'
+import { Link } from 'react-router-dom'
+import { setData } from '../redux/mhooSlice'
+
 
 function Dashboard() {
+    const dispatch = useDispatch()
     const [isLoading, setIsLoading] = useState(false)
     const userReduxData = useSelector((state) => state.data.userData)
     // const [userData, setUserData] = useState({})
@@ -38,6 +42,26 @@ function Dashboard() {
     if (isLoading) return <p>Loading data...</p>
 
 
+
+    const handleDel = async (id) => {
+        let userLodges = userReduxData.lodgeOwn.slice(1, userReduxData.lodgeOwn.length - 1).split(", ")
+        await landLordApi.delete("/lodge/delete/" + id)
+        userLodges = userLodges.filter(w => w !== id)
+        let str = "["
+
+        userLodges.forEach(element => {
+            str = str + element + ", "
+        });
+        str = str.slice(0, str.length - 2) + "]"
+
+        const newData = { ...userReduxData, lodgeOwn: str }
+        dispatch(setData(newData))
+        localStorage.clear("user")
+        localStorage.setItem("user", JSON.stringify(newData))
+        alert("delete la ai sus")
+        window.location.reload(false);
+    }
+
     return (<>
         <div className='container'>
             {ownLodges.map((lodge) => {
@@ -47,19 +71,25 @@ function Dashboard() {
                         src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
                         class="h-56 w-25 object-cover"
                     />
-                    <div class="bg-white p-4 sm:p-6 w">
+                    <div class="column bg-white p-4 sm:p-6 ">
                         <h3 class="mt-0.5 text-lg text-gray-900">
                             {lodge.information.name}
                         </h3>
                         <p class="mt-2 text-sm leading-relaxed text-gray-500 line-clamp-3">
                             information : {lodge.detail.detailENG}
                         </p>
-                    </div>
-                    <div className=''>
-                        <CardActions>
-                            <Button size="medium">Edit</Button>
-                            <Button size="medium">Delete</Button>
-                        </CardActions>
+                        <div className='ml-[400px]'>
+                            <CardActions>
+                                <Button size="medium">
+                                    <Link to={"/edit/" + lodge.lodgeId}>
+                                        Edit
+                                    </Link>
+                                </Button>
+                                <Button onClick={() => handleDel(lodge.lodgeId)} size="medium">
+                                    Delete
+                                </Button>
+                            </CardActions>
+                        </div>
                     </div>
                 </section>
             })}
