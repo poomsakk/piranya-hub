@@ -59,6 +59,22 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         return null;
     }
 
+    @Override
+    public String deleteLodge(String userId, String lodgeId) {
+        Optional<User> user = userRepository.findById(userId);
+        if(!user.isPresent()){
+            return "not found";
+        }
+        if(user.isPresent()) {
+            System.out.println("user found");
+            User newUser = user.get();
+            newUser.getLodgeOwn().remove(lodgeId);
+            userRepository.save(newUser);
+            return "Successful";
+        }
+        return null;
+    }
+
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

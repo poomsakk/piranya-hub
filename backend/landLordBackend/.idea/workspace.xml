@@ -4,12 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="573ebdec-ff4a-4789-8661-5462f5cbc04d" name="Changes" comment="">
+    <list default="true" id="4b8ba1d9-1782-4250-b51f-0853c3750798" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/service/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../matchingBackend/src/main/java/com/piranyaHub/matchingBackend/service/imp/MatchingServiveImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../matchingBackend/src/main/java/com/piranyaHub/matchingBackend/service/imp/MatchingServiveImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/piranyaHub/landLordBackend/controller/LodgeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/piranyaHub/landLordBackend/controller/LodgeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/piranyaHub/landLordBackend/service/LodgeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/piranyaHub/landLordBackend/service/LodgeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/piranyaHub/landLordBackend/service/imp/LodgeServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/piranyaHub/landLordBackend/service/imp/LodgeServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/controller/LodgeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/controller/LodgeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/service/LodgeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/service/LodgeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/service/imp/LodgeServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/service/imp/LodgeServiceImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/Register/3_Type.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/Register/3_Type.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/Register/Map3.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/Register/Map3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/Register/UserSignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/Register/UserSignIn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/Register/total.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/Register/total.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/components/Header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../frontend/src/components/Map.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/components/Map.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/pages/filterPage/FilterPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/pages/filterPage/FilterPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/dashboard/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/dashboard/Edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/dashboard/Edit.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,53 +41,26 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="Use Maven wrapper" />
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="2HCTzSw5AXlBO5dVfWtUcrm1MY1" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2He5JBTl8lTWAqOQy8uE1Z3p5T5" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/PREMz/Desktop/pirunyaHub/piranya-hub/backend/authBackend"
+    "last_opened_file_path": "C:/Users/PREMz/Desktop/pirunyaHub/piranya-hub/backend/landLordBackend"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="landLordBackend" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="landLordBackend" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="573ebdec-ff4a-4789-8661-5462f5cbc04d" name="Changes" comment="" />
-      <created>1667788328456</created>
+      <changelist id="4b8ba1d9-1782-4250-b51f-0853c3750798" name="Changes" comment="" />
+      <created>1668632634368</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1667788328456</updated>
+      <updated>1668632634368</updated>
     </task>
     <servers />
   </component>
@@ -82,8 +74,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

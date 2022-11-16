@@ -27,35 +27,37 @@ const Map = ({ rad, lodgeData }) => {
   }, [lodgeData]);
 
   return (
-    <GoogleMap
-      zoom={15}
-      center={{ lat: 13.7299, lng: 100.7782 }}
-      mapContainerClassName="w-auto h-[32rem]"
-      options={options}
-      onLoad={onLoad}
-      onClick={handleOnclick}
-    >
-      <>
-        <Marker position={center} />
-        <Circle
-          center={center}
-          options={{ fillColor: "green", strokeColor: "green" }}
-          radius={rad}
-        />
-      </>
-      {lodgess.map((lodge) => {
-        return (
-          <Marker
-            key={lodge.lodgeId}
-            position={{
-              lat: lodge.information.lat,
-              lng: lodge.information.lng,
-            }}
-            label={lodge.information.name}
+    <div className="h-1/2">
+      <GoogleMap
+        zoom={15}
+        center={{ lat: 13.7299, lng: 100.7782 }}
+        mapContainerClassName="w-auto h-[32rem]"
+        options={options}
+        onLoad={onLoad}
+        onClick={handleOnclick}
+      >
+        <>
+          <Marker position={center} />
+          <Circle
+            center={center}
+            options={{ fillColor: "green", strokeColor: "green" }}
+            radius={rad}
           />
-        );
-      })}
-    </GoogleMap>
+        </>
+        {lodgess.map((lodge) => {
+          return (
+            <Marker
+              key={lodge.lodgeId}
+              position={{
+                lat: lodge.information.lat,
+                lng: lodge.information.lng,
+              }}
+              label={lodge.information.name}
+            />
+          );
+        })}
+      </GoogleMap>
+    </div>
   );
 };
 

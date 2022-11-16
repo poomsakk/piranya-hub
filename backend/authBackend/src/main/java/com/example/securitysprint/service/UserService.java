@@ -14,4 +14,5 @@ public interface UserService {
 
     String addLodge(String userId,String lodgeId);
 
+    String deleteLodge(String userid, String lodgeid);
 }
