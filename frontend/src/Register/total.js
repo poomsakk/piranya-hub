@@ -31,6 +31,10 @@ function AddLodge() {
       imagePath: imageData,
       promotion: promotionData,
       contact: contactData
+    },{
+      headers: {
+        "Authorization" : "Bearer " + userReduxData.access_token
+      }
     }).then((res) => {
       userLodges.push(res.data.lodgeId)
       let str = "["
@@ -89,7 +93,10 @@ function AddLodge() {
   const [positon, SetPositon] = useState({ lat: 13.7298889, lng: 100.7782323 })
   // 1.1 Map section <<
   // 1 Information  section <<<
-
+  // const [roomInpField, setRoomInpField] = useState([{
+  //   roomType: "", roomSize: "",
+  //   rentMonth:"", rentDay: ""
+  // }])
 
   // 2 Facility section >>>
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
