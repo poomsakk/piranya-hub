@@ -86,7 +86,10 @@ function AddLodge() {
   const [positon, SetPositon] = useState({ lat: 13.7298889, lng: 100.7782323 })
   // 1.1 Map section <<
   // 1 Information  section <<<
-
+  // const [roomInpField, setRoomInpField] = useState([{
+  //   roomType: "", roomSize: "",
+  //   rentMonth:"", rentDay: ""
+  // }])
 
   // 2 Facility section >>>
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
@@ -523,6 +526,7 @@ function AddLodge() {
               <div className='items-center '>
                 <div className='container'>
                   <h1 className="font-IBMPlexSansThai text-2xl text-[#162B78] ml-12 m-2 w-96" >3. ประเภทห้องพัก</h1>
+                  {/* {roomInpField.} */}
                   <div className="border-2 border-indigo-800">
                     <div className="ml-6">
                       <div class="flex flex-row mt-2">
