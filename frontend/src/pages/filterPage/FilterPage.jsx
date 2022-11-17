@@ -47,7 +47,7 @@ const FilterPage = () => {
 
   useEffect(() => {
     getLodge();
-  }, [lodges]);
+  }, [price, circleRad, facilityData]);
 
   if (!isLoaded)
     return (
@@ -59,7 +59,10 @@ const FilterPage = () => {
   return (
     <div className="relative w-full h-full">
       <div className="h-15 absolute top-0 mr-10 right-0">
-        <ButtonCT btnName={"back to home"} onClick={() => navigate("/")} />
+        <ButtonCT
+          btnName={"ค้นหาด้วยชื่อ"}
+          onClick={() => navigate("/search")}
+        />
         {/* <ButtonCT btnName={"click to serch"} onClick={() => getLodge()} /> */}
       </div>
       <div className="container mt-5">
