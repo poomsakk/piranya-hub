@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import "./Dashboard.css"
-import { landLordApi,authApi } from '../axiosConfig'
+import { landLordApi, authApi } from '../axiosConfig'
 import { useSelector, useDispatch } from 'react-redux'
 import { CardActions, Button } from '@mui/material'
 import { Link } from 'react-router-dom'
@@ -46,7 +46,11 @@ function Dashboard() {
     const handleDel = async (id) => {
         let userLodges = userReduxData.lodgeOwn.slice(1, userReduxData.lodgeOwn.length - 1).split(", ")
         await landLordApi.delete("/lodge/delete/" + id)
-        await authApi.delete("/deleteLodge/"+userReduxData.id+"/"+id)
+        await authApi.delete("/deleteLodge/" + userReduxData.id + "/" + id, {
+            headers: {
+                "Authorization": "Bearer " + userReduxData.access_token
+            }
+        })
         userLodges = userLodges.filter(w => w !== id)
         let str = "["
 
@@ -65,6 +69,7 @@ function Dashboard() {
 
     return (<>
         <div className='container'>
+            {ownLodges.length === 0 ? <h1 className='text-6xl text-center'>คุณยังไม่มีที่พักที่ลงทะเบียน</h1> : null}
             {ownLodges.map((lodge) => {
                 return <section class="m-5 flex flex-row overflow-hidden rounded-lg shadow transition hover:shadow-lg">
                     <img

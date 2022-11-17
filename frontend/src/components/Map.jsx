@@ -8,9 +8,9 @@ const Map = ({ rad, lodgeData }) => {
   const mapRef = useRef();
   const options = useMemo(
     () => ({
-      disableDefaultUI: true,
+      disableDefaultUI: false,
       clickalbeIcons: false,
-      mapId: "9cc8b6e30219f4b2",
+      mapId: "9cc19ecccb4e1876",
     }),
     []
   );
@@ -27,35 +27,35 @@ const Map = ({ rad, lodgeData }) => {
   }, [lodgeData]);
 
   return (
-      <GoogleMap
-        zoom={15}
-        center={{ lat: 13.7299, lng: 100.7782 }}
-        mapContainerClassName="w-auto h-[32rem]"
-        options={options}
-        onLoad={onLoad}
-        onClick={handleOnclick}
-      >
-        <>
-          <Marker position={center} />
-          <Circle
-            center={center}
-            options={{ fillColor: "green", strokeColor: "green" }}
-            radius={rad}
+    <GoogleMap
+      zoom={15}
+      center={center}
+      mapContainerClassName="w-auto h-[32rem]"
+      options={options}
+      onLoad={onLoad}
+      onClick={handleOnclick}
+    >
+      <>
+        <Marker position={center} />
+        <Circle
+          center={center}
+          options={{ fillColor: "green", strokeColor: "green" }}
+          radius={rad}
+        />
+      </>
+      {lodgess.map((lodge) => {
+        return (
+          <Marker
+            key={lodge.lodgeId}
+            position={{
+              lat: lodge.information.lat,
+              lng: lodge.information.lng,
+            }}
+            label={lodge.information.name}
           />
-        </>
-        {lodgess.map((lodge) => {
-          return (
-            <Marker
-              key={lodge.lodgeId}
-              position={{
-                lat: lodge.information.lat,
-                lng: lodge.information.lng,
-              }}
-              label={lodge.information.name}
-            />
-          );
-        })}
-      </GoogleMap>
+        );
+      })}
+    </GoogleMap>
   );
 };
 

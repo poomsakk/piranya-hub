@@ -52,7 +52,7 @@ export default function Edit() {
         // console.log(contactData)
     }
     // Main section <<<
-    
+
     const [lodge, setLodge] = useState([]);
     const [isLoading, setIsLoading] = useState(true)
     const [informationData, setInformationData] = useState({
@@ -151,7 +151,7 @@ export default function Edit() {
                     promotion: response.data.promotion.promotion
                 })
                 setContactData({
-                    nameContact:  response.data.contact.nameContact,
+                    nameContact: response.data.contact.nameContact,
                     phoneNumber: response.data.contact.phoneNumber,
                     email: response.data.contact.email,
                     lineId: response.data.contact.lineId
@@ -162,7 +162,7 @@ export default function Edit() {
                 setIsLoading(false)
                 console.log(response.data)
                 console.log(response.data.roomType[0].typeName)
-
+                SetPositon({ lat: response.data.information.lat, lng: response.data.information.lng })
 
 
             })
@@ -230,7 +230,7 @@ export default function Edit() {
     // 5 Detail section <<<
 
     // 6 Image section >>>
-    
+
     const { imagePaths } = imageData
     function onImagePathChange(e) {
         setImageData({ imagePaths: [] })

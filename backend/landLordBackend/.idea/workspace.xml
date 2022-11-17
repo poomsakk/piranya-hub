@@ -5,30 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b8ba1d9-1782-4250-b51f-0853c3750798" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/service/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/piranyaHub/landLordBackend/controller/LodgeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/piranyaHub/landLordBackend/controller/LodgeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/piranyaHub/landLordBackend/service/LodgeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/piranyaHub/landLordBackend/service/LodgeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/piranyaHub/landLordBackend/service/imp/LodgeServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/piranyaHub/landLordBackend/service/imp/LodgeServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/controller/LodgeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/controller/LodgeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/service/LodgeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/service/LodgeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/service/imp/LodgeServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/service/imp/LodgeServiceImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/Register/3_Type.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/Register/3_Type.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/Register/Map3.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/Register/Map3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/Register/UserSignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/Register/UserSignIn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/Register/total.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/Register/total.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../matchingBackend/src/main/java/com/piranyaHub/matchingBackend/service/imp/MatchingServiveImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../matchingBackend/src/main/java/com/piranyaHub/matchingBackend/service/imp/MatchingServiveImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../frontend/src/components/Map.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/components/Map.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/dashboard/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../frontend/src/dashboard/Edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/dashboard/Edit.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,13 +25,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/PREMz/Desktop/pirunyaHub/piranya-hub/backend/landLordBackend"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/PREMz/Desktop/pirunyaHub/piranya-hub/backend/authBackend&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
