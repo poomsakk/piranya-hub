@@ -27,7 +27,6 @@ const Map = ({ rad, lodgeData }) => {
   }, [lodgeData]);
 
   return (
-    <div className="h-1/2">
       <GoogleMap
         zoom={15}
         center={{ lat: 13.7299, lng: 100.7782 }}
@@ -57,7 +56,6 @@ const Map = ({ rad, lodgeData }) => {
           );
         })}
       </GoogleMap>
-    </div>
   );
 };
 
