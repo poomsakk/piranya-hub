@@ -1,0 +1,14 @@
+.content {
+    max-width: 960px;
+    margin: 0 auto;
+    padding-top: 5%;
+}
+.card-container{
+    padding: 2%;
+    width: 700px;
+}
+
+.text{
+    font:IBMPlexSansThai;
+    font-size: 50px;
+}

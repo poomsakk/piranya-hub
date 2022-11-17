@@ -15,6 +15,7 @@ import UserSignIn from "./Register/UserSignIn"
 import UserSignUp from "./Register/UserSignUp"
 import Dashboard from './dashboard/Dashboard'
 import Edit from './dashboard/Edit';
+import AboutUs from './devTeam/AboutUs'
 
 function App() {
   const { pathname } = useLocation();
@@ -37,6 +38,8 @@ function App() {
         <Route path="/signin" element={<UserSignIn></UserSignIn>} />
         <Route path="*" element={<Page404 />} />
         <Route path="/edit/:lodgeId" element={<Edit/>} />
+        <Route path="/aboutus" element={<AboutUs/>} />
+
       </Routes>
     </div>
   );

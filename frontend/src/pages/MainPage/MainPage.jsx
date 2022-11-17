@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import "./MainPage.css";
 import { gsap } from "gsap";
 import FilterPage from "../filterPage/FilterPage";
-import { useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const MainPage = () => {
   const tl = gsap.timeline();
@@ -71,13 +71,13 @@ const MainPage = () => {
             >
               Get Started
             </button>
-
-            <a
+            <button
+              onClick={() => navigate('/aboutus')}
               className="block w-full rounded border border-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
-              href="/about"
+              href="/aboutus"
             >
-              Learn More
-            </a>
+              Our Team
+            </button>
           </div>
         </div>
       </div>
@@ -87,7 +87,7 @@ const MainPage = () => {
   return (
     <section className="bg-gray-900 text-white">
       {/* {!displayedMap ? <Banner /> : <FilterPage />} */}
-      <Banner/>
+      <Banner />
     </section>
   );
 };
