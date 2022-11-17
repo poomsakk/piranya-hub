@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bd2d643-7eb0-4ff2-9117-a12f3c2bf7e6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/pages/MainPage/MainPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/pages/MainPage/MainPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/pages/MainPage/MainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/pages/MainPage/MainPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +36,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/66820/Desktop/Newyear/CE_Third_Term1/Software Architecture/clonePJ04/piranya-hub/backend",
+    "last_opened_file_path": "C:/Users/66820/Desktop/Newyear/CE_Third_Term1/Software Architecture/clonePJ03/piranya-hub/backend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -45,7 +47,7 @@
     "spring.configuration.checksum": "a060e24d27336d282c0fbd04cc798a8d"
   }
 }]]></component>
-  <component name="RunManager" selected="Spring Boot.landLordBackend">
+  <component name="RunManager" selected="Spring Boot.MatchingBackendApplication">
     <configuration name="MatchingBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="matchingBackend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.piranyaHub.matchingBackend.MatchingBackendApplication" />
@@ -81,6 +83,7 @@
       <workItem from="1668519221559" duration="7002000" />
       <workItem from="1668610716470" duration="822000" />
       <workItem from="1668611551687" duration="160000" />
+      <workItem from="1668652350833" duration="699000" />
     </task>
     <servers />
   </component>
