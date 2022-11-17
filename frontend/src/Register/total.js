@@ -226,10 +226,10 @@ function AddLodge() {
   // 8 Contact section <<<
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center bg-[#EFEFEF]">
       <div className="flex flex-col ">
         <form onSubmit={handleSubmitForm}>
-          <div className="max-w-[960px] bg-[#EFEFEF] flex flex-col mt-10 rounded-3xl border-2 border-[#162B78] ">
+          <div className="max-w-[960px] bg-white flex flex-col mt-10 rounded-3xl border-2 border-[#162B78] ">
             <div className="information mb-10">
               <div className="items-center ">
                 <div className="container">
@@ -539,10 +539,10 @@ function AddLodge() {
                 <button
                     type="button"
                     onClick={handleAddFields}
-                    class="ml-[320px] group relative inline-block outline-none text-sm font-medium text-white focus:outline-none focus:ring"
+                    class="rounded-full ml-[320px] group relative inline-block outline-none text-sm font-medium text-white focus:outline-none focus:ring"
                     >
-                    <span class="rounded-xl absolute outline-0 inset-0 border focus:outline-none outline-none border-[#162B78] group-active:border-[#162B78]"></span>
-                    <span class="rounded-xl font-IBMPlexSansThai outline-0 focus:outline-none outline-none text-base block border border-[#162B78] text-white bg-[#162B78] px-4 py-3 transition-transform active:border-[#162B78]  active:bg-black group-hover:-translate-x-1 group-hover:-translate-y-1">
+                    <span class="shadow-md shadow-[#162B78] rounded-full absolute outline-0 inset-0 border focus:outline-none outline-none border-[#162B78] group-active:border-[#162B78]"></span>
+                    <span class="rounded-full font-IBMPlexSansThai outline-0 focus:outline-none outline-none text-base block border border-[#162B78] text-white bg-[#162B78] px-4 py-3 transition-transform active:border-[#162B78]  active:bg-black group-hover:-translate-x-1 group-hover:-translate-y-1">
                       เพิ่มประเภท
                     </span>
                   </button>
@@ -1111,10 +1111,10 @@ function AddLodge() {
           <div className="flex justify-end m-5">
             <button
               type="submit"
-              class="ml-5 group relative inline-block outline-none text-sm font-medium text-white focus:outline-none focus:ring"
+              class="rounded-full ml-5 group relative inline-block outline-none text-sm font-medium text-white focus:outline-none focus:ring"
             >
-              <span class="rounded-xl absolute outline-0 inset-0 border focus:outline-none outline-none border-[#162B78] group-active:border-[#162B78]"></span>
-              <span class="rounded-xl font-IBMPlexSansThai outline-0 focus:outline-none outline-none text-base block border border-[#162B78] text-white bg-[#162B78] px-4 py-3 transition-transform active:border-[#162B78]  active:bg-[#162B78] group-hover:-translate-x-1 group-hover:-translate-y-1">
+              <span class="shadow-md shadow-[#162B78] rounded-full absolute outline-0 inset-0 border focus:outline-none outline-none border-[#162B78] group-active:border-[#162B78]"></span>
+              <span class="rounded-full font-IBMPlexSansThai outline-0 focus:outline-none outline-none text-base block border border-[#162B78] text-white bg-[#162B78] px-4 py-3 transition-transform active:border-[#162B78]  active:bg-[#162B78] group-hover:-translate-x-1 group-hover:-translate-y-1">
                 บันทึก
               </span>
             </button>
