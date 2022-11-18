@@ -35,8 +35,8 @@ function UserSignIn() {
 
   return (
     <>
-      <div className="flex justify-center ">
-        <div className='max-w-[960px] bg-[#EFEFEF] flex flex-col mt-16 rounded-3xl'>
+      <div className="flex justify-center bg-[#EFEFEF] h-screen ">
+        <div className='max-w-[960px] bg-white flex flex-col mt-16 rounded-3xl h-[400px]'>
           <div className='usersignincontent mr-16 ml-12 mt-10 mb-5'>
             <form onSubmit={handleSubmit}>
               <h1 className="flex justify-center font-IBMPlexSansThai text-3xl text-[#162B78]" >เข้าสู่ระบบ</h1>
@@ -91,29 +91,24 @@ function UserSignIn() {
                 />
               </div>
               <div className='flex justify-center mt-8' >
-                <button type="submit"
-                  className="
-                          bg-[#162B78] 
-                          font-IBMPlexSansThai
-                          hover:bg-white 
-                          hover:text-[#162B78] 
-                          text-white 
-                          py-2 
-                          px-4 
-                          rounded-full 
-                          border border-[#162B78]
-                          shadow-md shadow-[#162B78]
-                          ">
+                <button
+                  type="submit"
+                  class="rounded-full group relative inline-block outline-none text-sm font-medium text-white focus:outline-none focus:ring"
+                >
+                  <span class="shadow-md shadow-[#162B78] rounded-full absolute outline-0 inset-0 border focus:outline-none outline-none border-[#162B78] group-active:border-[#162B78]"></span>
+                  <span class="rounded-full font-IBMPlexSansThai outline-0 focus:outline-none outline-none text-base block border border-[#162B78] text-white bg-[#162B78] px-4 py-3 transition-transform active:border-[#162B78]  active:bg-[#162B78] group-hover:-translate-x-1 group-hover:-translate-y-1">
                   เข้าสู่ระบบ
+                  </span>
                 </button>
               </div>
             </form>
             <div className='flex justify-center ' >
               <Link to="/signup">
                 <button href='/signup'
-                  className="signup font-IBMPlexSansThai py-4 px-4 mt-3">
+                  className="signup font-IBMPlexSansThai text-base text-[#162B78] hover:underline m-2 mt-5">
                   สมัครบัญชี
                 </button>
+                
               </Link>
             </div>
           </div>
