@@ -21,7 +21,7 @@ function AboutUs() {
                                 <CardMedia
                                     component="img"
                                     height="140"
-                                    image="/static/images/cards/contemplative-reptile.jpg"
+                                    image={require("../image/69516943_2218772318249526_3892508575234260992_n.jpg")}
 
                                 />
                                 <CardContent>
@@ -104,7 +104,7 @@ function AboutUs() {
                                 <CardMedia
                                     component="img"
                                     height="140"
-                                    image="/static/images/cards/contemplative-reptile.jpg"
+                                    image={require("../image/IMG_6333.JPG")}
 
                                 />
                                 <CardContent>
@@ -162,7 +162,7 @@ function AboutUs() {
                                 <CardMedia
                                     component="img"
                                     height="140"
-                                    image="/static/images/cards/contemplative-reptile.jpg"
+                                    image={require("../image/IMG_9557.jpg")}
 
                                 />
                                 <CardContent>
@@ -218,7 +218,7 @@ function AboutUs() {
                                 <CardMedia
                                     component="img"
                                     height="140"
-                                    image="/static/images/cards/contemplative-reptile.jpg"
+                                    image={require("../image/69505770.jpg")}
                                 />
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="div">
