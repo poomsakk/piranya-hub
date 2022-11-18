@@ -59,14 +59,14 @@ const FilterPage = () => {
   return (
     <div className="bg-[#EFEFEF]">
       <div className="relative w-full h-full">
-        <div className="h-15 absolute top-0 mr-10 right-0">
+        <div className="h-15 absolute top-0 mr-10 right-10 pt-12">
           <ButtonCT
             btnName={"ค้นหาด้วยชื่อ"}
             onClick={() => navigate("/search")}
           />
           {/* <ButtonCT btnName={"click to serch"} onClick={() => getLodge()} /> */}
         </div>
-        <div className="container mt-5">
+        <div className="container pt-12">
           <Map rad={circleRad} lodgeData={lodges} />
         </div>
         <div className="flex">
