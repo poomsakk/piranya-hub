@@ -60,10 +60,15 @@ const FilterPage = () => {
     <div className="bg-[#EFEFEF]">
       <div className="relative w-full h-full">
         <div className="h-15 absolute top-0 mr-10 right-10 pt-12">
-          <ButtonCT
-            btnName={"ค้นหาด้วยชื่อ"}
-            onClick={() => navigate("/search")}
-          />
+          <button
+              onClick={() => navigate("/search")}
+              class="rounded-full ml-5 group relative inline-block outline-none text-sm font-medium text-white focus:outline-none focus:ring"
+            >
+              <span class="shadow-md shadow-gray-900 rounded-full absolute outline-0 inset-0 border focus:outline-none outline-none border-gray-900 group-active:border-gray-900"></span>
+              <span class="rounded-full font-IBMPlexSansThai outline-0 focus:outline-none outline-none text-base block border border-gray-900 text-white bg-gray-900 px-4 py-3 transition-transform active:border-gray-900  active:bg-gray-900 group-hover:-translate-x-1 group-hover:-translate-y-1">
+                ค้นหาด้วยชื่อ
+              </span>
+            </button>
           {/* <ButtonCT btnName={"click to serch"} onClick={() => getLodge()} /> */}
         </div>
         <div className="container pt-12">
@@ -104,7 +109,7 @@ const FilterPage = () => {
               );
             })}
           </div>
-          <div className="w-1/4 overflow-hidden h-screen flex flex-col items-center justify-center bg-white rounded-xl m-8">
+          <div className="w-1/4 overflow-hidden h-screen flex flex-col items-center justify-center bg-white rounded-xl m-8 border-2 border-gray-900">
             <div className="font-IBMPlexSansThai p-3 rounded  text-black w-[390px] mx-auto h-5/6 my-7">
               <h1 className="text-2xl text-center font-bold mb-5 mt-[-30px]">
                 คุณต้องการที่พักแบบไหน ?
