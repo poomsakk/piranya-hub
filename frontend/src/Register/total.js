@@ -25,7 +25,7 @@ function AddLodge() {
     landLordApi.post(`/lodge/add/${userReduxData.id}`, {
       information: { ...informationData, lat: positon.lat, lng: positon.lng },
       facility: { facilities: tempF },
-      roomType: typeFields,
+      roomType: [typeData],
       cost: costData,
       detail: detailData,
       imagePath: imageData,
@@ -124,9 +124,9 @@ function AddLodge() {
     {
       id: uuidv4(),
       typeName: "",
-      size: "",
-      pricePerMonth: "",
-      pricePerDay: "",
+      size: 0,
+      pricePerMonth: 0,
+      pricePerDay: 0,
       available: true
     },
 
@@ -216,6 +216,7 @@ function AddLodge() {
     temp.push(e.target.value)
     setImageData({ imagePaths: temp })
   }
+  //new
   // 6 Image section <<<
 
   // 7 Promotions section >>>
@@ -940,7 +941,8 @@ function AddLodge() {
             <div class="mb-5 ml-12 mr-12 border-b border-gray-900"></div>
             <div className='Image mb-5'>
               <h1 className="font-IBMPlexSansThai text-2xl text-gray-900 ml-12 m-2 w-96" >6. รูปภาพ</h1>
-              <TextField
+              <input type="file"></input>
+              {/* <TextField
                 required
                 id="outlined-required"
                 label="Required"
@@ -949,7 +951,7 @@ function AddLodge() {
                 value={imagePaths}
                 onChange={onImagePathChange}
               />
-              <Button variant="contained">เพิ่ม image path</Button>
+              <Button variant="contained">เพิ่ม image path</Button> */}
             </div>
             <div class="mb-5 ml-12 mr-12 border-b border-gray-900"></div>
             <div className="Promotion mb-5">
