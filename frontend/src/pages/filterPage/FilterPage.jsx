@@ -47,7 +47,7 @@ const FilterPage = () => {
 
   useEffect(() => {
     getLodge();
-  }, [lodges]);
+  }, [price, circleRad, facilityData]);
 
   if (!isLoaded)
     return (
@@ -59,17 +59,18 @@ const FilterPage = () => {
   return (
     <div className="bg-[#EFEFEF]">
       <div className="relative w-full h-full">
-        <div></div>
-        <div className="h-15 absolute top-0 mr-10 right-0">
-          <ButtonCT btnName={"back to home"} onClick={() => navigate("/")} />
+        <div className="h-15 absolute top-0 mr-10 right-10 pt-12">
+          <ButtonCT
+            btnName={"ค้นหาด้วยชื่อ"}
+            onClick={() => navigate("/search")}
+          />
           {/* <ButtonCT btnName={"click to serch"} onClick={() => getLodge()} /> */}
         </div>
-        <div className="container">
+        <div className="container pt-12">
           <Map rad={circleRad} lodgeData={lodges} />
         </div>
-        
-        <div className="flex ">
-          <div className="container my-20 ">
+        <div className="flex">
+          <div className="container my-20">
             {lodges?.map((lodge, idx) => {
               return (
                 <section
@@ -175,7 +176,11 @@ const FilterPage = () => {
                   onCheck={onCheck}
                   name="airconditioner"
                 />
-                <CheckBoxCT displayName={"พัดลม"} onCheck={onCheck} name="fan" />
+                <CheckBoxCT
+                  displayName={"พัดลม"}
+                  onCheck={onCheck}
+                  name="fan"
+                />
                 <CheckBoxCT
                   displayName={"โทรทัศน์"}
                   onCheck={onCheck}
@@ -234,7 +239,11 @@ const FilterPage = () => {
                   onCheck={onCheck}
                   name="swimmingpool"
                 />
-                <CheckBoxCT displayName={"ฟิตเนส"} onCheck={onCheck} name="gym" />
+                <CheckBoxCT
+                  displayName={"ฟิตเนส"}
+                  onCheck={onCheck}
+                  name="gym"
+                />
                 <CheckBoxCT
                   displayName={"ร้านซัก-รีด / มีบริการเครื่องซักผ้า"}
                   onCheck={onCheck}

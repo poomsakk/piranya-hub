@@ -22,7 +22,7 @@ public class MatchingController {
 
     @GetMapping("/findByName/{name}")
     public List<Lodge> matchByName(@PathVariable("name") String name){
-        return  mathchingService.findByName(name);
+        return  mathchingService.findByFome(name);
     }
 
     @GetMapping("/findByFome/{name}")
