@@ -50,6 +50,7 @@ function Map({ SetPositon }) {
                 center={viewPort}
                 mapContainerClassName="map-container"
                 onClick={handleOnclick}
+                options = {{mapId: "9cc19ecccb4e1876"}}
             >
                 {selected && <MarkerF position={selected} />}
             </GoogleMap>

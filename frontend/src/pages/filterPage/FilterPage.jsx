@@ -60,15 +60,6 @@ const FilterPage = () => {
     <div className="bg-[#EFEFEF]">
       <div className="relative w-full h-full">
         <div className="h-15 absolute top-0 mr-10 right-10 pt-12">
-          <button
-              onClick={() => navigate("/search")}
-              class="rounded-full ml-5 group relative inline-block outline-none text-sm font-medium text-white focus:outline-none focus:ring"
-            >
-              <span class="shadow-md shadow-gray-900 rounded-full absolute outline-0 inset-0 border focus:outline-none outline-none border-gray-900 group-active:border-gray-900"></span>
-              <span class="rounded-full font-IBMPlexSansThai outline-0 focus:outline-none outline-none text-base block border border-gray-900 text-white bg-gray-900 px-4 py-3 transition-transform active:border-gray-900  active:bg-gray-900 group-hover:-translate-x-1 group-hover:-translate-y-1">
-                ค้นหาด้วยชื่อ
-              </span>
-            </button>
           {/* <ButtonCT btnName={"click to serch"} onClick={() => getLodge()} /> */}
         </div>
         <div className="container pt-12">

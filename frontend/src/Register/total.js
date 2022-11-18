@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import Checkbox from '@mui/material/Checkbox';
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
@@ -132,36 +132,6 @@ function AddLodge() {
 
   ]);
 
-  const handleChangeInput = (id, event) => {
-    const newInputFields = typeFields.map(i => {
-      if (id === i.id) {
-        i[event.target.name] = event.target.value
-      }
-      return i;
-    })
-    setTypeFields(newInputFields);
-  }
-
-  const handleChangeAvailable = (id, event) => {
-    const newAvailableFields = typeFields.map(i => {
-      if (id === i.id) {
-        i[event.target.name] = !event.target.checked
-      }
-      return i;
-    })
-
-    setTypeFields(newAvailableFields);
-  }
-
-  const handleAddFields = () => {
-    setTypeFields([...typeFields, { id: uuidv4(), typeName: "", size: "", pricePerMonth: "", pricePerDay: "", available: true }])
-  }
-
-  const handleRemoveFields = id => {
-    const values = [...typeFields];
-    values.splice(values.findIndex(value => value.id === id), 1);
-    setTypeFields(values);
-  }
   // 3 Type section Newyear<<<
   // 3 Type section Prem Fill only 1 room>>>
   const [typeData, setTypeData] = useState({
@@ -218,7 +188,21 @@ function AddLodge() {
   }
   //new
   // 6 Image section <<<
+  const [images, setImages] = useState([]);
+  const [imagesURLs, setImageURLs] = useState([]);
 
+  useEffect(() => {
+    if (images.lenght < 1 ) return;
+    const newImageUrls = [];
+    images.forEach(image => newImageUrls.push(URL.createObjectURL(image)));
+    setImageURLs(newImageUrls);
+
+  }, [images]);
+
+
+  function onImageChange(e){
+    setImages([...e.target.files]);
+  }
   // 7 Promotions section >>>
   const [promotionData, setPromotionData] = useState({
     promotion: ""
@@ -620,7 +604,7 @@ function AddLodge() {
                           name="row-radio-buttons-group"
                           defaultValue={1}
                         >
-                          <FormControlLabel value={1} control={<Radio sx={{ '&, &.Mui-checked': { color: '#162B78', } }} className='mt-5 ' />} />
+                          <FormControlLabel value={1} control={<Radio sx={{ '&, &.Mui-checked': { color: '#111827', } }} className='mt-5 ' />} />
                           <input
                             type={"text"}
                             className="
@@ -650,7 +634,7 @@ function AddLodge() {
                             <FormControlLabel
                               className='mt-5'
                               value="NoMonth"
-                              control={<Radio sx={{ '&, &.Mui-checked': { color: '#162B78', } }} />} />
+                              control={<Radio sx={{ '&, &.Mui-checked': { color: '#111827', } }} />} />
                             <h1 className="font-IBMPlexSansThai text-lg text-gray-900 w-44 mt-7 ml-[-15px]" >ไม่มีห้องเช่ารายเดือน</h1>
                           </FormControl>
                         </RadioGroup>
@@ -664,7 +648,7 @@ function AddLodge() {
                           name="row-radio-buttons-group"
                           defaultValue={1}
                         >
-                          <FormControlLabel value={1} control={<Radio sx={{ '&, &.Mui-checked': { color: '#162B78', } }} className='mt-5 ' />} />
+                          <FormControlLabel value={1} control={<Radio sx={{ '&, &.Mui-checked': { color: '#111827', } }} className='mt-5 ' />} />
                           <input
                             type={"text"}
                             className="
@@ -693,7 +677,7 @@ function AddLodge() {
                             <FormControlLabel
                               className='mt-5  font-IBMPlexSansThai text-xl text-gray-900'
                               value="NoDay"
-                              control={<Radio sx={{ '&, &.Mui-checked': { color: '#162B78', } }} />} />
+                              control={<Radio sx={{ '&, &.Mui-checked': { color: '#111827', } }} />} />
                             <h1 className="font-IBMPlexSansThai text-lg text-gray-900 w-44 mt-7 ml-[-15px]" >ไม่มีห้องเช่ารายวัน</h1>
                           </FormControl>
                         </RadioGroup>
@@ -702,7 +686,7 @@ function AddLodge() {
                         <h1 className="font-IBMPlexSansThai text-xl text-gray-900 ml-12 m-2 w-28 mt-7" >ห้องว่าง</h1>
                         <Switch
                           className="ml-4 mt-6 "
-                          sx={{ '& .MuiSwitch-switchBase.Mui-checked': { color: '#162B78', } }}
+                          sx={{ '& .MuiSwitch-switchBase.Mui-checked': { color: '#111827', } }}
                           checked={available}
                           inputProps={{ 'aria-label': 'controlled' }}
                           onChange={onInputtypeChangeAvaliable}
@@ -727,7 +711,7 @@ function AddLodge() {
                         name="row-radio-buttons-group"
                         defaultValue={1}
                       >
-                        <FormControlLabel value={1} control={<Radio sx={{ '&, &.Mui-checked': { color: '#162B78', } }} className='mt-5 ' />} />
+                        <FormControlLabel value={1} control={<Radio sx={{ '&, &.Mui-checked': { color: '#111827', } }} className='mt-5 ' />} />
                         <input
                           type={"text"}
                           className="
@@ -751,7 +735,7 @@ function AddLodge() {
                           onChange={onInputcostChange}
                         />
                         <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-24 mt-7" >บาท/ยูนิต</h1>
-                        <FormControlLabel value={0} control={<Radio sx={{ '&, &.Mui-checked': { color: '#162B78', } }} className='mt-5' />} />
+                        <FormControlLabel value={0} control={<Radio sx={{ '&, &.Mui-checked': { color: '#111827', } }} className='mt-5' />} />
                         <h1 className="font-IBMPlexSansThai text-lg text-gray-900 ml-[-15px] w-56 mt-7 " >ราคาตามที่การประปากำหนด</h1>
                       </RadioGroup>
                     </FormControl>
@@ -765,7 +749,7 @@ function AddLodge() {
                         name="row-radio-buttons-group"
                         defaultValue={1}
                       >
-                        <FormControlLabel value={1} control={<Radio sx={{ '&, &.Mui-checked': { color: '#162B78', } }} className='mt-5 ' />} />
+                        <FormControlLabel value={1} control={<Radio sx={{ '&, &.Mui-checked': { color: '#111827', } }} className='mt-5 ' />} />
                         <input
                           type={"text"}
                           className="
@@ -789,7 +773,7 @@ function AddLodge() {
                           onChange={onInputcostChange}
                         />
                         <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-24 mt-7" >บาท/ยูนิต</h1>
-                        <FormControlLabel value={0} control={<Radio sx={{ '&, &.Mui-checked': { color: '#162B78', } }} className='mt-5' />} />
+                        <FormControlLabel value={0} control={<Radio sx={{ '&, &.Mui-checked': { color: '#111827', } }} className='mt-5' />} />
                         <h1 className="font-IBMPlexSansThai text-lg text-gray-900 ml-[-15px] w-56 mt-7 " >ราคาตามที่การไฟฟ้ากำหนด</h1>
                       </RadioGroup>
                     </FormControl>
@@ -804,7 +788,7 @@ function AddLodge() {
                         name="row-radio-buttons-group"
                         defaultValue={1}
                       >
-                        <FormControlLabel value={1} control={<Radio sx={{ '&, &.Mui-checked': { color: '#162B78', } }} className='mt-5 ' />} />
+                        <FormControlLabel value={1} control={<Radio sx={{ '&, &.Mui-checked': { color: '#111827', } }} className='mt-5 ' />} />
                         <input
                           type={"text"}
                           className="
@@ -828,7 +812,7 @@ function AddLodge() {
                           onChange={onInputcostChange}
                         />
                         <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-24 mt-7" >บาท/เดือน</h1>
-                        <FormControlLabel value={0} control={<Radio sx={{ '&, &.Mui-checked': { color: '#162B78', } }} className='mt-5' />} />
+                        <FormControlLabel value={0} control={<Radio sx={{ '&, &.Mui-checked': { color: '#111827', } }} className='mt-5' />} />
                         <h1 className="font-IBMPlexSansThai text-lg text-gray-900 ml-[-15px] w-56 mt-7 " >รวมในค่าห้องแล้ว</h1>
                       </RadioGroup>
                     </FormControl>
@@ -843,7 +827,7 @@ function AddLodge() {
                         name="row-radio-buttons-group"
                         defaultValue={1}
                       >
-                        <FormControlLabel value={1} control={<Radio sx={{ '&, &.Mui-checked': { color: '#162B78', } }} className='mt-5 ' />} />
+                        <FormControlLabel value={1} control={<Radio sx={{ '&, &.Mui-checked': { color: '#111827', } }} className='mt-5 ' />} />
                         <input
                           type={"text"}
                           className="
@@ -867,7 +851,7 @@ function AddLodge() {
                           onChange={onInputcostChange}
                         />
                         <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-24 mt-7" >บาท</h1>
-                        <FormControlLabel value={0} control={<Radio sx={{ '&, &.Mui-checked': { color: '#162B78', } }} className='mt-5' />} />
+                        <FormControlLabel value={0} control={<Radio sx={{ '&, &.Mui-checked': { color: '#111827', } }} className='mt-5' />} />
                         <h1 className="font-IBMPlexSansThai text-lg text-gray-900 ml-[-15px] w-56 mt-7 " >ไม่มีการเก็บเงินประกัน</h1>
                       </RadioGroup>
                     </FormControl>
@@ -880,38 +864,7 @@ function AddLodge() {
               <h1 className="font-IBMPlexSansThai text-2xl text-gray-900 ml-12 m-2 w-96" >5. รายละเอียด</h1>
               <div className="flex flex-row ml-5">
                 <h1 className="font-IBMPlexSansThai text-xl text-gray-900 ml-12 m-2 mt-6 w-28 ">
-                  รายละเอียดภาษาไทย
-                </h1>
-                <input
-                  type={"text"}
-                  multiline
-                  className="
-                            font-IBMPlexSansThai 
-                            bg-[#EFEFEF]
-                            placeholder:text-zinc-500
-                            text-lg
-                            pl-5 
-                            w-[631px]
-                            h-[120px]
-                            m-2
-                            ml-4
-                            mt-4
-                            border-2 
-                            border-gray-900
-                            focus:outline-none
-                            focus:border-gray-900
-                            rounded-xl
-                            "
-                  placeholder="ระบุชื่อที่พัก"
-                  name="detailTHA"
-                  value={detailTHA}
-                  onChange={onInputDetailChange}
-                />
-              </div>
-
-              <div className="flex flex-row ml-5">
-                <h1 className="font-IBMPlexSansThai text-xl text-gray-900 ml-12 m-2 mt-6 w-28 ">
-                  รายละเอียดภาษาอังกฤษ
+                  รายละเอียดที่พัก
                 </h1>
                 <TextField
                   sx={{ border: '2px solid', borderRadius: 1, font: 'IBMPlexSansThai' }}
@@ -926,32 +879,34 @@ function AddLodge() {
                             m-2
                             ml-4
                             mt-4
+                            pt-2
                             border-gray-900
-                            rounded-xl'
+                            rounded-xl
+                            '
                   multiline
                   rows={4}
-                  placeholder="ระบุชื่อที่พัก"
+                  variant="standard"
+                  InputProps={{
+                    disableUnderline: true,
+                  }}
+                  placeholder="ระบุรายละเอียดที่พัก"
                   name="detailENG"
                   value={detailENG}
                   onChange={onInputDetailChange}
                 />
-
               </div>
             </div>
             <div class="mb-5 ml-12 mr-12 border-b border-gray-900"></div>
             <div className='Image mb-5'>
-              <h1 className="font-IBMPlexSansThai text-2xl text-gray-900 ml-12 m-2 w-96" >6. รูปภาพ</h1>
-              <input type="file"></input>
-              {/* <TextField
-                required
-                id="outlined-required"
-                label="Required"
-                defaultValue="EXAMPLE IMAGE PATH"
-                name="imagePaths"
-                value={imagePaths}
-                onChange={onImagePathChange}
-              />
-              <Button variant="contained">เพิ่ม image path</Button> */}
+                <h1 className="font-IBMPlexSansThai text-2xl text-[#111827] ml-12 m-2 w-96" >6. รูปภาพ</h1>
+                <div classname="border border-gray-900">
+                  <input type="file" multiple accept ="image/*" onChange={onImageChange} />
+                  <div classname="border border-gray-900">
+                    {imagesURLs.map((imageSrc) => ( 
+                      <img src= {imageSrc} width="200px" className="display: inline m-2"/> 
+                    ))}
+                  </div>
+                </div>
             </div>
             <div class="mb-5 ml-12 mr-12 border-b border-gray-900"></div>
             <div className="Promotion mb-5">
@@ -960,27 +915,30 @@ function AddLodge() {
                 <h1 className="font-IBMPlexSansThai text-xl text-gray-900 ml-12 m-2 mt-6 w-28 ">
                   รายละเอียดโปรโมชัน
                 </h1>
-                <input
-                  type={"text"}
-                  multiline
-                  className="
-                            font-IBMPlexSansThai 
+                <TextField
+                  sx={{ border: '2px solid', borderRadius: 1, font: 'IBMPlexSansThai' }}
+                  className='
+                            fontfont-IBMPlexSansThai 
                             bg-[#EFEFEF]
                             placeholder:text-zinc-500
                             text-lg
-                            pl-5 
+                            pl-2 
                             w-[631px]
                             h-[120px]
                             m-2
                             ml-4
                             mt-4
-                            border-2 
+                            pt-2
                             border-gray-900
-                            focus:outline-none
-                            focus:border-gray-900
                             rounded-xl
-                            "
-                  placeholder="ระบุโปร ไม่มีใส่ -"
+                            '
+                  multiline
+                  rows={4}
+                  variant="standard"
+                  InputProps={{
+                    disableUnderline: true,
+                  }}
+                  placeholder="ระบุโปรโมชัน ถ้าไม่มีใส่ -"
                   name="promotion"
                   value={promotion}
                   onChange={onInputPromotionChange}
@@ -1002,7 +960,7 @@ function AddLodge() {
                               placeholder:text-zinc-500
                               text-lg
                               pl-5 
-                              w-[500px]
+                              w-[631px]
                               h-[40px]
                               mt-5
                               ml-8
@@ -1028,7 +986,7 @@ function AddLodge() {
                                     placeholder:text-zinc-500
                                     text-lg
                                     pl-5 
-                                    w-[500px]
+                                    w-[631px]
                                     h-[40px]
                                     mt-5
                                     ml-8
@@ -1055,7 +1013,7 @@ function AddLodge() {
                                         placeholder:text-zinc-500
                                         text-lg
                                         pl-5 
-                                        w-[500px]
+                                        w-[631px]
                                         h-[40px]
                                         mt-5
                                         ml-8
@@ -1081,7 +1039,7 @@ function AddLodge() {
                                         placeholder:text-zinc-500
                                         text-lg
                                         pl-5 
-                                        w-[500px]
+                                        w-[631px]
                                         h-[40px]
                                         mt-5
                                         ml-8
