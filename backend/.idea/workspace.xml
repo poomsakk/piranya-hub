@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bd2d643-7eb0-4ff2-9117-a12f3c2bf7e6" name="Changes" comment="" />
+    <list default="true" id="8bd2d643-7eb0-4ff2-9117-a12f3c2bf7e6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,7 +33,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/66820/Desktop/Newyear/CE_Third_Term1/Software Architecture/clonePJ04/piranya-hub/backend&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/66820/Desktop/Newyear/CE_Third_Term1/Software Architecture/clonePJ03/piranya-hub/backend&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -78,6 +80,9 @@
       <workItem from="1668519221559" duration="7002000" />
       <workItem from="1668610716470" duration="822000" />
       <workItem from="1668611551687" duration="160000" />
+      <workItem from="1668652350833" duration="717000" />
+      <workItem from="1668757599293" duration="12000" />
+      <workItem from="1668757629554" duration="1283000" />
     </task>
     <servers />
   </component>

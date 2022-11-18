@@ -50,33 +50,87 @@ const MainPage = () => {
         <div className="mx-auto max-w-6xl text-center">
           <h1
             ref={p1}
-            className="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text lg:text-7xl font-extrabold text-transparent sm:text-5xl custom-font"
+            className="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text lg:text-6xl font-extrabold text-transparent sm:text-5xl custom-font"
           >
-            Browse 16,000+ Apartment
-            <span className="sm:block">for Rent in Thailand. </span>
+            Everything You Need All Right Here.
+            <span className="sm:block mt-4">Apartments in KMITL. </span>
           </h1>
 
           <p
             ref={p2}
-            className="mx-auto mt-4 max-w-xl sm:text-xl sm:leading-relaxed"
+            className="mx-auto mt-10 max-w-[620px] sm:text-xl sm:leading-relaxed"
           >
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt
-            illo tenetur fuga ducimus numquam ea!
+            ให้เราได้เป็นส่วนหนึ่งในการเลือกอพาร์ทเมนท์ ให้เหมาะกับทุกสไตล์ของคุณ
+            ต้องการที่พัก นึกถึง PIRANYA HUB.
           </p>
 
-          <div ref={p3} className="mt-8 flex flex-wrap justify-center gap-4">
+          <div ref={p3} className="mt-10 flex flex-wrap justify-center gap-4">
             <button
               onClick={() => navigate('/FilterPage')}
-              className="block w-full rounded border border-blue-600 bg-blue-600 px-12 py-3 text-sm outline-none font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
+              class="rounded-full ml-5 group relative inline-block outline-none text-white focus:outline-none focus:ring"
             >
-              Get Started
+              <span class="
+              rounded-full
+              absolute 
+              outline-0 
+              inset-0 
+              border 
+              focus:outline-none 
+              outline-none 
+              border-white
+              group-active:border-white">
+              </span>
+              <span class="
+              rounded-full
+              font-IBMPlexSansThai 
+              outline-0 
+              focus:outline-none 
+              outline-none 
+              text-lg block 
+              border 
+              border-white 
+              text-black 
+              bg-white
+              px-12 
+              py-3 
+              transition-transform 
+              active:border-white 
+              active:bg-white
+              group-hover:-translate-x-1 
+              group-hover:-translate-y-1">
+                ค้นหาที่พัก
+              </span>
             </button>
             <button
               onClick={() => navigate('/aboutus')}
-              className="block w-full rounded border border-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
-              href="/aboutus"
+              class="rounded-full ml-5 group relative inline-block outline-none text-white focus:outline-none focus:ring"
             >
-              Our Team
+              <span class="
+                rounded-full 
+                absolute 
+                outline-0 
+                inset-0 
+                border 
+                focus:outline-none 
+                outline-none 
+                border-white 
+                group-active:border-white">
+              </span>
+              <span class="
+              rounded-full 
+              font-IBMPlexSansThai 
+              outline-0 
+              focus:outline-none 
+              outline-none 
+              text-lg 
+              block 
+              border 
+              border-white
+              text-black 
+              bg-white
+              px-12 py-3 transition-transform active:border-white  active:bg-white group-hover:-translate-x-1 group-hover:-translate-y-1">
+              Contact us
+              </span>
             </button>
           </div>
         </div>

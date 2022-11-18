@@ -16,6 +16,7 @@ import UserSignUp from "./Register/UserSignUp"
 import Dashboard from './dashboard/Dashboard'
 import Edit from './dashboard/Edit';
 import AboutUs from './devTeam/AboutUs'
+import SearchPage from './pages/filterPage/SearchPage';
 
 function App() {
   const { pathname } = useLocation();
@@ -23,7 +24,7 @@ function App() {
   return (
     <div className="App">
       {/* {pathname == "/" ? <Header /> : <Header />} */}
-      {pathname !== "/FilterPage" && <Header />}
+      <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/FilterPage" element={<FilterPage />} />
@@ -39,7 +40,7 @@ function App() {
         <Route path="*" element={<Page404 />} />
         <Route path="/edit/:lodgeId" element={<Edit/>} />
         <Route path="/aboutus" element={<AboutUs/>} />
-
+        <Route path='/search' element={<SearchPage></SearchPage>}></Route>
       </Routes>
     </div>
   );

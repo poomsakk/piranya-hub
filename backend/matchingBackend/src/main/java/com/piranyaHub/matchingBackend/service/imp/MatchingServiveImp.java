@@ -103,10 +103,6 @@ public class MatchingServiveImp implements MathchingService {
             }
         }
 
-        for (int i = 0; i < res3.size(); i++) {
-            System.out.println((i+1) + ":" + res3.get(i).getInformation().getName());
-        }
-
         return res3;
     }
 

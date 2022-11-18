@@ -38,13 +38,13 @@ function UserSignUp() {
 
     return (
         <>
-            <div className='flex justify-center'>
-                <div className='max-w-[960px] bg-[#EFEFEF] flex flex-col mt-16 rounded-3xl'>
+            <div className='flex justify-center bg-[#EFEFEF] h-screen'>
+                <div className='max-w-[960px] bg-white flex flex-col mt-16 rounded-3xl h-[540px]  border-2 border-gray-900'>
                     <div className='usersignincontent mt-10 ml-12 mr-16 mb-12'>
                         <form onSubmit={onSubmit}>
-                            <h1 className="flex justify-center font-IBMPlexSansThai text-3xl text-[#162B78]" >ลงทะเบียน</h1>
+                            <h1 className="flex justify-center font-IBMPlexSansThai text-3xl text-gray-900" >ลงทะเบียน</h1>
                             <div className='flex flex-row'>
-                                <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] m-4 mt-10 w-40 " >Username :</h1>
+                                <h1 className="font-IBMPlexSansThai text-xl text-gray-900 m-4 mt-10 w-40 " >Username :</h1>
                                 <input
                                     type={"text"}
                                     className="
@@ -57,9 +57,9 @@ function UserSignUp() {
                                     h-[40px]
                                     mt-8
                                     border-2 
-                                    border-[#162B78] 
+                                    border-gray-900 
                                     focus:outline-none
-                                    focus:border-[#162B78]
+                                    focus:border-gray-900
                                     rounded-xl
                                     "
                                     placeholder="Username"
@@ -69,7 +69,7 @@ function UserSignUp() {
                                 />
                             </div>
                             <div className='flex flex-row'>
-                                <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] m-4 mt-10 w-40 " >Name-Surname :</h1>
+                                <h1 className="font-IBMPlexSansThai text-xl text-gray-900 m-4 mt-10 w-40 " >Name-Surname :</h1>
                                 <input
                                     type={"text"}
                                     className="
@@ -82,9 +82,9 @@ function UserSignUp() {
                                     h-[40px]
                                     mt-8
                                     border-2 
-                                    border-[#162B78] 
+                                    border-gray-900 
                                     focus:outline-none
-                                    focus:border-[#162B78]
+                                    focus:border-gray-900
                                     rounded-xl
                                     "
                                     placeholder="Name-Surname"
@@ -94,7 +94,7 @@ function UserSignUp() {
                                 />
                             </div>
                             <div className='flex flex-row'>
-                                <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] m-4 mt-10 w-40 " >Email :</h1>
+                                <h1 className="font-IBMPlexSansThai text-xl text-gray-900 m-4 mt-10 w-40 " >Email :</h1>
                                 <input
                                     type={"text"}
                                     className="
@@ -107,9 +107,9 @@ function UserSignUp() {
                                     h-[40px]
                                     mt-8
                                     border-2 
-                                    border-[#162B78] 
+                                    border-gray-900 
                                     focus:outline-none
-                                    focus:border-[#162B78]
+                                    focus:border-gray-900
                                     rounded-xl
                                     "
                                     placeholder="Email"
@@ -119,7 +119,7 @@ function UserSignUp() {
                                 />
                             </div>
                             <div className='flex flex-row'>
-                                <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] m-4 mt-10 w-40 " >Password :</h1>
+                                <h1 className="font-IBMPlexSansThai text-xl text-gray-900 m-4 mt-10 w-40 " >Password :</h1>
                                 <input
                                     type="password"
                                     className="
@@ -132,9 +132,9 @@ function UserSignUp() {
                                     h-[40px]
                                     mt-8
                                     border-2 
-                                    border-[#162B78] 
+                                    border-gray-900 
                                     focus:outline-none
-                                    focus:border-[#162B78]
+                                    focus:border-gray-900
                                     rounded-xl
                                     "
                                     placeholder="Password"
@@ -144,20 +144,14 @@ function UserSignUp() {
                                 />
                             </div>
                             <div className='flex justify-center mt-8' >
-                                <button type='submit'
-                                    className="
-                                    bg-[#162B78] 
-                                    font-IBMPlexSansThai
-                                    hover:bg-white 
-                                    hover:text-[#162B78] 
-                                    text-white 
-                                    py-2 
-                                    px-4 
-                                    rounded-full 
-                                    border border-[#162B78]
-                                    shadow-md shadow-[#162B78]
-                            ">
-                                    ลงทะเบียน
+                                <button
+                                type="submit"
+                                class="rounded-full group relative inline-block outline-none text-sm font-medium text-white focus:outline-none focus:ring"
+                                >
+                                <span class="shadow-md shadow-gray-900 rounded-full absolute outline-0 inset-0 border focus:outline-none outline-none border-gray-900 group-active:border-gray-900"></span>
+                                <span class="rounded-full font-IBMPlexSansThai outline-0 focus:outline-none outline-none text-base block border border-gray-900 text-white bg-gray-900 px-4 py-3 transition-transform active:border-gray-900  active:bg-gray-900 group-hover:-translate-x-1 group-hover:-translate-y-1">
+                                ลงทะเบียน
+                                </span>
                                 </button>
                             </div>
                         </form>
