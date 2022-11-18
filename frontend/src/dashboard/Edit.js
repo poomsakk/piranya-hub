@@ -14,249 +14,250 @@ import { useParams } from "react-router-dom";
 import Map3 from "../Register/Map3.js";
 
 export default function Edit() {
-    // Main section >>>
-    const { lodgeId } = useParams()
-    const dispatch = useDispatch()
-    const userReduxData = useSelector((state) => state.data.userData)
-    let navigate = useNavigate()
-    function handleSubmitForm(e) {
-        e.preventDefault()//
-        let userLodges = userReduxData.lodgeOwn.slice(1, userReduxData.lodgeOwn.length - 1).split(", ")
-        landLordApi.put(`/lodge/update/${lodgeId}`, {
-            information: { ...informationData, lat: positon.lat, lng: positon.lng },
-            facility: { facilities: tempF },
-            roomType: [typeData],
-            cost: costData,
-            detail: detailData,
-            imagePath: imageData,
-            promotion: promotionData,
-            contact: contactData
-        }).then((res) => {
-            alert("Edit success")
-            navigate("/dashboard")
-        }).catch((error) => {
-            console.log(error)
-            if (error.response) {
-                alert(error.response.data.message)
-            } else {
-                alert(error.message)
-            }
+  // Main section >>>
+  const { lodgeId } = useParams()
+  const dispatch = useDispatch()
+  const userReduxData = useSelector((state) => state.data.userData)
+  let navigate = useNavigate()
+  function handleSubmitForm(e) {
+    e.preventDefault()//
+    let userLodges = userReduxData.lodgeOwn.slice(1, userReduxData.lodgeOwn.length - 1).split(", ")
+    landLordApi.put(`/lodge/update/${lodgeId}`, {
+      information: { ...informationData, lat: positon.lat, lng: positon.lng },
+      facility: { facilities: tempF },
+      roomType: [typeData],
+      cost: costData,
+      detail: detailData,
+      imagePath: imageData,
+      promotion: promotionData,
+      contact: contactData
+    }).then((res) => {
+      alert("Edit success")
+      navigate("/dashboard")
+    }).catch((error) => {
+      console.log(error)
+      if (error.response) {
+        alert(error.response.data.message)
+      } else {
+        alert(error.message)
+      }
+    })
+    // console.log(informationData)
+    // console.log({ facilities: tempF })
+    // console.log(typeData)
+    // console.log(costData)
+    // console.log(detailData)
+    // console.log(imageData)
+    // console.log(promotionData)
+    // console.log(contactData)
+  }
+  // Main section <<<
+
+  const [lodge, setLodge] = useState([]);
+  const [isLoading, setIsLoading] = useState(true)
+  const [informationData, setInformationData] = useState({
+    name: "Hello",
+    nameEng: "",
+    houseNumber: "",
+    street: "",
+    soi: "",
+    subArea: "",
+    area: "",
+    city: "",
+    postalCode: "",
+    lat: 3,
+    lng: 3
+  })
+
+  const [facilityData, setFacilityData] = useState({
+    facilities: []
+  })
+
+  const [typeData, setTypeData] = useState({
+    typeName: "",
+    size: 0,
+    pricePerMonth: 0,
+    pricePerDay: 0,
+    available: true
+  })
+
+  const [costData, setCostData] = useState({
+    waterPerUnit: 0,
+    electricPerUnit: 0,
+    commonFee: 0,
+    insurance: 0,
+  })
+
+  const [detailData, setDetailData] = useState({
+    detailTHA: "",
+    detailENG: ""
+  })
+
+  const [promotionData, setPromotionData] = useState({
+    promotion: ""
+  })
+
+  const [contactData, setContactData] = useState({
+    nameContact: "",
+    phoneNumber: "",
+    email: "",
+    lineId: ""
+  })
+  const [imageData, setImageData] = useState({
+    imagePaths: []
+  })
+  let hello = 'yo'
+  const getLodge = async () => {
+    await landLordApi
+      .get("/lodge/get/" + lodgeId)
+      .then((response) => {
+        setLodge(response.data)
+        setInformationData({
+          name: response.data.information.name,
+          nameEng: response.data.information.nameEng,
+          houseNumber: response.data.information.houseNumber,
+          street: response.data.information.street,
+          soi: response.data.information.soi,
+          subArea: response.data.information.subArea,
+          area: response.data.information.area,
+          city: response.data.information.city,
+          postalCode: response.data.information.postalCode,
+          lat: response.data.information.lat,
+          lng: response.data.information.lng
         })
-        // console.log(informationData)
-        // console.log({ facilities: tempF })
-        // console.log(typeData)
-        // console.log(costData)
-        // console.log(detailData)
-        // console.log(imageData)
-        // console.log(promotionData)
-        // console.log(contactData)
-    }
-    // Main section <<<
-
-    const [lodge, setLodge] = useState([]);
-    const [isLoading, setIsLoading] = useState(true)
-    const [informationData, setInformationData] = useState({
-        name: "Hello",
-        nameEng: "",
-        houseNumber: "",
-        street: "",
-        soi: "",
-        subArea: "",
-        area: "",
-        city: "",
-        postalCode: "",
-        lat: 3,
-        lng: 3
-    })
-
-    const [facilityData, setFacilityData] = useState({
-        facilities: []
-    })
-
-    const [typeData, setTypeData] = useState({
-        typeName: "",
-        size: 0,
-        pricePerMonth: 0,
-        pricePerDay: 0,
-        available: true
-    })
-
-    const [costData, setCostData] = useState({
-        waterPerUnit: 0,
-        electricPerUnit: 0,
-        commonFee: 0,
-        insurance: 0,
-    })
-
-    const [detailData, setDetailData] = useState({
-        detailTHA: "",
-        detailENG: ""
-    })
-
-    const [promotionData, setPromotionData] = useState({
-        promotion: ""
-    })
-
-    const [contactData, setContactData] = useState({
-        nameContact: "",
-        phoneNumber: "",
-        email: "",
-        lineId: ""
-    })
-    const [imageData, setImageData] = useState({
-        imagePaths: []
-    })
-    let hello = 'yo'
-    const getLodge = async () => {
-        await landLordApi
-            .get("/lodge/get/" + lodgeId)
-            .then((response) => {
-                setLodge(response.data)
-                setInformationData({
-                    name: response.data.information.name,
-                    nameEng: response.data.information.nameEng,
-                    houseNumber: response.data.information.houseNumber,
-                    street: response.data.information.street,
-                    soi: response.data.information.soi,
-                    subArea: response.data.information.subArea,
-                    area: response.data.information.area,
-                    city: response.data.information.city,
-                    postalCode: response.data.information.postalCode,
-                    lat: response.data.information.lat,
-                    lng: response.data.information.lng
-                })
-                setFacilityData({
-                    facilities: response.data.facility.facilities
-                })
-                for (let i = 0; i < response.data.roomType.length; i++) {
-                    setTypeData({
-                        typeName: response.data.roomType[i].typeName,
-                        size: response.data.roomType[i].size,
-                        pricePerMonth: response.data.roomType[i].pricePerMonth,
-                        pricePerDay: response.data.roomType[i].pricePerDay,
-                        available: response.data.roomType[i].available
-                    })
-                }
-                setCostData({
-                    waterPerUnit: response.data.cost.waterPerUnit,
-                    electricPerUnit: response.data.cost.electricPerUnit,
-                    commonFee: response.data.cost.commonFee,
-                    insurance: response.data.cost.insurance,
-                })
-                setDetailData({
-                    detailTHA: response.data.detail.detailTHA,
-                    detailENG: response.data.detail.detailENG
-                })
-                setPromotionData({
-                    promotion: response.data.promotion.promotion
-                })
-                setContactData({
-                    nameContact: response.data.contact.nameContact,
-                    phoneNumber: response.data.contact.phoneNumber,
-                    email: response.data.contact.email,
-                    lineId: response.data.contact.lineId
-                })
-                setImageData({
-                    imagePaths: response.data.imagePath.imagePaths
-                })
-                setIsLoading(false)
-                console.log(response.data)
-                console.log(response.data.roomType[0].typeName)
-                SetPositon({ lat: response.data.information.lat, lng: response.data.information.lng })
-
-
-            })
-            .catch((error) => console.log(error))
-        // console.log(lodge.information)
-
-    };
-
-    useEffect(() => {
-        getLodge();
-    }, []);
-
-    // 1 Information  section >>>
-    const { name, nameEng, houseNumber, street, soi, subArea, area, city, postalCode, lat, lng } = informationData
-    function onInputinformationChange(e) {
-        setInformationData({ ...informationData, [e.target.name]: e.target.value })
-    }
-    // 1.1 Map section >>
-    const [positon, SetPositon] = useState({ lat: 13.7298889, lng: 100.7782323 })
-    // 1.1 Map section <<
-    // 1 Information  section <<<
-
-
-    // 2 Facility section >>>
-    const label = { inputProps: { "aria-label": "Checkbox demo" } };
-    const [tempF, setTempF] = useState([])
-    function onChangeFacility(e) {
-        let found = tempF.indexOf(e.target.name) !== -1
-        if (found) {
-            //remove
-            setTempF(tempF.filter(x => x !== e.target.name))
-        } else {
-            //add it
-            setTempF([...tempF, e.target.name])
+        setFacilityData({
+          facilities: response.data.facility.facilities
+        })
+        setTempF(response.data.facility.facilities)
+        for (let i = 0; i < response.data.roomType.length; i++) {
+          setTypeData({
+            typeName: response.data.roomType[i].typeName,
+            size: response.data.roomType[i].size,
+            pricePerMonth: response.data.roomType[i].pricePerMonth,
+            pricePerDay: response.data.roomType[i].pricePerDay,
+            available: response.data.roomType[i].available
+          })
         }
-        setFacilityData(prev => { return { facilities: tempF } })
-        //console.log(facilityData)   <<< this not work it show prev data i dont know why, but tempF is works ...
+        setCostData({
+          waterPerUnit: response.data.cost.waterPerUnit,
+          electricPerUnit: response.data.cost.electricPerUnit,
+          commonFee: response.data.cost.commonFee,
+          insurance: response.data.cost.insurance,
+        })
+        setDetailData({
+          detailTHA: response.data.detail.detailTHA,
+          detailENG: response.data.detail.detailENG
+        })
+        setPromotionData({
+          promotion: response.data.promotion.promotion
+        })
+        setContactData({
+          nameContact: response.data.contact.nameContact,
+          phoneNumber: response.data.contact.phoneNumber,
+          email: response.data.contact.email,
+          lineId: response.data.contact.lineId
+        })
+        setImageData({
+          imagePaths: response.data.imagePath.imagePaths
+        })
+        setIsLoading(false)
+        console.log(response.data)
+        console.log(response.data.roomType[0].typeName)
+        SetPositon({ lat: response.data.information.lat, lng: response.data.information.lng })
+
+
+      })
+      .catch((error) => console.log(error))
+    // console.log(lodge.information)
+
+  };
+
+  useEffect(() => {
+    getLodge();
+  }, []);
+
+  // 1 Information  section >>>
+  const { name, nameEng, houseNumber, street, soi, subArea, area, city, postalCode, lat, lng } = informationData
+  function onInputinformationChange(e) {
+    setInformationData({ ...informationData, [e.target.name]: e.target.value })
+  }
+  // 1.1 Map section >>
+  const [positon, SetPositon] = useState({ lat: 13.7298889, lng: 100.7782323 })
+  // 1.1 Map section <<
+  // 1 Information  section <<<
+
+
+  // 2 Facility section >>>
+  const label = { inputProps: { "aria-label": "Checkbox demo" } };
+  const [tempF, setTempF] = useState([])
+  function onChangeFacility(e) {
+    let found = tempF.indexOf(e.target.name) !== -1
+    if (found) {
+      //remove
+      setTempF(tempF.filter(x => x !== e.target.name))
+    } else {
+      //add it
+      setTempF([...tempF, e.target.name])
     }
-    // 2 Facility section <<<
+    setFacilityData(prev => { return { facilities: tempF } })
+    //console.log(facilityData)   <<< this not work it show prev data i dont know why, but tempF is works ...
+  }
+  // 2 Facility section <<<
 
 
-    // 3 Type section <<<
-    const { typeName, size, pricePerMonth, pricePerDay, available } = typeData
-    function onInputtypeChange(e) {
-        setTypeData({ ...typeData, [e.target.name]: e.target.name === "typeName" ? e.target.value : parseFloat(e.target.value) })
-    }
-    function onInputtypeChangeAvaliable(e) {
-        setTypeData(({ ...typeData, available: !available }))
-    }
-    // 3 Type section <<<
+  // 3 Type section <<<
+  const { typeName, size, pricePerMonth, pricePerDay, available } = typeData
+  function onInputtypeChange(e) {
+    setTypeData({ ...typeData, [e.target.name]: e.target.name === "typeName" ? e.target.value : parseFloat(e.target.value) })
+  }
+  function onInputtypeChangeAvaliable(e) {
+    setTypeData(({ ...typeData, available: !available }))
+  }
+  // 3 Type section <<<
 
 
-    // 4 Cost section <<<
-    const { waterPerUnit, electricPerUnit, commonFee, insurance } = costData
-    function onInputcostChange(e) {
-        setCostData({ ...costData, [e.target.name]: parseFloat(e.target.value) })
-    }
-    // 4 Cost section <<<
+  // 4 Cost section <<<
+  const { waterPerUnit, electricPerUnit, commonFee, insurance } = costData
+  function onInputcostChange(e) {
+    setCostData({ ...costData, [e.target.name]: parseFloat(e.target.value) })
+  }
+  // 4 Cost section <<<
 
-    // 5 Detail section >>>
-    const { detailTHA, detailENG } = detailData
-    function onInputDetailChange(e) {
-        setDetailData({ ...detailData, [e.target.name]: e.target.value })
-    }
-    // 5 Detail section <<<
+  // 5 Detail section >>>
+  const { detailTHA, detailENG } = detailData
+  function onInputDetailChange(e) {
+    setDetailData({ ...detailData, [e.target.name]: e.target.value })
+  }
+  // 5 Detail section <<<
 
-    // 6 Image section >>>
+  // 6 Image section >>>
 
-    const { imagePaths } = imageData
-    function onImagePathChange(e) {
-        setImageData({ imagePaths: [] })
-        let temp = []
-        temp.push(e.target.value)
-        setImageData({ imagePaths: temp })
-    }
-    // 6 Image section <<<
+  const { imagePaths } = imageData
+  function onImagePathChange(e) {
+    setImageData({ imagePaths: [] })
+    let temp = []
+    temp.push(e.target.value)
+    setImageData({ imagePaths: temp })
+  }
+  // 6 Image section <<<
 
-    // 7 Promotions section >>>
-    const { promotion } = promotionData
-    function onInputPromotionChange(e) {
-        setPromotionData({ promotion: e.target.value })
-    }
-    // 7 Promotions section <<<
+  // 7 Promotions section >>>
+  const { promotion } = promotionData
+  function onInputPromotionChange(e) {
+    setPromotionData({ promotion: e.target.value })
+  }
+  // 7 Promotions section <<<
 
-    // 8 Contact section >>>
-    const { nameContact, phoneNumber, email, lineId } = contactData
-    function onInputContactonChange(e) {
-        setContactData({ ...contactData, [e.target.name]: e.target.value })
-    }
-    // 8 Contact section <<<
+  // 8 Contact section >>>
+  const { nameContact, phoneNumber, email, lineId } = contactData
+  function onInputContactonChange(e) {
+    setContactData({ ...contactData, [e.target.name]: e.target.value })
+  }
+  // 8 Contact section <<<
 
-    return (<>
-        
-        <div className="flex justify-center bg-[#EFEFEF]">
+  return (<>
+
+    <div className="flex justify-center bg-[#EFEFEF]">
       <div className="flex flex-col ">
         <form onSubmit={handleSubmitForm}>
           <div className="max-w-[960px] bg-white flex flex-col mt-10 rounded-3xl border-2 border-gray-900 ">
@@ -472,90 +473,90 @@ export default function Edit() {
                   <div className='flex flex-row mt-4 '>
                     <div >
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-gray-900 ml-10' name="airconditioner" onChange={onChangeFacility} />
+                        <Checkbox {...label} className='text-gray-900 ml-10' name="airconditioner" onChange={onChangeFacility} checked={tempF.indexOf("airconditioner") !== -1} />
                         <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-44" >เครื่องปรับอากาศ</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-gray-900 ml-10' name="furniture" onChange={onChangeFacility} />
+                        <Checkbox {...label} className='text-gray-900 ml-10' name="furniture" onChange={onChangeFacility} checked={tempF.indexOf("furniture") !== -1} />
                         <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-44 " >เฟอร์นิเจอร์-ตู้, เตียง</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-gray-900 ml-10' name="waterheater" onChange={onChangeFacility} />
+                        <Checkbox {...label} className='text-gray-900 ml-10' name="waterheater" onChange={onChangeFacility} checked={tempF.indexOf("waterheater") !== -1} />
                         <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-44 " >เครื่องทำน้ำอุ่น</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-gray-900 ml-10' name="fan" onChange={onChangeFacility} />
+                        <Checkbox {...label} className='text-gray-900 ml-10' name="fan" onChange={onChangeFacility} checked={tempF.indexOf("fan") !== -1} />
                         <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-44 " >พัดลม</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-gray-900 ml-10' name="tv" onChange={onChangeFacility} />
+                        <Checkbox {...label} className='text-gray-900 ml-10' name="tv" onChange={onChangeFacility} checked={tempF.indexOf("tv") !== -1} />
                         <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-44 " >โทรทัศน์</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-gray-900 ml-10' name="fridge" onChange={onChangeFacility} />
+                        <Checkbox {...label} className='text-gray-900 ml-10' name="fridge" onChange={onChangeFacility} checked={tempF.indexOf("fridge") !== -1} />
                         <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-44 " >ตู้เย็น</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-gray-900 ml-10' name="directphone" onChange={onChangeFacility} />
+                        <Checkbox {...label} className='text-gray-900 ml-10' name="directphone" onChange={onChangeFacility} checked={tempF.indexOf("directphone") !== -1} />
                         <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-44 " >โทรศัพท์สายตรง</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-gray-900 ml-10' name="wifi" onChange={onChangeFacility} />
+                        <Checkbox {...label} className='text-gray-900 ml-10' name="wifi" onChange={onChangeFacility} checked={tempF.indexOf("wifi") !== -1} />
                         <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-64 " >อินเทอร์เน็ตไร้สาย (WIFI) ในห้อง</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-gray-900 ml-10' name="motoparking" onChange={onChangeFacility} />
+                        <Checkbox {...label} className='text-gray-900 ml-10' name="motoparking" onChange={onChangeFacility} checked={tempF.indexOf("motoparking") !== -1} />
                         <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-60 " >ที่จอดรถมอเตอร์ไซด์ / จักรยาน</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-gray-900 ml-10' name="carparking" onChange={onChangeFacility} />
+                        <Checkbox {...label} className='text-gray-900 ml-10' name="carparking" onChange={onChangeFacility} checked={tempF.indexOf("carparking") !== -1} />
                         <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-60 " >ที่จอดรถยนต์</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-gray-900 ml-10' name="swimmingpool" onChange={onChangeFacility} />
+                        <Checkbox {...label} className='text-gray-900 ml-10' name="swimmingpool" onChange={onChangeFacility} checked={tempF.indexOf("swimmingpool") !== -1} />
                         <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-60 " >สระว่ายน้ำ</h1>
                       </div>
                     </div>
 
                     <div className='ml-32'>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-gray-900' name="fingerprintscanner" onChange={onChangeFacility} />
+                        <Checkbox {...label} className='text-gray-900' name="fingerprintscanner" onChange={onChangeFacility} checked={tempF.indexOf("fingerprintscanner") !== -1} />
                         <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-96 " >มีระบบรักษาความปลอดภัย (สแกนลายนิ้วมือ)</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-gray-900' name="CCTV" onChange={onChangeFacility} />
+                        <Checkbox {...label} className='text-gray-900' name="CCTV" onChange={onChangeFacility} checked={tempF.indexOf("CCTV") !== -1} />
                         <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-96 " >กล้องวงจรปิด (CCTV)</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-gray-900' name="elevator" onChange={onChangeFacility} />
+                        <Checkbox {...label} className='text-gray-900' name="elevator" onChange={onChangeFacility} checked={tempF.indexOf("elevator") !== -1} />
                         <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-96 " >ลิฟต์</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-gray-900' name="securityguard" onChange={onChangeFacility} />
+                        <Checkbox {...label} className='text-gray-900' name="securityguard" onChange={onChangeFacility} checked={tempF.indexOf("securityguard") !== -1} />
                         <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-60 " >รปภ.</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-gray-900' name="conveniencestore" onChange={onChangeFacility} />
+                        <Checkbox {...label} className='text-gray-900' name="conveniencestore" onChange={onChangeFacility} checked={tempF.indexOf("conveniencestore") !== -1} />
                         <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-96 " >ร้านค้า สะดวกซื้อ</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-gray-900' name="washingmachine" onChange={onChangeFacility} />
+                        <Checkbox {...label} className='text-gray-900' name="washingmachine" onChange={onChangeFacility} checked={tempF.indexOf("washingmachine") !== -1} />
                         <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-96 " >ร้านซัก-รีด / มีบริการเครื่องซักผ้า</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-gray-900' name="hairsalon" onChange={onChangeFacility} />
+                        <Checkbox {...label} className='text-gray-900' name="hairsalon" onChange={onChangeFacility} checked={tempF.indexOf("hairsalon") !== -1} />
                         <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-96 " >ร้านทำผม-เสริมสวย</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-gray-900' name="foodstore" onChange={onChangeFacility} />
+                        <Checkbox {...label} className='text-gray-900' name="foodstore" onChange={onChangeFacility} checked={tempF.indexOf("foodstore") !== -1} />
                         <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-96 " >ร้านขายอาหาร</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-gray-900' name="gym" onChange={onChangeFacility} />
+                        <Checkbox {...label} className='text-gray-900' name="gym" onChange={onChangeFacility} checked={tempF.indexOf("gym") !== -1} />
                         <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-60 " >โรงยิม / ฟิตเนส</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-gray-900' name="petallowed" onChange={onChangeFacility} />
+                        <Checkbox {...label} className='text-gray-900' name="petallowed" onChange={onChangeFacility} checked={tempF.indexOf("petallowed") !== -1} />
                         <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-60 " >อนุญาตให้เลี้ยงสัตว์</h1>
                       </div>
                     </div>
@@ -1125,6 +1126,6 @@ export default function Edit() {
           </div>
         </form>
       </div>
-        </div>
-    </>)
+    </div>
+  </>)
 }
