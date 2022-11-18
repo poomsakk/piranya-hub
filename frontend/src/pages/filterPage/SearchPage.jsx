@@ -31,33 +31,46 @@ export default function SearchPage() {
 
   return (
     <>
-      <div className="container pt-10">
-        <Grid container spacing={2}>
-          <Grid item xs={8}>
-            <TextField
-              fullWidth
-              label="ค้นหาชื่อที่พัก"
+    <div className="bg-[#EFEFEF] h-screen">
+      <div className="container py-10">
+        <div className="ml-24" >
+            <input
+              type={"text"}
+              className="
+                font-IBMPlexSansThai 
+                bg-[#EFEFEF]
+                placeholder:text-zinc-500
+                text-lg
+                pl-5 
+                w-[631px]
+                h-[40px]
+                m-2
+                ml-4
+                mt-2
+                border-2 
+                border-gray-900
+                focus:outline-none
+                focus:border-gray-900
+                rounded-xl
+                "
+              placeholder="ระบุชื่อที่พัก"
               variant="outlined"
               value={textInput}
               onChange={handleTextInputChange}
             />
-          </Grid>
-          <Grid item xs={4}>
-            <Button
-              style={{
-                maxWidth: "200px",
-                minWidth: "200px",
-              }}
-              className="w-18"
+            <button
               variant="contained"
               onClick={handleSearchBtn}
+              class="rounded-full ml-5 group relative inline-block outline-none text-sm font-medium text-white focus:outline-none focus:ring"
             >
-              ค้นหา
-            </Button>
-          </Grid>
-        </Grid>
+              <span class="shadow-md shadow-gray-900 rounded-full absolute outline-0 inset-0 border focus:outline-none outline-none border-gray-900 group-active:border-gray-900"></span>
+              <span class="rounded-full font-IBMPlexSansThai outline-0 focus:outline-none outline-none text-base block border border-gray-900 text-white bg-gray-900 px-4 py-3 transition-transform active:border-gray-900  active:bg-gray-900 group-hover:-translate-x-1 group-hover:-translate-y-1">
+                ค้นหา
+              </span>
+            </button>
+        </div>
         {isLoading ? <h1>Loading...</h1> : null}
-        <div className="container my-20">
+        <div className="container my-10">
           {lodges?.map((lodge, idx) => {
             return (
               <section
@@ -71,7 +84,7 @@ export default function SearchPage() {
                   class="h-56 w-56 object-cover"
                 />
 
-                <div class="bg-white p-4 sm:p-6">
+                <div class="bg-white p-4 sm:p-6 w-screen">
                   <time
                     datetime="2022-10-10"
                     class="block text-xs text-gray-500"
@@ -92,6 +105,7 @@ export default function SearchPage() {
           })}
         </div>
       </div>
+    </div>
     </>
   );
 }

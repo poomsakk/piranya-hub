@@ -245,18 +245,18 @@ function AddLodge() {
     <div className="flex justify-center bg-[#EFEFEF]">
       <div className="flex flex-col ">
         <form onSubmit={handleSubmitForm}>
-          <div className="max-w-[960px] bg-white flex flex-col mt-10 rounded-3xl border-2 border-[#162B78] ">
+          <div className="max-w-[960px] bg-white flex flex-col mt-10 rounded-3xl border-2 border-gray-900 ">
             <div className="information mb-10">
               <div className="items-center ">
                 <div className="container">
-                  <h1 className="font-IBMPlexSansThai text-3xl text-[#162B78] ml-12 w-96 mt-10">
+                  <h1 className="font-IBMPlexSansThai text-3xl text-gray-900 ml-12 w-96 mt-10 ">
                     ลงประกาศอพาร์ทเม้นท์
                   </h1>
-                  <h1 className="font-IBMPlexSansThai text-2xl text-[#162B78] ml-12 m-2 w-96 mt-4">
+                  <h1 className="font-IBMPlexSansThai text-2xl text-gray-900 ml-12 m-2 w-96 mt-4">
                     1. ข้อมูลที่พัก
                   </h1>
                   <div className="flex flex-row">
-                    <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] ml-12 m-2 mt-6 w-40 ">
+                    <h1 className="font-IBMPlexSansThai text-xl text-gray-900 ml-12 m-2 mt-6 w-40 ">
                       ชื่อที่พัก
                     </h1>
                     <input
@@ -273,9 +273,9 @@ function AddLodge() {
                             ml-4
                             mt-4
                             border-2 
-                            border-[#162B78]
+                            border-gray-900
                             focus:outline-none
-                            focus:border-[#162B78]
+                            focus:border-gray-900
                             rounded-xl
                             "
                       placeholder="ระบุชื่อที่พัก"
@@ -285,7 +285,7 @@ function AddLodge() {
                     />
                   </div>
                   <div className="flex flex-row">
-                    <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] ml-12 m-4 mt-2 w-32">
+                    <h1 className="font-IBMPlexSansThai text-xl text-gray-900 ml-12 m-4 mt-2 w-32">
                       ที่อยู่
                     </h1>
                     <div className="flex justify-center ml-8">
@@ -301,9 +301,9 @@ function AddLodge() {
                                 w-[200px]
                                 h-[40px]
                                 border-2 
-                                border-[#162B78]
+                                border-gray-900
                                 focus:outline-none
-                                focus:border-[#162B78]
+                                focus:border-gray-900
                                 rounded-xl"
                         placeholder="เลขที่"
                         name="houseNumber"
@@ -322,9 +322,9 @@ function AddLodge() {
                                 h-[40px]
                                 m-2 
                                 border-2 
-                                border-[#162B78]
+                                border-gray-900
                                 focus:outline-none
-                                focus:border-[#162B78]
+                                focus:border-gray-900
                                 rounded-xl"
                         placeholder="ถนน"
                         name="street"
@@ -343,9 +343,9 @@ function AddLodge() {
                                 h-[40px]
                                 m-2 
                                 border-2 
-                                border-[#162B78]
+                                border-gray-900
                                 focus:outline-none
-                                focus:border-[#162B78]
+                                focus:border-gray-900
                                 rounded-xl"
                         placeholder="ซอย"
                         name="soi"
@@ -367,9 +367,9 @@ function AddLodge() {
                                 w-[200px]
                                 h-[40px]
                                 border-2 
-                                border-[#162B78]
+                                border-gray-900
                                 focus:outline-none
-                                focus:border-[#162B78]
+                                focus:border-gray-900
                                 rounded-xl"
                       placeholder="ตำบล / แขวง"
                       name="subArea"
@@ -388,9 +388,9 @@ function AddLodge() {
                                 h-[40px]
                                 m-2 
                                 border-2 
-                                border-[#162B78]
+                                border-gray-900
                                 focus:outline-none
-                                focus:border-[#162B78]
+                                focus:border-gray-900
                                 rounded-xl"
                       placeholder="อำเภอ / เขต"
                       name="area"
@@ -409,9 +409,9 @@ function AddLodge() {
                                 h-[40px]
                                 m-2 
                                 border-2 
-                                border-[#162B78]
+                                border-gray-900
                                 focus:outline-none
-                                focus:border-[#162B78]
+                                focus:border-gray-900
                                 rounded-xl"
                       placeholder="จังหวัด"
                       name="city"
@@ -433,9 +433,9 @@ function AddLodge() {
                                 pl-5 
                                 w-[200px]
                                 border-2 
-                                border-[#162B78]
+                                border-gray-900
                                 focus:outline-none
-                                focus:border-[#162B78]
+                                focus:border-gray-900
                                 rounded-xl"
                     placeholder="รหัสไปรษณีย์"
                     name="postalCode"
@@ -451,129 +451,131 @@ function AddLodge() {
                 </div>
               </div>
             </div>
-            <div className="facilities mb-10">
+            <div class="mb-5 ml-12 mr-12 border-b border-gray-900"></div>
+            <div className="facilities mb-5">
               <div className='items-center  '>
                 <div className='content' >
-                  <h1 className="font-IBMPlexSansThai text-2xl text-[#162B78] ml-12 m-2 w-96" >2. สิ่งอำนวยความสะดวก</h1>
+                  <h1 className="font-IBMPlexSansThai text-2xl text-gray-900 ml-12 m-2 w-96" >2. สิ่งอำนวยความสะดวก</h1>
                   <div className='flex flex-row mt-4 '>
                     <div >
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-[#162B78] ml-10' name="airconditioner" onChange={onChangeFacility} />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-44" >เครื่องปรับอากาศ</h1>
+                        <Checkbox {...label} className='text-gray-900 ml-10' name="airconditioner" onChange={onChangeFacility} />
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-44" >เครื่องปรับอากาศ</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-[#162B78] ml-10' name="furniture" onChange={onChangeFacility} />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-44 " >เฟอร์นิเจอร์-ตู้, เตียง</h1>
+                        <Checkbox {...label} className='text-gray-900 ml-10' name="furniture" onChange={onChangeFacility} />
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-44 " >เฟอร์นิเจอร์-ตู้, เตียง</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-[#162B78] ml-10' name="waterheater" onChange={onChangeFacility} />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-44 " >เครื่องทำน้ำอุ่น</h1>
+                        <Checkbox {...label} className='text-gray-900 ml-10' name="waterheater" onChange={onChangeFacility} />
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-44 " >เครื่องทำน้ำอุ่น</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-[#162B78] ml-10' name="fan" onChange={onChangeFacility} />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-44 " >พัดลม</h1>
+                        <Checkbox {...label} className='text-gray-900 ml-10' name="fan" onChange={onChangeFacility} />
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-44 " >พัดลม</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-[#162B78] ml-10' name="tv" onChange={onChangeFacility} />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-44 " >โทรทัศน์</h1>
+                        <Checkbox {...label} className='text-gray-900 ml-10' name="tv" onChange={onChangeFacility} />
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-44 " >โทรทัศน์</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-[#162B78] ml-10' name="fridge" onChange={onChangeFacility} />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-44 " >ตู้เย็น</h1>
+                        <Checkbox {...label} className='text-gray-900 ml-10' name="fridge" onChange={onChangeFacility} />
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-44 " >ตู้เย็น</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-[#162B78] ml-10' name="directphone" onChange={onChangeFacility} />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-44 " >โทรศัพท์สายตรง</h1>
+                        <Checkbox {...label} className='text-gray-900 ml-10' name="directphone" onChange={onChangeFacility} />
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-44 " >โทรศัพท์สายตรง</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-[#162B78] ml-10' name="wifi" onChange={onChangeFacility} />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-64 " >อินเทอร์เน็ตไร้สาย (WIFI) ในห้อง</h1>
+                        <Checkbox {...label} className='text-gray-900 ml-10' name="wifi" onChange={onChangeFacility} />
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-64 " >อินเทอร์เน็ตไร้สาย (WIFI) ในห้อง</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-[#162B78] ml-10' name="motoparking" onChange={onChangeFacility} />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-60 " >ที่จอดรถมอเตอร์ไซด์ / จักรยาน</h1>
+                        <Checkbox {...label} className='text-gray-900 ml-10' name="motoparking" onChange={onChangeFacility} />
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-60 " >ที่จอดรถมอเตอร์ไซด์ / จักรยาน</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-[#162B78] ml-10' name="carparking" onChange={onChangeFacility} />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-60 " >ที่จอดรถยนต์</h1>
+                        <Checkbox {...label} className='text-gray-900 ml-10' name="carparking" onChange={onChangeFacility} />
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-60 " >ที่จอดรถยนต์</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-[#162B78] ml-10' name="swimmingpool" onChange={onChangeFacility} />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-60 " >สระว่ายน้ำ</h1>
+                        <Checkbox {...label} className='text-gray-900 ml-10' name="swimmingpool" onChange={onChangeFacility} />
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-60 " >สระว่ายน้ำ</h1>
                       </div>
                     </div>
 
                     <div className='ml-32'>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-[#162B78]' name="fingerprintscanner" onChange={onChangeFacility} />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-96 " >มีระบบรักษาความปลอดภัย (สแกนลายนิ้วมือ)</h1>
+                        <Checkbox {...label} className='text-gray-900' name="fingerprintscanner" onChange={onChangeFacility} />
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-96 " >มีระบบรักษาความปลอดภัย (สแกนลายนิ้วมือ)</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-[#162B78]' name="CCTV" onChange={onChangeFacility} />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-96 " >กล้องวงจรปิด (CCTV)</h1>
+                        <Checkbox {...label} className='text-gray-900' name="CCTV" onChange={onChangeFacility} />
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-96 " >กล้องวงจรปิด (CCTV)</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-[#162B78]' name="elevator" onChange={onChangeFacility} />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-96 " >ลิฟต์</h1>
+                        <Checkbox {...label} className='text-gray-900' name="elevator" onChange={onChangeFacility} />
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-96 " >ลิฟต์</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-[#162B78]' name="securityguard" onChange={onChangeFacility} />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-60 " >รปภ.</h1>
+                        <Checkbox {...label} className='text-gray-900' name="securityguard" onChange={onChangeFacility} />
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-60 " >รปภ.</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-[#162B78]' name="conveniencestore" onChange={onChangeFacility} />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-96 " >ร้านค้า สะดวกซื้อ</h1>
+                        <Checkbox {...label} className='text-gray-900' name="conveniencestore" onChange={onChangeFacility} />
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-96 " >ร้านค้า สะดวกซื้อ</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-[#162B78]' name="washingmachine" onChange={onChangeFacility} />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-96 " >ร้านซัก-รีด / มีบริการเครื่องซักผ้า</h1>
+                        <Checkbox {...label} className='text-gray-900' name="washingmachine" onChange={onChangeFacility} />
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-96 " >ร้านซัก-รีด / มีบริการเครื่องซักผ้า</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-[#162B78]' name="hairsalon" onChange={onChangeFacility} />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-96 " >ร้านทำผม-เสริมสวย</h1>
+                        <Checkbox {...label} className='text-gray-900' name="hairsalon" onChange={onChangeFacility} />
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-96 " >ร้านทำผม-เสริมสวย</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-[#162B78]' name="foodstore" onChange={onChangeFacility} />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-96 " >ร้านขายอาหาร</h1>
+                        <Checkbox {...label} className='text-gray-900' name="foodstore" onChange={onChangeFacility} />
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-96 " >ร้านขายอาหาร</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-[#162B78]' name="gym" onChange={onChangeFacility} />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-60 " >โรงยิม / ฟิตเนส</h1>
+                        <Checkbox {...label} className='text-gray-900' name="gym" onChange={onChangeFacility} />
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-60 " >โรงยิม / ฟิตเนส</h1>
                       </div>
                       <div className='flex flex-row'>
-                        <Checkbox {...label} className='text-[#162B78]' name="petallowed" onChange={onChangeFacility} />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-60 " >อนุญาตให้เลี้ยงสัตว์</h1>
+                        <Checkbox {...label} className='text-gray-900' name="petallowed" onChange={onChangeFacility} />
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-60 " >อนุญาตให้เลี้ยงสัตว์</h1>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="RoomType mb-10">
+            <div class="mb-5 ml-12 mr-12 border-b border-gray-900"></div>
+            <div className="RoomType mb-5">
               <div className='items-center '>
                 <div className='container'>
-                  <h1 className="font-IBMPlexSansThai text-2xl text-[#162B78] ml-12 m-2 w-96" >3. ประเภทห้องพัก</h1>
-                  <div className="border-2 border-indigo-800">
+                  <h1 className="font-IBMPlexSansThai text-2xl text-gray-900 ml-12 m-2 w-96" >3. ประเภทห้องพัก</h1>
+                  <div className="">
                     <div className="ml-6">
                       <div class="flex flex-row mt-2">
-                        <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] ml-12 m-2 w-36 mt-7" >รูปแบบห้อง</h1>
+                        <h1 className="font-IBMPlexSansThai text-xl text-gray-900 ml-12 m-2 w-36 mt-7" >รูปแบบห้อง</h1>
                         <input
                           type={"text"}
                           className="
-                              font-IBMPlexSansThai
-                              bg-[#EFEFEF]
-                              placeholder:text-zinc-500
-                              text-lg
-                              pl-5
-                              w-[180px]
-                              h-[40px]
-                              mt-5
-                              ml-8
-                              border-2
-                              border-[#162B78]
-                              focus:outline-none
-                              focus:border-[#162B78]
-                              rounded-xl
+                            font-IBMPlexSansThai 
+                            bg-[#EFEFEF]
+                            placeholder:text-zinc-500
+                            text-lg
+                            pl-5 
+                            w-[180px]
+                            h-[40px]
+                            mt-5
+                            ml-8
+                            border-2 
+                            border-gray-900 
+                            focus:outline-none
+                            focus:border-gray-900
+                          rounded-xl
                               "
                           placeholder="ระบุประเภท"
                           name="typeName"
@@ -582,7 +584,7 @@ function AddLodge() {
                         />
                       </div>
                       <div class="flex flex-row">
-                        <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] ml-12 m-2 w-36 mt-6" >ขนาดห้อง</h1>
+                        <h1 className="font-IBMPlexSansThai text-xl text-gray-900 ml-12 m-2 w-36 mt-6" >ขนาดห้อง</h1>
                         <input
                           type={"text"}
                           className="
@@ -596,9 +598,9 @@ function AddLodge() {
                                     mt-5
                                     ml-8
                                     border-2
-                                    border-[#162B78]
+                                    border-gray-900
                                     focus:outline-none
-                                    focus:border-[#162B78]
+                                    focus:border-gray-900
                                     rounded-xl
                                     "
                           placeholder="ระบุขนาดห้อง"
@@ -606,17 +608,18 @@ function AddLodge() {
                           value={size}
                           onChange={onInputtypeChange}
                         />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-44 mt-7" >ตารางเมตร</h1>
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-44 mt-7" >ตารางเมตร</h1>
                       </div>
 
                       <div class="flex flex-row">
-                        <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] ml-12 m-2 w-36 mt-7" >เช่ารายเดือน</h1>
+                        <h1 className="font-IBMPlexSansThai text-xl text-gray-900 ml-12 m-2 w-36 mt-7" >เช่ารายเดือน</h1>
                         <RadioGroup
                           row
                           aria-labelledby="demo-row-radio-buttons-group-label"
                           name="row-radio-buttons-group"
+                          defaultValue={1}
                         >
-                          <FormControlLabel value="female" control={<Radio sx={{ '&, &.Mui-checked': { color: '#162B78', } }} className='mt-5 ' />} />
+                          <FormControlLabel value={1} control={<Radio sx={{ '&, &.Mui-checked': { color: '#162B78', } }} className='mt-5 ' />} />
                           <input
                             type={"text"}
                             className="
@@ -630,9 +633,9 @@ function AddLodge() {
                                         mt-5
                                         ml-[-15px]
                                         border-2
-                                        border-[#162B78]
+                                        border-gray-900
                                         focus:outline-none
-                                        focus:border-[#162B78]
+                                        focus:border-gray-900
                                         rounded-xl
                                         "
                             placeholder="ระบุค่าเช่ารายเดือน"
@@ -641,25 +644,26 @@ function AddLodge() {
                             onChange={onInputtypeChange}
 
                           />
-                          <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-32 mt-7" >บาท/เดือน</h1>
+                          <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-32 mt-7" >บาท/เดือน</h1>
                           <FormControl class="flex flex-row">
                             <FormControlLabel
                               className='mt-5'
                               value="NoMonth"
                               control={<Radio sx={{ '&, &.Mui-checked': { color: '#162B78', } }} />} />
-                            <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] w-44 mt-7 ml-[-15px]" >ไม่มีห้องเช่ารายเดือน</h1>
+                            <h1 className="font-IBMPlexSansThai text-lg text-gray-900 w-44 mt-7 ml-[-15px]" >ไม่มีห้องเช่ารายเดือน</h1>
                           </FormControl>
                         </RadioGroup>
                       </div>
 
                       <div class="flex flex-row">
-                        <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] ml-12 m-2 w-36 mt-7" >เช่ารายวัน</h1>
+                        <h1 className="font-IBMPlexSansThai text-xl text-gray-900 ml-12 m-2 w-36 mt-7" >เช่ารายวัน</h1>
                         <RadioGroup
                           row
                           aria-labelledby="demo-row-radio-buttons-group-label"
                           name="row-radio-buttons-group"
+                          defaultValue={1}
                         >
-                          <FormControlLabel value="female" control={<Radio sx={{ '&, &.Mui-checked': { color: '#162B78', } }} className='mt-5 ' />} />
+                          <FormControlLabel value={1} control={<Radio sx={{ '&, &.Mui-checked': { color: '#162B78', } }} className='mt-5 ' />} />
                           <input
                             type={"text"}
                             className="
@@ -673,9 +677,9 @@ function AddLodge() {
                                         mt-5
                                         ml-[-15px]
                                         border-2
-                                        border-[#162B78]
+                                        border-gray-900
                                         focus:outline-none
-                                        focus:border-[#162B78]
+                                        focus:border-gray-900
                                         rounded-xl
                                         "
                             placeholder="ระบุค่าเช่ารายวัน"
@@ -683,19 +687,21 @@ function AddLodge() {
                             value={pricePerDay}
                             onChange={onInputtypeChange}
                           />
-                          <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-32 mt-7" >บาท/วัน</h1>
+                          <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-32 mt-7" >บาท/วัน</h1>
                           <FormControl class="flex flex-row">
                             <FormControlLabel
-                              className='mt-5  font-IBMPlexSansThai text-xl text-[#162B78]'
+                              className='mt-5  font-IBMPlexSansThai text-xl text-gray-900'
                               value="NoDay"
                               control={<Radio sx={{ '&, &.Mui-checked': { color: '#162B78', } }} />} />
-                            <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] w-44 mt-7 ml-[-15px]" >ไม่มีห้องเช่ารายวัน</h1>
+                            <h1 className="font-IBMPlexSansThai text-lg text-gray-900 w-44 mt-7 ml-[-15px]" >ไม่มีห้องเช่ารายวัน</h1>
                           </FormControl>
                         </RadioGroup>
                       </div>
                       <div class="flex flex-row">
-                        <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] ml-12 m-2 w-36 mt-7" >ห้องว่างอ้ะป่าว</h1>
+                        <h1 className="font-IBMPlexSansThai text-xl text-gray-900 ml-12 m-2 w-28 mt-7" >ห้องว่าง</h1>
                         <Switch
+                          className="ml-4 mt-6 "
+                          sx={{ '& .MuiSwitch-switchBase.Mui-checked': { color: '#162B78', } }}
                           checked={available}
                           inputProps={{ 'aria-label': 'controlled' }}
                           onChange={onInputtypeChangeAvaliable}
@@ -706,206 +712,13 @@ function AddLodge() {
                 </div>
               </div>
             </div>
-            {/* <div className="RoomType mb-5">
-              <div className="flex flex-row" >
-                <h1 className="font-IBMPlexSansThai text-2xl text-[#162B78] ml-12 m-2 w-96" >3. ประเภทห้องพัก</h1>
-                <button
-                    type="button"
-                    onClick={handleAddFields}
-                    class="rounded-full ml-[320px] group relative inline-block outline-none text-sm font-medium text-white focus:outline-none focus:ring"
-                    >
-                    <span class="shadow-md shadow-[#162B78] rounded-full absolute outline-0 inset-0 border focus:outline-none outline-none border-[#162B78] group-active:border-[#162B78]"></span>
-                    <span class="rounded-full font-IBMPlexSansThai outline-0 focus:outline-none outline-none text-base block border border-[#162B78] text-white bg-[#162B78] px-4 py-3 transition-transform active:border-[#162B78]  active:bg-black group-hover:-translate-x-1 group-hover:-translate-y-1">
-                      เพิ่มประเภท
-                    </span>
-                  </button>
-              </div>
-              <div>
-                {typeFields.map(inputField => (
-                  <div
-                    className="border-2 border-[#162B78] rounded-3xl ml-12 mr-12 mt-5 mb-5"
-                    key={inputField.id}>
-                    <div className="ml-6 mb-6">
-                      <div class="flex flex-row ">
-                        <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] ml-3 m-2 w-36 mt-7" >รูปแบบห้อง</h1>
-                        <input
-                          type={"text"}
-                          className="
-                                font-IBMPlexSansThai 
-                                bg-[#EFEFEF]
-                                placeholder:text-zinc-500
-                                text-lg
-                                pl-5 
-                                w-[180px]
-                                h-[40px]
-                                mt-5
-                                ml-8
-                                border-2 
-                                border-[#162B78] 
-                                focus:outline-none
-                                focus:border-[#162B78]
-                                rounded-xl
-                                "
-                          placeholder="ระบุประเภท"
-                          name="typeName"
-                          value={inputField.typeName}
-                          onChange={event => handleChangeInput(inputField.id, event)}
-                        />
-                      </div>
-                    
-                      <div class="flex flex-row">
-                        <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] ml-3 m-2 w-36 mt-6" >ขนาดห้อง</h1>
-                        <input
-                          type={"text"}
-                          className="
-                                      font-IBMPlexSansThai 
-                                      bg-[#EFEFEF]
-                                      placeholder:text-zinc-500
-                                      text-lg
-                                      pl-5 
-                                      w-[180px]
-                                      h-[40px]
-                                      mt-5
-                                      ml-8
-                                      border-2 
-                                      border-[#162B78] 
-                                      focus:outline-none
-                                      focus:border-[#162B78]
-                                      rounded-xl
-                                      "
-                          placeholder="ระบุขนาดห้อง"
-                          name="size"
-                          value={inputField.size}
-                          onChange={event => handleChangeInput(inputField.id, event)}
-                        />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-44 mt-7" >ตารางเมตร</h1>
-                      </div>
-                      
-                      <div class="flex flex-row">
-                        <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] ml-3 m-2 w-36 mt-7" >เช่ารายเดือน</h1>
-                        <RadioGroup
-                          row
-                          aria-labelledby="demo-row-radio-buttons-group-label"
-                          name="row-radio-buttons-group"
-                          defaultValue={1}
-                        >
-                          <FormControlLabel value={1} control={<Radio sx={{ '&, &.Mui-checked': { color: '#162B78', } }} className='mt-5 ' />} />
-                          <input
-                            type={"text"}
-                            className="
-                                        font-IBMPlexSansThai 
-                                        bg-[#EFEFEF]
-                                        placeholder:text-zinc-500
-                                        text-lg
-                                        pl-5 
-                                        w-[180px]
-                                        h-[40px]
-                                        mt-5
-                                        ml-[-15px]
-                                        border-2 
-                                        border-[#162B78] 
-                                        focus:outline-none
-                                        focus:border-[#162B78]
-                                        rounded-xl
-                                        "
-                            placeholder="ระบุค่าเช่ารายเดือน"
-                            name="pricePerMonth"
-                            value={inputField.pricePerMonth}
-                            onChange={event => handleChangeInput(inputField.id, event)}
-
-                          />
-                          <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-32 mt-7" >บาท/เดือน</h1>
-                          <FormControl class="flex flex-row">
-                            <FormControlLabel
-                              className='mt-5'
-                              value="NoMonth"
-                              control={<Radio sx={{ '&, &.Mui-checked': { color: '#162B78', } }} />} />
-                            <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] w-44 mt-7 ml-[-15px]" >ไม่มีห้องเช่ารายเดือน</h1>
-                          </FormControl>
-                        </RadioGroup>
-                      </div>
-                      
-                      <div class="flex flex-row ">
-                        <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] ml-3 m-2 w-36 mt-7" >เช่ารายวัน</h1>
-                        <RadioGroup
-                          row
-                          aria-labelledby="demo-row-radio-buttons-group-label"
-                          name="row-radio-buttons-group"
-                          defaultValue={1}
-                        >
-                          <FormControlLabel value={1} control={<Radio sx={{ '&, &.Mui-checked': { color: '#162B78', } }} className='mt-5 ' />} />
-                          <input
-                            type={"text"}
-                            className="
-                                          font-IBMPlexSansThai 
-                                          bg-[#EFEFEF]
-                                          placeholder:text-zinc-500
-                                          text-lg
-                                          pl-5 
-                                          w-[180px]
-                                          h-[40px]
-                                          mt-5
-                                          ml-[-15px]
-                                          border-2 
-                                          border-[#162B78] 
-                                          focus:outline-none
-                                          focus:border-[#162B78]
-                                          rounded-xl
-                                          "
-                            placeholder="ระบุค่าเช่ารายวัน"
-                            name="pricePerDay"
-                            value={inputField.pricePerDay}
-                            onChange={event => handleChangeInput(inputField.id, event)}
-                          />
-                          <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-32 mt-7" >บาท/วัน</h1>
-                          <FormControl class="flex flex-row">
-                            <FormControlLabel
-                              className='mt-5  font-IBMPlexSansThai text-xl text-[#162B78]'
-                              value="NoDay"
-                              control={<Radio sx={{ '&, &.Mui-checked': { color: '#162B78', } }} />} />
-                            <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] w-44 mt-7 ml-[-15px]" >ไม่มีห้องเช่ารายวัน</h1>
-                          </FormControl>
-                        </RadioGroup>
-                      </div>
-                      <div class="flex flex-row">
-                        <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] ml-3 m-2 w-32 mt-7" >ห้องว่าง</h1>
-                        <Switch
-                          name="available"
-                          className="mt-6"
-                          checked={typeFields[0].available}
-                          inputProps={{ 'aria-label': 'controlled' }}
-                          onChange={event => handleChangeAvailable(inputField.id, event)}
-                        />
-                        {typeFields.length !== 1 && (
-                          <button
-                            type="button"
-                            onClick={() => handleRemoveFields(inputField.id)}
-                            class="
-                            ml-[550px]
-                            mb-[-50px]
-                            font-IBMPlexSansThai
-                            text-lg 
-                            text-[#162B78] 
-                            underline 
-                            hover:text-red-500
-                            m-2"
-                          >
-                            ลบ
-                          </button>
-                        )}
-                      </div>
-                      
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div> */}
-            <div className="Cost mb-10">
+            <div class="mb-5 ml-12 mr-12 border-b border-gray-900"></div>
+            <div className="Cost mb-5">
               <div className='items-center '>
                 <div className='container'>
-                  <h1 className="font-IBMPlexSansThai text-2xl text-[#162B78] ml-12 m-2 w-96" >4. ค่าใช้จ่าย</h1>
+                  <h1 className="font-IBMPlexSansThai text-2xl text-gray-900 ml-12 m-2 w-96" >4. ค่าใช้จ่าย</h1>
                   <div class="flex flex-row mt-2 ml-6">
-                    <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] ml-12 m-2 w-40 mt-7" >ค่าน้ำ</h1>
+                    <h1 className="font-IBMPlexSansThai text-xl text-gray-900 ml-12 m-2 w-40 mt-7" >ค่าน้ำ</h1>
                     <FormControl>
                       <RadioGroup
                         row
@@ -927,23 +740,23 @@ function AddLodge() {
                                   mt-5
                                   ml-[-15px]
                                   border-2 
-                                  border-[#162B78] 
+                                  border-gray-900 
                                   focus:outline-none
-                                  focus:border-[#162B78]
+                                  focus:border-gray-900
                                   rounded-xl
                                   "
                           name="waterPerUnit"
                           value={waterPerUnit}
                           onChange={onInputcostChange}
                         />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-24 mt-7" >บาท/ยูนิต</h1>
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-24 mt-7" >บาท/ยูนิต</h1>
                         <FormControlLabel value={0} control={<Radio sx={{ '&, &.Mui-checked': { color: '#162B78', } }} className='mt-5' />} />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] ml-[-15px] w-56 mt-7 " >ราคาตามที่การประปากำหนด</h1>
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 ml-[-15px] w-56 mt-7 " >ราคาตามที่การประปากำหนด</h1>
                       </RadioGroup>
                     </FormControl>
                   </div>
                   <div class="flex flex-row mt-2 ml-6">
-                    <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] ml-12 m-2 w-40 mt-7" >ค่าไฟ</h1>
+                    <h1 className="font-IBMPlexSansThai text-xl text-gray-900 ml-12 m-2 w-40 mt-7" >ค่าไฟ</h1>
                     <FormControl>
                       <RadioGroup
                         row
@@ -965,24 +778,24 @@ function AddLodge() {
                               mt-5
                               ml-[-15px]
                               border-2 
-                              border-[#162B78] 
+                              border-gray-900 
                               focus:outline-none
-                              focus:border-[#162B78]
+                              focus:border-gray-900
                               rounded-xl
                               "
                           name="electricPerUnit"
                           value={electricPerUnit}
                           onChange={onInputcostChange}
                         />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-24 mt-7" >บาท/ยูนิต</h1>
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-24 mt-7" >บาท/ยูนิต</h1>
                         <FormControlLabel value={0} control={<Radio sx={{ '&, &.Mui-checked': { color: '#162B78', } }} className='mt-5' />} />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] ml-[-15px] w-56 mt-7 " >ราคาตามที่การไฟฟ้ากำหนด</h1>
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 ml-[-15px] w-56 mt-7 " >ราคาตามที่การไฟฟ้ากำหนด</h1>
                       </RadioGroup>
                     </FormControl>
                   </div>
 
                   <div class="flex flex-row mt-2 ml-6">
-                    <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] ml-12 m-2 w-40 mt-7" >ค่าบริการอื่นๆ</h1>
+                    <h1 className="font-IBMPlexSansThai text-xl text-gray-900 ml-12 m-2 w-40 mt-7" >ค่าบริการอื่นๆ</h1>
                     <FormControl>
                       <RadioGroup
                         row
@@ -1004,24 +817,24 @@ function AddLodge() {
                               mt-5
                               ml-[-15px]
                               border-2 
-                              border-[#162B78] 
+                              border-gray-900 
                               focus:outline-none
-                              focus:border-[#162B78]
+                              focus:border-gray-900
                               rounded-xl
                               "
                           name="commonFee"
                           value={commonFee}
                           onChange={onInputcostChange}
                         />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-24 mt-7" >บาท/เดือน</h1>
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-24 mt-7" >บาท/เดือน</h1>
                         <FormControlLabel value={0} control={<Radio sx={{ '&, &.Mui-checked': { color: '#162B78', } }} className='mt-5' />} />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] ml-[-15px] w-56 mt-7 " >รวมในค่าห้องแล้ว</h1>
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 ml-[-15px] w-56 mt-7 " >รวมในค่าห้องแล้ว</h1>
                       </RadioGroup>
                     </FormControl>
                   </div>
 
                   <div class="flex flex-row mt-2 ml-6">
-                    <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] ml-12 m-2 w-40 mt-7" >เงินมัดจำ/ประกัน</h1>
+                    <h1 className="font-IBMPlexSansThai text-xl text-gray-900 ml-12 m-2 w-40 mt-7" >เงินมัดจำ/ประกัน</h1>
                     <FormControl>
                       <RadioGroup
                         row
@@ -1043,28 +856,29 @@ function AddLodge() {
                               mt-5
                               ml-[-15px]
                               border-2 
-                              border-[#162B78] 
+                              border-gray-900 
                               focus:outline-none
-                              focus:border-[#162B78]
+                              focus:border-gray-900
                               rounded-xl
                               "
                           name="insurance"
                           value={insurance}
                           onChange={onInputcostChange}
                         />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] m-2 w-24 mt-7" >บาท</h1>
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 m-2 w-24 mt-7" >บาท</h1>
                         <FormControlLabel value={0} control={<Radio sx={{ '&, &.Mui-checked': { color: '#162B78', } }} className='mt-5' />} />
-                        <h1 className="font-IBMPlexSansThai text-lg text-[#162B78] ml-[-15px] w-56 mt-7 " >ไม่มีการเก็บเงินประกัน</h1>
+                        <h1 className="font-IBMPlexSansThai text-lg text-gray-900 ml-[-15px] w-56 mt-7 " >ไม่มีการเก็บเงินประกัน</h1>
                       </RadioGroup>
                     </FormControl>
                   </div>
                 </div>
               </div>
             </div>
-            <div className='Detail container '>
-              <h1 className="font-IBMPlexSansThai text-2xl text-[#162B78] ml-12 m-2 w-96" >5. รายละเอียด</h1>
+            <div class="mb-5 ml-12 mr-12 border-b border-gray-900"></div>
+            <div className='Detail mb-5 '>
+              <h1 className="font-IBMPlexSansThai text-2xl text-gray-900 ml-12 m-2 w-96" >5. รายละเอียด</h1>
               <div className="flex flex-row ml-5">
-                <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] ml-12 m-2 mt-6 w-28 ">
+                <h1 className="font-IBMPlexSansThai text-xl text-gray-900 ml-12 m-2 mt-6 w-28 ">
                   รายละเอียดภาษาไทย
                 </h1>
                 <input
@@ -1082,9 +896,9 @@ function AddLodge() {
                             ml-4
                             mt-4
                             border-2 
-                            border-[#162B78]
+                            border-gray-900
                             focus:outline-none
-                            focus:border-[#162B78]
+                            focus:border-gray-900
                             rounded-xl
                             "
                   placeholder="ระบุชื่อที่พัก"
@@ -1095,7 +909,7 @@ function AddLodge() {
               </div>
 
               <div className="flex flex-row ml-5">
-                <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] ml-12 m-2 mt-6 w-28 ">
+                <h1 className="font-IBMPlexSansThai text-xl text-gray-900 ml-12 m-2 mt-6 w-28 ">
                   รายละเอียดภาษาอังกฤษ
                 </h1>
                 <TextField
@@ -1111,7 +925,7 @@ function AddLodge() {
                             m-2
                             ml-4
                             mt-4
-                            border-[#162B78]
+                            border-gray-900
                             rounded-xl'
                   multiline
                   rows={4}
@@ -1123,8 +937,9 @@ function AddLodge() {
 
               </div>
             </div>
-            <div className='Image container'>
-              <h1 className="font-IBMPlexSansThai text-2xl text-[#162B78] ml-12 m-2 w-96" >6. รูปภาพ</h1>
+            <div class="mb-5 ml-12 mr-12 border-b border-gray-900"></div>
+            <div className='Image mb-5'>
+              <h1 className="font-IBMPlexSansThai text-2xl text-gray-900 ml-12 m-2 w-96" >6. รูปภาพ</h1>
               <TextField
                 required
                 id="outlined-required"
@@ -1136,10 +951,11 @@ function AddLodge() {
               />
               <Button variant="contained">เพิ่ม image path</Button>
             </div>
-            <div className="Promotion">
-              <h1 className="font-IBMPlexSansThai text-2xl text-[#162B78] ml-12 m-2 w-96" >7. โปรโมชั่น</h1>
+            <div class="mb-5 ml-12 mr-12 border-b border-gray-900"></div>
+            <div className="Promotion mb-5">
+              <h1 className="font-IBMPlexSansThai text-2xl text-gray-900 ml-12 m-2 w-96" >7. โปรโมชั่น</h1>
               <div className="flex flex-row ml-5">
-                <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] ml-12 m-2 mt-6 w-28 ">
+                <h1 className="font-IBMPlexSansThai text-xl text-gray-900 ml-12 m-2 mt-6 w-28 ">
                   รายละเอียดโปรโมชัน
                 </h1>
                 <input
@@ -1157,9 +973,9 @@ function AddLodge() {
                             ml-4
                             mt-4
                             border-2 
-                            border-[#162B78]
+                            border-gray-900
                             focus:outline-none
-                            focus:border-[#162B78]
+                            focus:border-gray-900
                             rounded-xl
                             "
                   placeholder="ระบุโปร ไม่มีใส่ -"
@@ -1169,12 +985,13 @@ function AddLodge() {
                 />
               </div>
             </div>
-            <div className="Contact mb-10">
+            <div class="mb-5 ml-12 mr-12 border-b border-gray-900"></div>
+            <div className="Contact mb-5">
               <div className='container'>
-                <h1 className="font-IBMPlexSansThai text-2xl text-[#162B78] ml-12 m-2 w-96" >8. ข้อมูลสำหรับติดต่อ</h1>
+                <h1 className="font-IBMPlexSansThai text-2xl text-gray-900 ml-12 m-2 w-96" >8. ข้อมูลสำหรับติดต่อ</h1>
                 <div className="ml-6">
                   <div class="flex flex-row mt-2">
-                    <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] ml-12 m-2 w-24 mt-7" >ชื่อผู้ดูแล</h1>
+                    <h1 className="font-IBMPlexSansThai text-xl text-gray-900 ml-12 m-2 w-24 mt-7" >ชื่อผู้ดูแล</h1>
                     <input
                       type={"text"}
                       className="
@@ -1188,9 +1005,9 @@ function AddLodge() {
                               mt-5
                               ml-8
                               border-2 
-                              border-[#162B78] 
+                              border-gray-900 
                               focus:outline-none
-                              focus:border-[#162B78]
+                              focus:border-gray-900
                               rounded-xl
                               "
                       placeholder="ระบุชื่อผู้ดูแล"
@@ -1200,7 +1017,7 @@ function AddLodge() {
                     />
                   </div>
                   <div class="flex flex-row">
-                    <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] ml-12 m-2 w-24 mt-6" >เบอร์ติดต่อ</h1>
+                    <h1 className="font-IBMPlexSansThai text-xl text-gray-900 ml-12 m-2 w-24 mt-6" >เบอร์ติดต่อ</h1>
                     <input
                       type={"text"}
                       className="
@@ -1214,9 +1031,9 @@ function AddLodge() {
                                     mt-5
                                     ml-8
                                     border-2 
-                                    border-[#162B78] 
+                                    border-gray-900 
                                     focus:outline-none
-                                    focus:border-[#162B78]
+                                    focus:border-gray-900
                                     rounded-xl
                                     "
                       placeholder="ระบุเบอร์ติดต่อ"
@@ -1227,7 +1044,7 @@ function AddLodge() {
                   </div>
 
                   <div class="flex flex-row">
-                    <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] ml-12 m-2 w-24 mt-7" >E-mail</h1>
+                    <h1 className="font-IBMPlexSansThai text-xl text-gray-900 ml-12 m-2 w-24 mt-7" >E-mail</h1>
                     <input
                       type={"text"}
                       className="
@@ -1241,9 +1058,9 @@ function AddLodge() {
                                         mt-5
                                         ml-8
                                         border-2 
-                                        border-[#162B78] 
+                                        border-gray-900 
                                         focus:outline-none
-                                        focus:border-[#162B78]
+                                        focus:border-gray-900
                                         rounded-xl
                                         "
                       placeholder="ระบุ E-mail"
@@ -1253,7 +1070,7 @@ function AddLodge() {
                     />
                   </div>
                   <div class="flex flex-row">
-                    <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] ml-12 m-2 w-24 mt-7" >Line ID</h1>
+                    <h1 className="font-IBMPlexSansThai text-xl text-gray-900 ml-12 m-2 w-24 mt-7" >Line ID</h1>
                     <input
                       type={"text"}
                       className="
@@ -1267,9 +1084,9 @@ function AddLodge() {
                                         mt-5
                                         ml-8
                                         border-2 
-                                        border-[#162B78] 
+                                        border-gray-900 
                                         focus:outline-none
-                                        focus:border-[#162B78]
+                                        focus:border-gray-900
                                         rounded-xl
                                         "
                       placeholder="ระบุ Line ID"
@@ -1287,8 +1104,8 @@ function AddLodge() {
               type="submit"
               class="rounded-full ml-5 group relative inline-block outline-none text-sm font-medium text-white focus:outline-none focus:ring"
             >
-              <span class="shadow-md shadow-[#162B78] rounded-full absolute outline-0 inset-0 border focus:outline-none outline-none border-[#162B78] group-active:border-[#162B78]"></span>
-              <span class="rounded-full font-IBMPlexSansThai outline-0 focus:outline-none outline-none text-base block border border-[#162B78] text-white bg-[#162B78] px-4 py-3 transition-transform active:border-[#162B78]  active:bg-[#162B78] group-hover:-translate-x-1 group-hover:-translate-y-1">
+              <span class="shadow-md shadow-gray-900 rounded-full absolute outline-0 inset-0 border focus:outline-none outline-none border-gray-900 group-active:border-gray-900"></span>
+              <span class="rounded-full font-IBMPlexSansThai outline-0 focus:outline-none outline-none text-base block border border-gray-900 text-white bg-gray-900 px-4 py-3 transition-transform active:border-gray-900  active:bg-gray-900 group-hover:-translate-x-1 group-hover:-translate-y-1">
                 บันทึก
               </span>
             </button>

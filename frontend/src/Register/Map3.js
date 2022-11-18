@@ -80,7 +80,7 @@ const PlacesAutocomplete = ({ setSelected, setViewPort, SetPositon }) => {
     return (
         <Combobox onSelect={handleSelect}>
             <div className="flex flex-row mb-4 mt-[-12px]">
-                <h1 className="font-IBMPlexSansThai text-xl text-[#162B78] mt-2 w-40 ">ค้นหาสถานที่</h1>
+                <h1 className="font-IBMPlexSansThai text-xl text-gray-900 mt-2 w-40 ">ค้นหาสถานที่</h1>
                 <ComboboxInput
                     value={value}
                     onChange={(e) => setValue(e.target.value)}
@@ -96,9 +96,9 @@ const PlacesAutocomplete = ({ setSelected, setViewPort, SetPositon }) => {
                     h-[40px]
                     ml-6
                     border-2 
-                    border-[#162B78]
+                    border-gray-900
                     focus:outline-none
-                    focus:border-[#162B78]
+                    focus:border-gray-900
                     rounded-xl
                     "
                     placeholder="Search an address"
