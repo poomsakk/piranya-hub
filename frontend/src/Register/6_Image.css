@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
+
+:root {
+    --body-bg: #EFEFEF;
+    --box-bg: #ffffff;
+    --input-bg: #EFEFEF;
+    --txt-color: #2f2d2f;
+    --txt-second-color: #ccc;
+    --border-color: #111827;
+}
+
+.box {
+    background-color: var(--box-bg);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+}

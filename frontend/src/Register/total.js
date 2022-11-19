@@ -13,6 +13,7 @@ import { setData } from "../redux/mhooSlice"
 import { v4 as uuidv4 } from 'uuid';
 import Map3 from "./Map3";
 import Type from "./3_Type"
+import Images from "./6_Image"
 
 function AddLodge() {
   // Main section >>>
@@ -230,13 +231,14 @@ function AddLodge() {
     <div className="flex justify-center bg-[#EFEFEF]">
       <div className="flex flex-col ">
         <form onSubmit={handleSubmitForm}>
-          <div className="max-w-[960px] bg-white flex flex-col mt-10 rounded-3xl border-2 border-gray-900 ">
+          <div className="max-w-[960px] bg-white flex flex-col mt-10 rounded-3xl shadow-lg shadow-gray-400">
             <div className="information mb-10">
               <div className="items-center ">
                 <div className="container">
                   <h1 className="font-IBMPlexSansThai text-3xl text-gray-900 ml-12 w-96 mt-10 ">
                     ลงประกาศอพาร์ทเม้นท์
                   </h1>
+                  <div class="mb-5 mt-5 ml-12 mr-12 border-b border-gray-900"></div>
                   <h1 className="font-IBMPlexSansThai text-2xl text-gray-900 ml-12 m-2 w-96 mt-4">
                     1. ข้อมูลที่พัก
                   </h1>
@@ -436,8 +438,9 @@ function AddLodge() {
                 </div>
               </div>
             </div>
-            <div class="mb-5 ml-12 mr-12 border-b border-gray-900"></div>
-            <div className="facilities mb-5">
+            <div class="ml-12 mr-12 border-b border-gray-900"></div>
+
+            <div className="facilities mb-5 mt-[-20px]">
               <div className='items-center  '>
                 <div className='content' >
                   <h1 className="font-IBMPlexSansThai text-2xl text-gray-900 ml-12 m-2 w-96" >2. สิ่งอำนวยความสะดวก</h1>
@@ -536,6 +539,7 @@ function AddLodge() {
               </div>
             </div>
             <div class="mb-5 ml-12 mr-12 border-b border-gray-900"></div>
+
             <div className="RoomType mb-5">
               <div className='items-center '>
                 <div className='container'>
@@ -698,6 +702,7 @@ function AddLodge() {
               </div>
             </div>
             <div class="mb-5 ml-12 mr-12 border-b border-gray-900"></div>
+
             <div className="Cost mb-5">
               <div className='items-center '>
                 <div className='container'>
@@ -860,6 +865,7 @@ function AddLodge() {
               </div>
             </div>
             <div class="mb-5 ml-12 mr-12 border-b border-gray-900"></div>
+
             <div className='Detail mb-5 '>
               <h1 className="font-IBMPlexSansThai text-2xl text-gray-900 ml-12 m-2 w-96" >5. รายละเอียด</h1>
               <div className="flex flex-row ml-5">
@@ -897,18 +903,12 @@ function AddLodge() {
               </div>
             </div>
             <div class="mb-5 ml-12 mr-12 border-b border-gray-900"></div>
+
             <div className='Image mb-5'>
-                <h1 className="font-IBMPlexSansThai text-2xl text-[#111827] ml-12 m-2 w-96" >6. รูปภาพ</h1>
-                <div classname="border border-gray-900">
-                  <input type="file" multiple accept ="image/*" onChange={onImageChange} />
-                  <div classname="border border-gray-900">
-                    {imagesURLs.map((imageSrc) => ( 
-                      <img src= {imageSrc} width="200px" className="display: inline m-2"/> 
-                    ))}
-                  </div>
-                </div>
+              <Images/>
             </div>
             <div class="mb-5 ml-12 mr-12 border-b border-gray-900"></div>
+
             <div className="Promotion mb-5">
               <h1 className="font-IBMPlexSansThai text-2xl text-gray-900 ml-12 m-2 w-96" >7. โปรโมชั่น</h1>
               <div className="flex flex-row ml-5">
@@ -946,7 +946,8 @@ function AddLodge() {
               </div>
             </div>
             <div class="mb-5 ml-12 mr-12 border-b border-gray-900"></div>
-            <div className="Contact mb-5">
+
+            <div className="Contact mb-10">
               <div className='container'>
                 <h1 className="font-IBMPlexSansThai text-2xl text-gray-900 ml-12 m-2 w-96" >8. ข้อมูลสำหรับติดต่อ</h1>
                 <div className="ml-6">
@@ -1059,7 +1060,7 @@ function AddLodge() {
               </div>
             </div>
           </div>
-          <div className="flex justify-end m-5">
+          <div className="flex justify-end m-5 mr-10">
             <button
               type="submit"
               class="rounded-full ml-5 group relative inline-block outline-none text-sm font-medium text-white focus:outline-none focus:ring"
