@@ -53,9 +53,14 @@ const LodgeInfo = () => {
             </section>
             <section>
               <Carousel>
-                {imgUrl.map((item, i) => (
-                  <ImageCom key={i} item={item} />
-                ))}
+                {lodge.imagePath.imagePaths.map(
+                  (
+                    item,
+                    i //old -> imgUrl.map(...)
+                  ) => (
+                    <ImageCom key={i} item={item} />
+                  )
+                )}
               </Carousel>
             </section>
             <section>
@@ -73,7 +78,9 @@ const LodgeInfo = () => {
                     <div className="flex justify-between">
                       <h1>ค่ามัดจำ </h1>
                       <h1>
-                        {lodge.cost.insurance === 0 ? "-" : lodge.cost.insurance}{" "}
+                        {lodge.cost.insurance === 0
+                          ? "-"
+                          : lodge.cost.insurance}{" "}
                         บาท
                       </h1>
                     </div>
@@ -88,7 +95,9 @@ const LodgeInfo = () => {
                     <div className="flex justify-between">
                       <h1>ค่าบริการอื่นๆ: </h1>
                       <h1>
-                        {lodge.cost.commonFee === 0 ? "-" : lodge.cost.commonFee}{" "}
+                        {lodge.cost.commonFee === 0
+                          ? "-"
+                          : lodge.cost.commonFee}{" "}
                         บาท
                       </h1>
                     </div>

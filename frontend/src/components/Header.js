@@ -34,9 +34,8 @@ function Header() {
 
   return (
     <div
-      className={`${
-        pathname == "/" ? "header-in-main-page" : "header bg-gray-900"
-      }`}
+      className={`${pathname === "/" ? "header-in-main-page" : "header bg-gray-900"
+        }`}
     >
       <div className="container">
         <div className="header-con">
@@ -90,7 +89,7 @@ function Header() {
             >
               <span class="rounded-full absolute outline-0 inset-0 border focus:outline-none outline-none border-white group-active:border-white"></span>
               <span class="rounded-full font-IBMPlexSansThai outline-0 focus:outline-none outline-none text-base block border border-white text-black bg-white px-7 py-3 transition-transform active:border-white  active:bg-white group-hover:-translate-x-1 group-hover:-translate-y-1">
-                ค้นหาด้วยชื่อ
+                ค้นหาชื่อที่พัก
               </span>
             </button>
 

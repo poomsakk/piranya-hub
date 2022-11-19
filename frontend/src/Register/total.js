@@ -6,6 +6,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import { Button, Switch } from "@mui/material";
+import CircularProgress from '@mui/material/CircularProgress';
 import { landLordApi } from "../axiosConfig";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
@@ -14,14 +15,19 @@ import { v4 as uuidv4 } from 'uuid';
 import Map3 from "./Map3";
 import Type from "./3_Type"
 import Images from "./6_Image"
+import "./6_Image.css"
+import DropFileInput from './dropImage/DropFileInput';
+import axios from "axios";
 
 function AddLodge() {
   // Main section >>>
   const dispatch = useDispatch()
   const userReduxData = useSelector((state) => state.data.userData)
   let navigate = useNavigate()
-  function handleSubmitForm(e) {
+  let links = []
+  async function handleSubmitForm(e) {
     e.preventDefault()//
+    await upLoadImages()
     let userLodges = userReduxData.lodgeOwn.slice(1, userReduxData.lodgeOwn.length - 1).split(", ")
     landLordApi.post(`/lodge/add/${userReduxData.id}`, {
       information: { ...informationData, lat: positon.lat, lng: positon.lng },
@@ -29,7 +35,8 @@ function AddLodge() {
       roomType: [typeData],
       cost: costData,
       detail: detailData,
-      imagePath: imageData,
+      //imagePath: imageData,
+      imagePath: { imagePaths: links },
       promotion: promotionData,
       contact: contactData
     }, {
@@ -176,7 +183,7 @@ function AddLodge() {
 
   // 5 Detail section <<<
 
-  // 6 Image section >>>
+  // 6 Image section - old plain text>>>
   const [imageData, setImageData] = useState({
     imagePaths: []
   })
@@ -187,13 +194,38 @@ function AddLodge() {
     temp.push(e.target.value)
     setImageData({ imagePaths: temp })
   }
-  //new
+  //new drop image
+  const [isImageLoading, setIsimageLoading] = useState(false)
+  const [imageFiles, setImageFiles] = useState([])
+  const onFileChange = (files) => {
+    setImageFiles(files)
+    //console.log(files)
+  }
+  function upLoadImages() {
+    setIsimageLoading(true)
+    links = []
+    const uploader = imageFiles.map(async (file) => {
+      const data = new FormData()
+      data.append('file', file)
+      data.append('upload_preset', 'piranyahub')
+      const res = await axios.post("https://api.cloudinary.com/v1_1/dhweyvzzp/image/upload", data)
+      links.push(res.data.url)
+      // axios.post("https://api.cloudinary.com/v1_1/dhweyvzzp/image/upload", data)
+      //   .then(res => {
+      //     console.log(res.data.url)
+      //   })
+    })
+    return axios.all(uploader).then(() => {
+      setIsimageLoading(false)
+    })
+  }
   // 6 Image section <<<
+
   const [images, setImages] = useState([]);
   const [imagesURLs, setImageURLs] = useState([]);
 
   useEffect(() => {
-    if (images.lenght < 1 ) return;
+    if (images.lenght < 1) return;
     const newImageUrls = [];
     images.forEach(image => newImageUrls.push(URL.createObjectURL(image)));
     setImageURLs(newImageUrls);
@@ -201,7 +233,7 @@ function AddLodge() {
   }, [images]);
 
 
-  function onImageChange(e){
+  function onImageChange(e) {
     setImages([...e.target.files]);
   }
   // 7 Promotions section >>>
@@ -905,7 +937,14 @@ function AddLodge() {
             <div class="mb-5 ml-12 mr-12 border-b border-gray-900"></div>
 
             <div className='Image mb-5'>
-              <Images/>
+              <div className='container'>
+                <h1 className="font-IBMPlexSansThai text-2xl text-[#111827] ml-12 m-2 w-96" >6. รูปภาพ</h1>
+                <div className="box">
+                  <DropFileInput
+                    onFileChange={(files) => onFileChange(files)}
+                  />
+                </div>
+              </div>
             </div>
             <div class="mb-5 ml-12 mr-12 border-b border-gray-900"></div>
 
@@ -1061,13 +1100,15 @@ function AddLodge() {
             </div>
           </div>
           <div className="flex justify-end m-5 mr-10">
+            {isImageLoading ? <CircularProgress /> : null}
             <button
+              disabled={isImageLoading}
               type="submit"
               class="rounded-full ml-5 group relative inline-block outline-none text-sm font-medium text-white focus:outline-none focus:ring"
             >
               <span class="shadow-md shadow-gray-900 rounded-full absolute outline-0 inset-0 border focus:outline-none outline-none border-gray-900 group-active:border-gray-900"></span>
               <span class="rounded-full font-IBMPlexSansThai outline-0 focus:outline-none outline-none text-base block border border-gray-900 text-white bg-gray-900 px-4 py-3 transition-transform active:border-gray-900  active:bg-gray-900 group-hover:-translate-x-1 group-hover:-translate-y-1">
-                บันทึก
+                {isImageLoading ? "กำลังอัพโหลดข้อมูล" : "บันทึก"}
               </span>
             </button>
           </div>

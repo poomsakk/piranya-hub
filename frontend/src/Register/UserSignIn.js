@@ -27,7 +27,8 @@ function UserSignIn() {
         console.log(error);
         if (error.response) {
           alert(error.response.data.message) // wrong username password
-        } else {
+        }
+        else {
           alert(error.message) // server down
         }
       });
@@ -97,7 +98,7 @@ function UserSignIn() {
                 >
                   <span class="shadow-md shadow-gray-900 rounded-full absolute outline-0 inset-0 border focus:outline-none outline-none border-gray-900 group-active:border-gray-900"></span>
                   <span class="rounded-full font-IBMPlexSansThai outline-0 focus:outline-none outline-none text-base block border border-gray-900 text-white bg-gray-900 px-4 py-3 transition-transform active:border-gray-900  active:bg-gray-900 group-hover:-translate-x-1 group-hover:-translate-y-1">
-                  เข้าสู่ระบบ
+                    เข้าสู่ระบบ
                   </span>
                 </button>
               </div>
@@ -108,7 +109,7 @@ function UserSignIn() {
                   className="signup font-IBMPlexSansThai text-base text-gray-900 hover:underline m-2 mt-5">
                   สมัครบัญชี
                 </button>
-                
+
               </Link>
             </div>
           </div>
