@@ -36,7 +36,7 @@ function UserSignIn() {
   return (
     <>
       <div className="flex justify-center bg-[#EFEFEF] h-screen ">
-        <div className='max-w-[960px] bg-white flex flex-col mt-16 rounded-3xl h-[400px] border-2 border-gray-900'>
+        <div className='max-w-[960px] bg-white flex flex-col mt-16 rounded-3xl h-[400px] shadow-lg shadow-gray-400'>
           <div className='usersignincontent mr-16 ml-12 mt-10 mb-5'>
             <form onSubmit={handleSubmit}>
               <h1 className="flex justify-center font-IBMPlexSansThai text-3xl text-gray-900" >เข้าสู่ระบบ</h1>

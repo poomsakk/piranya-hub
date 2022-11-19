@@ -6,6 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="8bd2d643-7eb0-4ff2-9117-a12f3c2bf7e6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/Register/6_Image.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/Register/6_Image.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/Register/6_Image.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/Register/6_Image.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/Register/total.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/Register/total.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/image/IMG_6333.JPG" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/image/IMG_6333.JPG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/pages/filterPage/FilterPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/pages/filterPage/FilterPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +49,7 @@
     &quot;spring.configuration.checksum&quot;: &quot;a060e24d27336d282c0fbd04cc798a8d&quot;
   }
 }</component>
-  <component name="RunManager" selected="Spring Boot.SecuritySprintApplication">
+  <component name="RunManager" selected="Spring Boot.MatchingBackendApplication">
     <configuration name="MatchingBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="matchingBackend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.piranyaHub.matchingBackend.MatchingBackendApplication" />
@@ -83,7 +88,8 @@
       <workItem from="1668652350833" duration="717000" />
       <workItem from="1668757599293" duration="12000" />
       <workItem from="1668757629554" duration="1283000" />
-      <workItem from="1668778411036" duration="1840000" />
+      <workItem from="1668778411036" duration="2439000" />
+      <workItem from="1668835267115" duration="630000" />
     </task>
     <servers />
   </component>

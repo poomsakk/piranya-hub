@@ -65,7 +65,7 @@ const LodgeInfo = () => {
                   <p>{lodge.detail.detailTHA}</p>
                 </div>
                 <div className="ml-10 w-1/2">
-                  <div className="rounded border border-gray-100 p-8 shadow-xl">
+                  <div className="rounded border border-gray-100 p-8 shadow-lg shadow-gray-300">
                     <div className="flex justify-between">
                       <h1>ราคาที่พัก </h1>
                       <h1>{lodge.roomType[0].pricePerMonth} บาท/เดือน</h1>
@@ -106,7 +106,7 @@ const LodgeInfo = () => {
                           padding: "2px",
                         }}
                       />
-                      <h1 className="text-green-400 mt-1 ml-3 text-3xl text-center font-extrabold">
+                      <h1 className="text-[#00A96E] ml-3 text-2xl text-center font-bold">
                         {lodge.contact.phoneNumber}
                       </h1>
                     </div>
@@ -126,7 +126,7 @@ const LodgeInfo = () => {
                     lodge.facility.facilities?.indexOf(item.EngName) !== -1;
                   return (
                     <div key={key} className="flex my-1">
-                      {/* #4ade80 #808080*/}
+                      {/* #00A96E #808080*/}
                       <CheckCircle
                         sx={{ color: found ? "#00A96E" : "#BBBBBB" }}
                       />

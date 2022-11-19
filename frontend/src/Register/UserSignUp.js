@@ -39,7 +39,7 @@ function UserSignUp() {
     return (
         <>
             <div className='flex justify-center bg-[#EFEFEF] h-screen'>
-                <div className='max-w-[960px] bg-white flex flex-col mt-16 rounded-3xl h-[540px]  border-2 border-gray-900'>
+                <div className='max-w-[960px] bg-white flex flex-col mt-16 rounded-3xl h-[540px] shadow-lg shadow-gray-400'>
                     <div className='usersignincontent mt-10 ml-12 mr-16 mb-12'>
                         <form onSubmit={onSubmit}>
                             <h1 className="flex justify-center font-IBMPlexSansThai text-3xl text-gray-900" >ลงทะเบียน</h1>
