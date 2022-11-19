@@ -2,9 +2,9 @@ import React from "react";
 
 const TableCT = ({ items }) => {
   return (
-    <div class="overflow-hidden overflow-x-auto rounded-lg border border-gray-200">
-      <table class="min-w-full divide-y divide-gray-200 text-sm">
-        <thead class="bg-gray-100">
+    <div class="overflow-hidden overflow-x-auto rounded-lg border border-gray-600">
+      <table class="min-w-full divide-y divide-gray-400 text-sm">
+        <thead class="bg-gray-300">
           <tr>
             <th class="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
               ประเภท

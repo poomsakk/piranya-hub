@@ -47,7 +47,7 @@ const FilterPage = () => {
 
   useEffect(() => {
     getLodge();
-  }, [lodges]);
+  }, [price, circleRad, facilityData]);
 
   if (!isLoaded)
     return (
@@ -59,17 +59,16 @@ const FilterPage = () => {
   return (
     <div className="bg-[#EFEFEF]">
       <div className="relative w-full h-full">
-        <div></div>
-        <div className="h-15 absolute top-0 mr-10 right-0">
-          <ButtonCT btnName={"back to home"} onClick={() => navigate("/")} />
+        <div className="h-15 absolute top-0 mr-10 right-10 pt-12">
           {/* <ButtonCT btnName={"click to serch"} onClick={() => getLodge()} /> */}
         </div>
-        <div className="container">
-          <Map rad={circleRad} lodgeData={lodges} />
+        <div className="container pt-12 ">
+          <div className="shadow-lg shadow-gray-400">
+            <Map rad={circleRad} lodgeData={lodges} />
+          </div>
         </div>
-        
-        <div className="flex ">
-          <div className="container my-20 ">
+        <div className="flex">
+          <div className="container my-20">
             {lodges?.map((lodge, idx) => {
               return (
                 <section
@@ -103,13 +102,13 @@ const FilterPage = () => {
               );
             })}
           </div>
-          <div className="w-1/4 overflow-hidden h-screen flex flex-col items-center justify-center bg-white rounded-xl m-8">
+          <div className="w-1/4 overflow-hidden h-screen flex flex-col items-center justify-center bg-white rounded-xl m-8 shadow-lg shadow-gray-400">
             <div className="font-IBMPlexSansThai p-3 rounded  text-black w-[390px] mx-auto h-5/6 my-7">
               <h1 className="text-2xl text-center font-bold mb-5 mt-[-30px]">
                 คุณต้องการที่พักแบบไหน ?
               </h1>
               <div className="flex flex-col w-full h-full overflow-y-scroll overflow-x-hidden custom-class">
-                <h1 className="my-7">ระยะทางจาก สจล. (เมตร)</h1>
+                <h1 className="text-xl my-7">ระยะทางจาก สจล. (เมตร)</h1>
                 <Slider
                   className="w-[330px] ml-3"
                   value={circleRad}
@@ -121,7 +120,7 @@ const FilterPage = () => {
                   sx={{ color: "#000" }}
                   valueLabelDisplay="on"
                 />
-                <h1 className="text-xl mt-5">ราคาต่อเดือน(บาท)</h1>
+                <h1 className="text-xl mt-5 mb-5">ราคาต่อเดือน(บาท)</h1>
                 <Slider
                   className="w-[330px] ml-3"
                   disableSwap
@@ -147,7 +146,7 @@ const FilterPage = () => {
                       id="startPrice"
                       value={price[0]}
                       disabled
-                      class="p-1 w-1/2 rounded-md border-gray-200 shadow-sm sm:text-sm"
+                      class="p-1 w-1/2 rounded-md border-gray-500 shadow-sm sm:text-sm"
                     />
                   </div>
                   <div className="flex justify-center items-center">
@@ -175,7 +174,11 @@ const FilterPage = () => {
                   onCheck={onCheck}
                   name="airconditioner"
                 />
-                <CheckBoxCT displayName={"พัดลม"} onCheck={onCheck} name="fan" />
+                <CheckBoxCT
+                  displayName={"พัดลม"}
+                  onCheck={onCheck}
+                  name="fan"
+                />
                 <CheckBoxCT
                   displayName={"โทรทัศน์"}
                   onCheck={onCheck}
@@ -234,7 +237,11 @@ const FilterPage = () => {
                   onCheck={onCheck}
                   name="swimmingpool"
                 />
-                <CheckBoxCT displayName={"ฟิตเนส"} onCheck={onCheck} name="gym" />
+                <CheckBoxCT
+                  displayName={"ฟิตเนส"}
+                  onCheck={onCheck}
+                  name="gym"
+                />
                 <CheckBoxCT
                   displayName={"ร้านซัก-รีด / มีบริการเครื่องซักผ้า"}
                   onCheck={onCheck}

@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import "./MainPage.css";
 import { gsap } from "gsap";
 import FilterPage from "../filterPage/FilterPage";
-import { useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const MainPage = () => {
   const tl = gsap.timeline();
@@ -101,9 +101,8 @@ const MainPage = () => {
                 ค้นหาที่พัก
               </span>
             </button>
-
             <button
-              onClick={() => navigate('/about')}
+              onClick={() => navigate('/aboutus')}
               class="rounded-full ml-5 group relative inline-block outline-none text-white focus:outline-none focus:ring"
             >
               <span class="
@@ -142,7 +141,7 @@ const MainPage = () => {
   return (
     <section className="bg-gray-900 text-white">
       {/* {!displayedMap ? <Banner /> : <FilterPage />} */}
-      <Banner/>
+      <Banner />
     </section>
   );
 };

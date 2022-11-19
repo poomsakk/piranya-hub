@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bd2d643-7eb0-4ff2-9117-a12f3c2bf7e6" name="Changes" comment="" />
+    <list default="true" id="8bd2d643-7eb0-4ff2-9117-a12f3c2bf7e6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/Register/6_Image.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/Register/6_Image.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/Register/6_Image.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/Register/6_Image.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/Register/total.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/Register/total.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/image/IMG_6333.JPG" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/image/IMG_6333.JPG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/pages/filterPage/FilterPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/pages/filterPage/FilterPage.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,26 +29,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/66820/Desktop/Newyear/CE_Third_Term1/Software Architecture/clonePJ03/piranya-hub/backend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "spring.configuration.checksum": "a060e24d27336d282c0fbd04cc798a8d"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/66820/Desktop/Newyear/CE_Third_Term1/Software Architecture/clonePJ03/piranya-hub/backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;a060e24d27336d282c0fbd04cc798a8d&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Spring Boot.MatchingBackendApplication">
     <configuration name="MatchingBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="matchingBackend" />
@@ -79,6 +86,10 @@
       <workItem from="1668610716470" duration="822000" />
       <workItem from="1668611551687" duration="160000" />
       <workItem from="1668652350833" duration="717000" />
+      <workItem from="1668757599293" duration="12000" />
+      <workItem from="1668757629554" duration="1283000" />
+      <workItem from="1668778411036" duration="2439000" />
+      <workItem from="1668835267115" duration="630000" />
     </task>
     <servers />
   </component>
