@@ -893,38 +893,7 @@ export default function Edit() {
               <h1 className="font-IBMPlexSansThai text-2xl text-gray-900 ml-12 m-2 w-96" >5. รายละเอียด</h1>
               <div className="flex flex-row ml-5">
                 <h1 className="font-IBMPlexSansThai text-xl text-gray-900 ml-12 m-2 mt-6 w-28 ">
-                  รายละเอียดภาษาไทย
-                </h1>
-                <input
-                  type={"text"}
-                  multiline
-                  className="
-                            font-IBMPlexSansThai 
-                            bg-[#EFEFEF]
-                            placeholder:text-zinc-500
-                            text-lg
-                            pl-5 
-                            w-[631px]
-                            h-[120px]
-                            m-2
-                            ml-4
-                            mt-4
-                            border-2 
-                            border-gray-900
-                            focus:outline-none
-                            focus:border-gray-900
-                            rounded-xl
-                            "
-                  placeholder="ระบุชื่อที่พัก"
-                  name="detailTHA"
-                  value={detailTHA}
-                  onChange={onInputDetailChange}
-                />
-              </div>
-
-              <div className="flex flex-row ml-5">
-                <h1 className="font-IBMPlexSansThai text-xl text-gray-900 ml-12 m-2 mt-6 w-28 ">
-                  รายละเอียดภาษาอังกฤษ
+                  รายละเอียดที่พัก
                 </h1>
                 <TextField
                   sx={{ border: '2px solid', borderRadius: 1, font: 'IBMPlexSansThai' }}
@@ -939,31 +908,33 @@ export default function Edit() {
                             m-2
                             ml-4
                             mt-4
+                            pt-2
                             border-gray-900
-                            rounded-xl'
+                            rounded-xl
+                            '
                   multiline
                   rows={4}
-                  placeholder="ระบุชื่อที่พัก"
+                  variant="standard"
+                  InputProps={{
+                    disableUnderline: true,
+                  }}
+                  placeholder="ระบุรายละเอียดที่พัก"
                   name="detailENG"
                   value={detailENG}
                   onChange={onInputDetailChange}
                 />
-
               </div>
             </div>
             <div class="mb-5 ml-12 mr-12 border-b border-gray-900"></div>
             <div className='Image mb-5'>
               <h1 className="font-IBMPlexSansThai text-2xl text-gray-900 ml-12 m-2 w-96" >6. รูปภาพ</h1>
-              <TextField
-                required
-                id="outlined-required"
-                label="Required"
-                defaultValue="EXAMPLE IMAGE PATH"
-                name="imagePaths"
-                value={imagePaths}
-                onChange={onImagePathChange}
-              />
-              <Button variant="contained">เพิ่ม image path</Button>
+              <div className="font-IBMPlexSansThai text-gray-900 ml-12 m-2 w-96">
+                {imageData.imagePaths?.map((img, idx) => {
+                  return <p key={idx}>
+                    {img}
+                  </p>
+                })}
+              </div>
             </div>
             <div class="mb-5 ml-12 mr-12 border-b border-gray-900"></div>
             <div className="Promotion mb-5">

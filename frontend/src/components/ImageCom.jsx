@@ -1,12 +1,12 @@
-import React from 'react'
-import { Paper  } from "@mui/material";
+import React from "react";
+import { Paper } from "@mui/material";
 
 const ImageCom = (props) => {
   return (
     <Paper>
-      <img className="w-full h-[500px] object-cover" src={props.item.imgUrl} alt="" />
+      <img className="w-full h-[500px] object-cover" src={props.item} alt="" />
     </Paper>
-  )
-}
+  );
+};
 
-export default ImageCom
+export default ImageCom;

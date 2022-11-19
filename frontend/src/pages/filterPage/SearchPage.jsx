@@ -31,9 +31,9 @@ export default function SearchPage() {
 
   return (
     <>
-    <div className="bg-[#EFEFEF] h-screen">
-      <div className="container py-10">
-        <div className="ml-24" >
+      <div className="bg-[#EFEFEF] h-screen">
+        <div className="container py-10">
+          <div className="ml-24">
             <input
               type={"text"}
               className="
@@ -68,44 +68,48 @@ export default function SearchPage() {
                 ค้นหา
               </span>
             </button>
-        </div>
-        {isLoading ? <h1>Loading...</h1> : null}
-        <div className="container my-10">
-          {lodges?.map((lodge, idx) => {
-            return (
-              <section
-                key={idx}
-                onClick={() => navigate(`/Lodges/${lodge.lodgeId}`)}
-                class="m-5 cursor-pointer flex flex-row overflow-hidden rounded-lg shadow transition hover:shadow-lg"
-              >
-                <img
-                  alt="Office"
-                  src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-                  class="h-56 w-56 object-cover"
-                />
+          </div>
+          {isLoading ? <h1>Loading...</h1> : null}
+          <div className="container my-10">
+            {lodges?.map((lodge, idx) => {
+              return (
+                <section
+                  key={idx}
+                  onClick={() => navigate(`/Lodges/${lodge.lodgeId}`)}
+                  class="m-5 cursor-pointer flex flex-row overflow-hidden rounded-lg shadow transition hover:shadow-lg"
+                >
+                  <img
+                    alt="Office"
+                    src={
+                      lodge.imagePath.imagePaths.length === 0
+                        ? "https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                        : lodge.imagePath.imagePaths[0]
+                    }
+                    class="h-56 w-56 object-cover"
+                  />
 
-                <div class="bg-white p-4 sm:p-6 w-screen">
-                  <time
-                    datetime="2022-10-10"
-                    class="block text-xs text-gray-500"
-                  >
-                    10th Oct 2022
-                  </time>
+                  <div class="bg-white p-4 sm:p-6 w-screen">
+                    <time
+                      datetime="2022-10-10"
+                      class="block text-xs text-gray-500"
+                    >
+                      10th Oct 2022
+                    </time>
 
-                  <h3 class="mt-0.5 text-lg text-gray-900">
-                    {lodge.information.name}
-                  </h3>
+                    <h3 class="mt-0.5 text-lg text-gray-900">
+                      {lodge.information.name}
+                    </h3>
 
-                  <p class="mt-2 text-sm leading-relaxed text-gray-500 line-clamp-3">
-                    {lodge.detail.detailTHA}
-                  </p>
-                </div>
-              </section>
-            );
-          })}
+                    <p class="mt-2 text-sm leading-relaxed text-gray-500 line-clamp-3">
+                      {lodge.detail.detailTHA}
+                    </p>
+                  </div>
+                </section>
+              );
+            })}
+          </div>
         </div>
       </div>
-    </div>
     </>
   );
 }
