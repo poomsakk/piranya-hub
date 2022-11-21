@@ -267,6 +267,7 @@ export default function Edit() {
                   <h1 className="font-IBMPlexSansThai text-3xl text-gray-900 ml-12 w-96 mt-10 ">
                     ลงประกาศอพาร์ทเม้นท์
                   </h1>
+                  <div class="mb-5 mt-5 ml-12 mr-12 border-b border-gray-900"></div>
                   <h1 className="font-IBMPlexSansThai text-2xl text-gray-900 ml-12 m-2 w-96 mt-4">
                     1. ข้อมูลที่พัก
                   </h1>
@@ -971,7 +972,7 @@ export default function Edit() {
               </div>
             </div>
             <div class="mb-5 ml-12 mr-12 border-b border-gray-900"></div>
-            <div className="Contact mb-5">
+            <div className="Contact mb-10">
               <div className='container'>
                 <h1 className="font-IBMPlexSansThai text-2xl text-gray-900 ml-12 m-2 w-96" >8. ข้อมูลสำหรับติดต่อ</h1>
                 <div className="ml-6">

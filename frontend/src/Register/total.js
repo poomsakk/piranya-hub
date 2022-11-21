@@ -5,7 +5,7 @@ import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
-import { Button, Switch } from "@mui/material";
+import { Switch } from "@mui/material";
 import CircularProgress from '@mui/material/CircularProgress';
 import { landLordApi } from "../axiosConfig";
 import { useNavigate } from "react-router-dom";
@@ -13,8 +13,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import { setData } from "../redux/mhooSlice"
 import { v4 as uuidv4 } from 'uuid';
 import Map3 from "./Map3";
-import Type from "./3_Type"
-import Images from "./6_Image"
 import "./6_Image.css"
 import DropFileInput from './dropImage/DropFileInput';
 import axios from "axios";
@@ -35,7 +33,6 @@ function AddLodge() {
       roomType: [typeData],
       cost: costData,
       detail: detailData,
-      //imagePath: imageData,
       imagePath: { imagePaths: links },
       promotion: promotionData,
       contact: contactData
@@ -69,14 +66,6 @@ function AddLodge() {
         alert(error.message)
       }
     })
-    // console.log(informationData)
-    // console.log({ facilities: tempF })
-    // console.log(typeData)
-    // console.log(costData)
-    // console.log(detailData)
-    // console.log(imageData)
-    // console.log(promotionData)
-    // console.log(contactData)
   }
   // Main section <<<
   // 1 Information  section >>>
@@ -184,16 +173,7 @@ function AddLodge() {
   // 5 Detail section <<<
 
   // 6 Image section - old plain text>>>
-  const [imageData, setImageData] = useState({
-    imagePaths: []
-  })
-  const { imagePaths } = imageData
-  function onImagePathChange(e) {
-    setImageData({ imagePaths: [] })
-    let temp = []
-    temp.push(e.target.value)
-    setImageData({ imagePaths: temp })
-  }
+
   //new drop image
   const [isImageLoading, setIsimageLoading] = useState(false)
   const [imageFiles, setImageFiles] = useState([])
