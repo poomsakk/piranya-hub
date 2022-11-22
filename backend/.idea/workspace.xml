@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bd2d643-7eb0-4ff2-9117-a12f3c2bf7e6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landLordBackend/src/main/java/com/piranyaHub/landLordBackend/controller/imp/GetLodge.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/landLordBackend/src/main/java/com/piranyaHub/landLordBackend/controller/imp/SaveLodge.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/matchingBackend/src/main/java/com/piranyaHub/matchingBackend/controller/MatchingControllerGet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/landLordBackend/src/main/java/com/piranyaHub/landLordBackend/controller/LodgeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/landLordBackend/src/main/java/com/piranyaHub/landLordBackend/controller/LodgeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/landLordBackend/target/classes/com/piranyaHub/landLordBackend/controller/LodgeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/matchingBackend/src/main/java/com/piranyaHub/matchingBackend/controller/MatchingController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/axiosConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/axiosConfig.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
