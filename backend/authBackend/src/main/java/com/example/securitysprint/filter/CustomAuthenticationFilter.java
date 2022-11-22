@@ -3,17 +3,17 @@ package com.example.securitysprint.filter;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.example.securitysprint.service.UserDetailsImp;
+import com.example.securitysprint.strategy_pattern.Context;
+import com.example.securitysprint.strategy_pattern.InMemoryStrategy;
+import com.example.securitysprint.strategy_pattern.MongoDBStrategy;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import javax.servlet.FilterChain;
@@ -30,7 +30,7 @@ public class CustomAuthenticationFilter extends AbstractAuthenticationProcessing
     private final AuthenticationManager authenticationManager;
 
     public CustomAuthenticationFilter(AuthenticationManager authenticationManager) {
-        super(new AntPathRequestMatcher("/signin", "POST" ));
+        super(new AntPathRequestMatcher("/signin", "POST"));
         this.authenticationManager = authenticationManager;
     }
 
@@ -48,11 +48,27 @@ public class CustomAuthenticationFilter extends AbstractAuthenticationProcessing
 
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authentication) throws IOException, ServletException {
-//        super.successfulAuthentication(request, response, chain, authResult);
-//        System.out.println(authentication.getPrincipal());
 
-        UserDetailsImp user = (UserDetailsImp) authentication.getPrincipal();
-//        System.out.println(user.getId());
+        Context context = Context.getInstance();
+        if (context.getAuthenticationStrategy() instanceof MongoDBStrategy) {
+            System.out.println("MongoDBStrategy Yeah man!!");
+        } else if (context.getAuthenticationStrategy() instanceof InMemoryStrategy) {
+            System.out.println("InMemoryStrategy okee !!");
+        }
+
+//        System.out.println("Did not reach!!!");
+
+        // condition here
+        UserDetails user = context.getAuthenticationStrategy().getUserDetails(authentication);
+
+//        if (context.getAuthenticationStrategy() instanceof MongoDBStrategy) {
+//            user = (UserDetailsImp) authentication.getPrincipal();
+//        } else if (context.getAuthenticationStrategy() instanceof InMemoryStrategy) {
+//            user = (UserDetails) authentication.getPrincipal();
+//        }
+
+//        System.out.println("Reach!!!!!!!!!!!!!!!");
+
         Algorithm algorithm = Algorithm.HMAC256("secret".getBytes());
         String access_token = JWT.create()
                 .withSubject(user.getUsername())
@@ -68,11 +84,15 @@ public class CustomAuthenticationFilter extends AbstractAuthenticationProcessing
                 .sign(algorithm);
 
         Map<String, String> token = new HashMap<>();
-        token.put("id", user.getId());
-        token.put("lodgeOwn",user.getLodgeOwn().toString());
+
+        // condition here too
+        if (context.getAuthenticationStrategy() instanceof MongoDBStrategy) {
+            token.put("id", ((UserDetailsImp)user).getId());
+            token.put("lodgeOwn", ((UserDetailsImp)user).getLodgeOwn().toString());
+        }
+
         token.put("access_token", access_token);
         token.put("refresh_token", refresh_token);
-
         new ObjectMapper().writeValue(response.getOutputStream(), token);
     }
 

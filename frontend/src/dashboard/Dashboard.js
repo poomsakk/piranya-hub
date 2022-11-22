@@ -68,7 +68,7 @@ function Dashboard() {
     }
 
     return (<>
-        <div className='bg-[#EFEFEF] h-screen p-5'>
+        <div className='bg-[#EFEFEF]  p-5'>
             <div className='container'>
                 {ownLodges.length === 0 ? <h1 className='text-6xl text-center'>คุณยังไม่มีที่พักที่ลงทะเบียน</h1> : null}
                 {ownLodges.map((lodge) => {
