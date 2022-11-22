@@ -31,7 +31,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        TypeOfAuth type = TypeOfAuth.INMEMORY;
+        TypeOfAuth type = TypeOfAuth.MONGODB;
         context = Context.getInstance();
 
         if (type == TypeOfAuth.MONGODB) {
