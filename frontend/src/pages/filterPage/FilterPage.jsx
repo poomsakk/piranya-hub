@@ -9,7 +9,7 @@ import { Slider, CircularProgress } from "@mui/material";
 import { matchingApi } from "../../axiosConfig";
 
 const FilterPage = () => {
-  const [price, setPrice] = useState([1000, 5000]);
+  const [price, setPrice] = useState([1000, 6500]);
   const [circleRad, setCircleRad] = useState(450);
   const navigate = useNavigate();
   const [lodges, setLodges] = useState([]);

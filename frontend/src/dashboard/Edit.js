@@ -920,8 +920,8 @@ export default function Edit() {
                     disableUnderline: true,
                   }}
                   placeholder="ระบุรายละเอียดที่พัก"
-                  name="detailENG"
-                  value={detailENG}
+                  name="detailTHA"
+                  value={detailTHA}
                   onChange={onInputDetailChange}
                 />
               </div>
