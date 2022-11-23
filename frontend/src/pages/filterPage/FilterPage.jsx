@@ -10,7 +10,7 @@ import { matchingApi } from "../../axiosConfig";
 
 const FilterPage = () => {
   const [price, setPrice] = useState([1000, 6500]);
-  const [circleRad, setCircleRad] = useState(450);
+  const [circleRad, setCircleRad] = useState(1000);
   const navigate = useNavigate();
   const [lodges, setLodges] = useState([]);
   const [facilityData, setFacilityData] = useState([]);
