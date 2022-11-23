@@ -25,12 +25,14 @@ Module - JWT, Redux, MUI, Tailwind, Google Maps Platform, Axios, react-rounter
 
 ## Getting start
 ### Frontend
-install npm packages in frontend folder and run it<br />
+1.install npm packages in frontend folder and run it<br />
    ```
    cd frontend
    npm install
    npm start
    ```
+2.Add google api key in .env files<br />
+```REACT_APP_GOOGLE_MAP_API=YOUR_API_KEY```
 ### Backend
 We use 3 independent spring backends but connected with the same DB then we need to run 3 backend simultaneously
 1. open project in **backend/authBackend** with any IDE (for example Intellij)<br />
