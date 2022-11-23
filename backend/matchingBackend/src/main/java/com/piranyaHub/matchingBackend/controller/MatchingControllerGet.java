@@ -11,6 +11,9 @@ import java.util.List;
 public interface MatchingControllerGet <Lodge> {
     @GetMapping("/findByName/")
     Lodge matchBy(String str);
+
+
+
 //    @GetMapping("/findById/{lodge_id}")
 //    abstract Lodge matchByid(@PathVariable("lodge_id") String id);
 //

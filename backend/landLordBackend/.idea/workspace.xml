@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b8ba1d9-1782-4250-b51f-0853c3750798" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../matchingBackend/src/main/java/com/piranyaHub/matchingBackend/service/strategy/ConcreteStrategyFindByNameNormal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../matchingBackend/src/main/java/com/piranyaHub/matchingBackend/service/strategy/ConcreteStrategyFindByNameSuperAdvance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../matchingBackend/src/main/java/com/piranyaHub/matchingBackend/service/strategy/Context.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../matchingBackend/src/main/java/com/piranyaHub/matchingBackend/service/strategy/FindByNameStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../matchingBackend/src/main/java/com/piranyaHub/matchingBackend/controller/MatchingControllerGet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../matchingBackend/src/main/java/com/piranyaHub/matchingBackend/controller/MatchingControllerGet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../matchingBackend/src/main/java/com/piranyaHub/matchingBackend/controller/imp/MatchByFome.java" beforeDir="false" afterPath="$PROJECT_DIR$/../matchingBackend/src/main/java/com/piranyaHub/matchingBackend/controller/imp/MatchByNameSuperAdvance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../matchingBackend/src/main/java/com/piranyaHub/matchingBackend/controller/imp/MatchByName.java" beforeDir="false" afterPath="$PROJECT_DIR$/../matchingBackend/src/main/java/com/piranyaHub/matchingBackend/controller/imp/MatchByNameNormal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +35,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/PREMz/Desktop/pirunyaHub/piranya-hub/backend/landLordBackend&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/PREMz/Desktop/pirunyaHub/piranya-hub/backend/matchingBackend&quot;
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
