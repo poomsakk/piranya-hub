@@ -11,25 +11,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 @RestController
 @RequestMapping("/match")
 @CrossOrigin
-public class MatchByNameSuperAdvance implements MatchingControllerGet <List<Lodge>> {
+public class MatchByNameSuperAdvance implements MatchingControllerGet<List<Lodge>> {
     private Context context = new Context();
     @Autowired
     private LodgeRepository lodgeRepository;
+
     @Override
     @GetMapping("/findByName/{name}")
     public List<Lodge> matchBy(@PathVariable("name") String str) {
         context.setStrategy(new ConcreteStrategyFindByNameSuperAdvance(lodgeRepository));
-        return  context.executeStrategy(str);
+        return context.executeStrategy(str);
     }
-//    @Autowired
-//    private MathchingService mathchingService;
-//
-//    @Override
-//    @GetMapping("/findByNameadvance/{name}")
-//    public List<Lodge> matchBy(String str) {
-//        return  mathchingService.findByFome(str);
-//    }
+    // @Autowired
+    // private MathchingService mathchingService;
+    //
+    // @Override
+    // @GetMapping("/findByNameadvance/{name}")
+    // public List<Lodge> matchBy(String str) {
+    // return mathchingService.findByFome(str);
+    // }
 }

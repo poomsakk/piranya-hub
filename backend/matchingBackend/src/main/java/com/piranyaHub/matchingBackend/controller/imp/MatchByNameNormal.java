@@ -14,24 +14,24 @@ import java.util.List;
 @RestController
 @RequestMapping("/match")
 @CrossOrigin
-public class MatchByNameNormal implements MatchingControllerGet <List<Lodge>> {
+public class MatchByNameNormal implements MatchingControllerGet<List<Lodge>> {
 
     private Context context = new Context();
     @Autowired
     private LodgeRepository lodgeRepository;
+
     @Override
     @GetMapping("/findByName2/{name}")
     public List<Lodge> matchBy(@PathVariable("name") String str) {
         context.setStrategy(new ConcreteStrategyFindByNameNormal(lodgeRepository));
-        return  context.executeStrategy(str);
+        return context.executeStrategy(str);
     }
 
-
-    //    @Autowired
-//    private MathchingService mathchingService;
-//    @Override
-//    @GetMapping("/findByName/{name}")
-//    public List<Lodge> matchBy(@PathVariable("name") String str) {
-//        return  mathchingService.findByFome(str);
-//    }
+    // @Autowired
+    // private MathchingService mathchingService;
+    // @Override
+    // @GetMapping("/findByName/{name}")
+    // public List<Lodge> matchBy(@PathVariable("name") String str) {
+    // return mathchingService.findByFome(str);
+    // }
 }
