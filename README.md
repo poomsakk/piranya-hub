@@ -1,4 +1,4 @@
-# PiranYa Hub - Complate ✅
+# PiranYa Hub - Complete ✅
 
 โปรเจคนี้ส่วนหนึ่งของรายวิชา Software architecture and design / This project is part of the Software architecture and design course.
 
