@@ -28,7 +28,7 @@ public class LodgeServiceImp implements LodgeService {
 
         HttpEntity<String> request = new HttpEntity<String>(headers);
         RestTemplate restTemplate2 = new RestTemplate();
-        String uri = "http://localhost:8090/addLodgeId/" + userid + "/" + data.getLodgeId();
+        String uri = "https://piranyahubauthbackend.poomsakk.com/addLodgeId/" + userid + "/" + data.getLodgeId();
         ResponseEntity<String> response = restTemplate2.exchange(uri, HttpMethod.GET, request, String.class);
         System.out.println("response here!!!!!"+response );
 

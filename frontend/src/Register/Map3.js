@@ -18,7 +18,6 @@ export default function Map3({ SetPositon }) {
     const { isLoaded } = useLoadScript({
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API,
         libraries: ["places"],
-        mapIds: ["768e6ec3c770487c"],
     });
 
     if (!isLoaded) return <div>Loading...</div>;
@@ -50,7 +49,7 @@ function Map({ SetPositon }) {
                 center={viewPort}
                 mapContainerClassName="map-container"
                 onClick={handleOnclick}
-                options = {{mapId: "9cc19ecccb4e1876"}}
+                options={{ mapId: "9cc19ecccb4e1876" }}
             >
                 {selected && <MarkerF position={selected} />}
             </GoogleMap>

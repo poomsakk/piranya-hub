@@ -16,7 +16,7 @@ public class DeleteUser implements LodgeControllerDelete<String> {
     @DeleteMapping("/delete/{lodge_id}")
     public String delete(@PathVariable("lodge_id") String str) {
         lodgeService.deleteLodge(str);
-        String uri = "http://localhost:8090/deleteLodgeId/" + str ;
+        String uri = "https://piranyahubauthbackend.poomsakk.com/deleteLodgeId/" + str ;
         return "deleted succesfully... (Maybe)";
     }
 }

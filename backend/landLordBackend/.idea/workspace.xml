@@ -5,9 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b8ba1d9-1782-4250-b51f-0853c3750798" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../authBackend/dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/SecuritySprintApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authBackend/src/main/java/com/sample/SecuritySprintApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authBackend/src/main/java/com/sample/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/filter/CustomAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authBackend/src/main/java/com/sample/filter/CustomAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/filter/CustomAuthorizationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authBackend/src/main/java/com/sample/filter/CustomAuthorizationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authBackend/src/main/java/com/sample/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/payload/ReqData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authBackend/src/main/java/com/sample/payload/ReqData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authBackend/src/main/java/com/sample/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authBackend/src/main/java/com/sample/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/service/UserDetailsImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authBackend/src/main/java/com/sample/service/UserDetailsImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authBackend/src/main/java/com/sample/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authBackend/src/main/java/com/sample/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/strategy_pattern/AuthenticationStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authBackend/src/main/java/com/sample/strategy_pattern/AuthenticationStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/strategy_pattern/Context.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authBackend/src/main/java/com/sample/strategy_pattern/Context.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/strategy_pattern/InMemoryStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authBackend/src/main/java/com/sample/strategy_pattern/InMemoryStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/strategy_pattern/MongoDBStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authBackend/src/main/java/com/sample/strategy_pattern/MongoDBStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authBackend/src/main/java/com/example/securitysprint/strategy_pattern/TypeOfAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authBackend/src/main/java/com/sample/strategy_pattern/TypeOfAuth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authBackend/src/test/java/com/example/securitysprint/SecuritySprintApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authBackend/src/test/java/com/sample/SecuritySprintApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authBackend/src/test/java/com/piranyaHub/authBackend/AuthBackendApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authBackend/src/test/java/com/sample/piranyaHub/authBackend/AuthBackendApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../matchingBackend/src/main/java/com/piranyaHub/matchingBackend/controller/imp/MatchByNameNormal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../matchingBackend/src/main/java/com/piranyaHub/matchingBackend/controller/imp/MatchByNameNormal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../matchingBackend/src/main/java/com/piranyaHub/matchingBackend/controller/imp/MatchByNameSuperAdvance.java" beforeDir="false" afterPath="$PROJECT_DIR$/../matchingBackend/src/main/java/com/piranyaHub/matchingBackend/controller/imp/MatchByNameSuperAdvance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/piranyaHub/landLordBackend/controller/imp/DeleteUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/piranyaHub/landLordBackend/controller/imp/DeleteUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/piranyaHub/landLordBackend/service/imp/LodgeServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/piranyaHub/landLordBackend/service/imp/LodgeServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/service/imp/LodgeServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/piranyaHub/landLordBackend/service/imp/LodgeServiceImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/Register/Map3.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/Register/Map3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../frontend/src/axiosConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../frontend/src/axiosConfig.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,17 +46,20 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2He5JBTl8lTWAqOQy8uE1Z3p5T5" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/PREMz/Desktop/pirunyaHub/piranya-hub/backend/authBackend"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/PREMz/Desktop/pirunyaHub/piranya-hub/backend/matchingBackend&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

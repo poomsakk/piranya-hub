@@ -1,16 +1,30 @@
 import axios from "axios";
 
+// export const landLordApi = axios.create({
+//     baseURL: 'http://localhost:8080'
+// });
+
+// export const authApi = axios.create({
+//     baseURL: 'http://localhost:8090'
+// });
+
+// export const matchingApi = axios.create({
+//     baseURL: 'http://localhost:8099'
+// })
+
 export const landLordApi = axios.create({
-    baseURL: 'http://localhost:8080'
+    baseURL: 'https://piranyahublandlordbackend.poomsakk.com'
 });
 
 export const authApi = axios.create({
-    baseURL: 'http://localhost:8090'
+    baseURL: 'https://piranyahubauthbackend.poomsakk.com'
 });
 
 export const matchingApi = axios.create({
-    baseURL: 'http://localhost:8099'
-})
+    baseURL: 'https://piranyahubmatchingbackend.poomsakk.com'
+});
+
+// ===================================================================
 
 // export const landLordApi = axios.create({
 //     baseURL: 'https://piranyahub-landlordbackend.herokuapp.com'
