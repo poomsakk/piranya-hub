@@ -5,8 +5,9 @@
 ### Details
 เว็บไซต์ค้นหาหอพักที่อยู่ใกล้ สจล. มีระบบทีี่ให้เจ้าของหอมาลงโพสประกาศ <br />
 Website to search for lodge near KMITL. There is a system that allows the landlord to post announcements. <br />
-Demo - [youtube video link](https://youtu.be/aBKQB63tBzE)
-
+Demo video - [youtube video link](https://youtu.be/aBKQB63tBzE) <br />
+website link - [piranyahub.netlify.app](https://piranyahub.netlify.app/) or [piranyahub.poomsakk.com](https://piranyahub.poomsakk.com/)<br />
+[![Netlify Status](https://api.netlify.com/api/v1/badges/afacf69e-89d7-4eb7-b202-649cdcbfe4ab/deploy-status)](https://app.netlify.com/sites/piranyahub/deploys)
 ## Build with
 Frontend - React<br />
 Backend - Spring boot<br />
